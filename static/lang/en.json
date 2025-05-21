@@ -1,0 +1,81 @@
+{
+  "app_title": "Los Super Ninis",
+  "app_slogan": "Powered by caffeine\n & chaos.",
+  "app_desc": "We\"re a small but mighty game studio turning procrastination into inspiration!",
+  
+  "testimonials_title": "What People Are Saying \uD83D\uDDE3\uFE0F",
+  "testimonials_desc": "Don\"t just take our word for it - here\"s what players and reviewers think of our games!",
+  
+  "newsletter_title": "Join the Nini Newsletter! \uD83D\uDCEE",
+  "newsletter_desc": "Be the first to know about our new game releases, updates, and occasional game development disasters!",
+  "newsletter_placeholder": "your@email.com",
+  "newsletter_button": "Subscribe!",
+  
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "games": "Games",
+    "news": "Blog",
+    "licences": "Licences",
+    "privacy": "Privacy",
+    "terms": "Terms of Use"
+  },
+  
+  "symbiosis": {
+    "titleKey": "<br>SYMBIOSIS™",
+    "genreKey": "Resource Management.",
+    "descriptionKey": "Manage the smallest city in the world!"
+  },
+  "for-pawns-sake": {
+    "titleKey": "For Pawn\"s Sake",
+    "descriptionKey": "Run the wackiest pawn shop in town!",
+    "genreKey": "Tycoon."
+  },
+  "mouse-game": {
+    "titleKey": "A MOUSE GAME",
+    "genreKey": "Arcade.",
+    "descriptionKey": "Collect objects to create your own gaming setup."
+  },
+  "friendly-fire": {
+    "titleKey": "FRIENDLY FIRE",
+    "genreKey": "Strategy.",
+    "descriptionKey": "Survive (or don't) with your friend."
+  },
+  "crop-guardian": {
+    "titleKey": "CROP GUARDIAN",
+    "genreKey": "Arcade.",
+    "descriptionKey": "Mow down aliens to protect your crops."
+  },
+
+  "cookie-banner": {
+    "message": "\uD83C\uDF6A We use cookies to make your experience here more fun! They help us understand how you play and make things even better.",
+    "privacy-policy": "View our Privacy Policy",
+    "accept": "Yes, I love cookies! \uD83C\uDFAE",
+    "decline": "No, thanks \uD83D\uDEAB"
+    },
+
+  "about-us": {
+    "title": "Meet the Super Ninis! \uD83D\uDC4B",
+    "description": "We're a small but mighty team of game developers who believe that great games don't need to be serious to be seriously fun! We pour our hearts, creativity, and a healthy dose of silliness into every project. Our mission? To turn procrastination into inspiration and deliver games that are small in size but BIG on fun!",
+    "developers": {
+      "title": "Passionate Developers",
+      "description": "Creating joy one line of code at a time. We love tackling challenges and bringing innovative gameplay mechanics to life."
+    },
+    "artists": {
+      "title": "Creative Artists",
+      "description": "Making the world more colorful with unique art styles and charming characters. Every pixel is crafted with love"
+    },
+    "sound": {
+      "title": "Sound Wizards",
+      "description": "Adding bops, beeps, and emotional scores to your gameplay. We believe sound is half the experience!"
+    },
+    "designers": {
+      "title": "Storytellers & Designers",
+      "description": "Weaving narratives and designing experiences that are engaging, memorable, and, most importantly, fun!"
+    },
+    "our-philosophy": {
+      "title": "Our Philosophy",
+      "description": "At Los Super Ninis, we embrace the \"Nini\" spirit – that spark of genius that strikes when you're *supposed* to be doing something else."
+    }
+  }
+}
