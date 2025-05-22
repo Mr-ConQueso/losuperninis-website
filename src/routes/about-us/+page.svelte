@@ -39,6 +39,17 @@
     }
 </style>
 
+<svelte:head>
+    <title>Los Super Ninis | About</title>
+    <meta property="og:title" content="Los Super Ninis" />
+    <meta property="og:site_name" content="Los Super Ninis"/>
+    <meta property="og:url" content="https://losuperninis.cheesylabs.net/about-us"/>
+    <meta property="og:description" content="We're a small but mighty team of game developers who believe that great games don't need to be serious to be seriously fun!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://losuperninis.cheesylabs.net/icons/logotype.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+</svelte:head>
+
 <div class="about-us-container">
     <section class="team-section">
         <h1>{$_("about-us.title")}</h1>

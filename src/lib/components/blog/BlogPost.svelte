@@ -1,7 +1,36 @@
 <script>
     import { marked } from 'marked';
-    export let title;
-    export let content;
+    import SEO from '$lib/components/SEO/index.svelte';
+
+    let {
+        title,
+        desc,
+        lastUpdated,
+        datePublished,
+        slug,
+        timeToRead,
+        imageUrl,
+        imageAlt,
+        content
+    } = $props();
+
+    const post = {
+        article: true,
+        datePublished: new Date(datePublished).toISOString(),
+        featuredImage: null,
+        featuredImageAlt: imageAlt,
+        featuredImageSrc: imageUrl,
+        featuredImageSrcset: null,
+        timeToRead: timeToRead,
+        lastUpdated: new Date(lastUpdated).toISOString(),
+        ogImage: imageUrl,
+        ogSquareImage: true,
+        postTitle: title,
+        metadescription: desc,
+        slug: slug,
+        twitterImage: imageUrl,
+    }
+    
 </script>
 
 <style>
@@ -86,6 +115,7 @@
     }
 </style>
 
+<SEO {...post} />
 <article class="bg-white rounded-[var(--border-radius-large)] p-6 sm:p-10 shadow-lg animate-fadeIn text-[var(--color-dark)]">
     <h1
             class="text-4xl sm:text-5xl font-heading text-[var(--color-pink)] mb-8 leading-tight drop-shadow"

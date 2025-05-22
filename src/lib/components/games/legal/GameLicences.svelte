@@ -26,9 +26,6 @@
     .licences-container ul {
         padding-left: 20px;
     }
-    .licences-container a {
-        color: var(--color-purple);
-    }
     .licences-container strong {
         color: var(--color-pink);
     }

@@ -28,10 +28,6 @@ html {
   scroll-behavior: smooth;
 }
 
-main {
-  max-width: 1200px;
-}
-
 body {
   font-family: var(--font-body);
   color: var(--color-dark);
@@ -51,6 +47,24 @@ h1 {
 h2, h3, h4, h5, h6 {
   font-family: var(--font-subheading);
   margin-top: 0;
+}
+
+.header {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+}
+
+.subheader {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+}
+
+.triheader {
+  font-size: clamp(1rem, 3vw, 2rem);
+  color: var(--color-dark);
+  margin-bottom: 1rem;
 }
 
 .btn-primary {
@@ -104,6 +118,10 @@ h2, h3, h4, h5, h6 {
   padding: 1rem;
 }
 
+.section {
+  margin-top: 4rem;
+}
+
 @keyframes bounce {
   from { transform: translateY(0); }
   to { transform: translateY(-10px); }
@@ -122,5 +140,8 @@ h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .container {
     padding: 1rem;
+  }
+  .section {
+    margin-top: 1rem;
   }
 }

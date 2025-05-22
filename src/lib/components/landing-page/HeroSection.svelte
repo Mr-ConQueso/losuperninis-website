@@ -89,9 +89,9 @@
     <MobileHeroSection cards={cards} />
 {:else}
     <div class="cards-container" id="games">
-        {#each cards as card, index}
+        {#each cards as card}
             <div class="card-wrapper">
-                <Card title={card.titleKey} genre={card.genreKey} description={card.descriptionKey} imageSrc={card.imageSrc} imageAlt={card.imageAlt} link={card.link}/>
+                <Card {...card}/>
             </div>
         {/each}
     </div>

@@ -1,9 +1,8 @@
 <script lang="ts">
     import '../../../app.css';
-    import {_, setupI18n, locale} from "$lib/lang/i18n.js";
+    import {_, locale, setupI18n} from "$lib/lang/i18n.ts";
     import LocaleSelector from "$lib/components/LocaleSelector.svelte";
-    import {isMobile} from "$lib/utils/device.js";
-    import MobileHeroSection from "$lib/components/landing-page/MobileHeroSection.svelte";
+    import {isMobile} from "$lib/utils/device.ts";
 
     let navItems = [
         { icon: '🏠', key: 'navigation.home', href: '/' },

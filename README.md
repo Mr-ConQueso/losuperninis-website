@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/Mr-ConQueso/losuperninis-website/blob/production/static/icons/logotype.png?raw=true" alt="Project Name" />
+  <img src="static/icons/logotype.png" alt="los Super Ninis" style="height: 100px;" />
 </div>
 
 # Losuperninis Website
