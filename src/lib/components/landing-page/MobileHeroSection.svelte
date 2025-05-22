@@ -2,6 +2,7 @@
     import {spring} from 'svelte/motion';
     import {onMount} from 'svelte';
     import Card from './Card.svelte';
+    import TestCard from "$lib/components/TestCard.svelte";
 
     export let cards = [];
 
@@ -110,15 +111,15 @@
           scale(1);
           z-index: 2;"
             >
-                <Card {...card} swipeable={false} />
+                <TestCard {...card} swipeable={false} />
             </div>
         {:else if idx === activeIndex - 1}
             <div class="card prev">
-                <Card {...card} swipeable={false} />
+                <TestCard {...card} swipeable={false} />
             </div>
         {:else if idx === activeIndex + 1}
             <div class="card next">
-                <Card {...card} swipeable={false} />
+                <TestCard {...card} swipeable={false} />
             </div>
         {/if}
     {/each}
