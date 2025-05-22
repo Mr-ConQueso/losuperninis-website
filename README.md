@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="https://github.com/Mr-ConQueso/losuperninis-website/blob/production/static/icons/logotype.png?raw=true" alt="Project Name" />
+</div>
+
 # Losuperninis Website
 
 The official website for Losuperninis, a game development studio. Features information about our games, blog posts, and team.
@@ -43,11 +47,19 @@ To run the website locally on your machine, follow these steps:
     The site will typically be accessible at `http://localhost:5173`.
 
 ## Find Us
-
 Connect with us on social media:
-
-*   [![Discord](static/icons/Discord_Logo.png)](https://discord.gg/placeholder)
-*   [![YouTube](static/icons/Youtube_Logo.png)](https://youtube.com/@placeholder)
-*   [![Instagram](static/icons/Instagram_Logo.png)](https://instagram.com/placeholder)
-*   [![Bluesky](static/icons/Bluesky_Logo.png)](https://bsky.app/profile/placeholder)
-*   [![Steam](static/icons/Steam_Logo.png)](https://store.steampowered.com/developer/placeholder)
+<br><br>
+<div align="center">
+  <a href="https://discord.gg/placeholder" style="margin: 0 10px;">
+    <img src="static/icons/Discord_Logo.png" alt="Discord" height="40">
+  </a>
+  <a href="https://youtube.com/@losuperninis" style="margin: 0 10px;">
+    <img src="static/icons/Youtube_Logo.png" alt="YouTube" height="40">
+  </a>
+  <a href="https://bsky.app/profile/losuperninis.bsky.social" style="margin: 0 10px;">
+    <img src="static/icons/Bluesky_Logo.png" alt="Bluesky" height="40">
+  </a>
+  <a href="https://steamcommunity.com/id/losuperninis" style="margin: 0 10px;">
+    <img src="static/icons/Steam_Logo.png" alt="Steam" height="40">
+  </a>
+</div>
