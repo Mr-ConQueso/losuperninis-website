@@ -54,7 +54,7 @@
         position: relative;
         width: 100%;
         max-width: 1400px;
-        height: 800px;
+        height: 640px;
         margin: 0 auto;
     }
 

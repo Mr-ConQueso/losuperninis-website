@@ -1,17 +1,19 @@
-<script>
+<script lang="ts">
+    import { WEBSITE_URL, COMPANY_NAME, INFO_EMAIL } from '$lib/utils/constants.js';
+    
     const contacts = [
         {
             type: "Email",
             icon: "/icons/email.svg",
             description: "Reach out to us directly via email for inquiries, collaborations, or just to say hello!",
-            address: "mailto:info@supersninis.com",
-            buttonText: "info@supersninis.com"
+            address: "mailto:" + INFO_EMAIL,
+            buttonText: INFO_EMAIL
         },
         {
             type: "Discord",
             icon: "/icons/Discord_Logo.png",
             description: "Join our Discord server to chat, give feedback, and hang out with the devs and community!",
-            address: "https://discord.gg/YOUR_INVITE",
+            address: "https://discord.gg/W6mWZpNTjK",
             buttonText: "Join Discord"
         },
         {

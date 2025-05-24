@@ -31,7 +31,7 @@
     <a href="https://www.youtube.com/@losuperninis" aria-label="YouTube">
         <img src="/icons/Youtube_Logo.png" alt="YouTube Logo" class="icon" />
     </a>
-    <a href="https://discord.com" aria-label="Discord">
+    <a href="https://discord.gg/W6mWZpNTjK" aria-label="Discord">
         <img src="/icons/Discord_Logo.png" alt="Discord Logo" class="icon" />
     </a>
     <a href="https://steamcommunity.com/id/losuperninis/" aria-label="Steam">

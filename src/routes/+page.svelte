@@ -98,11 +98,24 @@
     }
 
     /* Latest Feature */
+    .feature-section-bg {
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-image: var(--image-url);
+        background-size: 100% auto;
+        width: 100vw;
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+        z-index: -1;
+    }
+    
     .feature-section {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
         padding: 1rem;
+        margin-top: 12rem;
     }
 
     .left-column,
@@ -113,19 +126,13 @@
         padding: 1rem;
     }
 
-    .left-column img {
-        width: auto;
-        height: 100px;
-        margin-bottom: 1rem;
-    }
-
     .left-column button {
         margin-top: 1.5rem;
     }
 
     .video-container {
         position: relative;
-        margin-top: 5rem;
+        margin-top: 1rem;
         padding-bottom: 56.25%; /* 16:9 aspect ratio */
         height: 0;
         overflow: hidden;
@@ -143,6 +150,7 @@
     /* Features List */
     .features-section {
         text-align: center;
+        background: var(--color-yellow);
         padding: 2rem;
     }
 
@@ -299,6 +307,14 @@
         .how-it-works-grid {
             gap: 0.5rem;
         }
+        .feature-section-bg {
+            padding-top: 0;
+            padding-bottom: 0;
+            background-size: cover;
+        }
+        .feature-section {
+            margin-top: 15rem;
+        }
     }
 </style>
 
@@ -312,41 +328,45 @@
     <HeroSection/>
 </section>
 
-<section class="feature-section container section">
-    <!-- LEFT COLUMN -->
-    <div class="left-column">
-        <img src="/icons/logo.png" alt="Game Preview" />
-        <h2 class="subheader">Discover Our Latest Indie Game Adventure!</h2>
-        <p>
-            Dive into a whimsical world filled with quirky characters and challenging puzzles. Our latest release promises hours of fun and laughter for players of all ages!
-        </p>
-        <button class="btn-primary">Play</button>
-    </div>
+<section class="section feature-section-bg" style="--image-url: url('/shapes/hero-waves.svg')">
+<!--    <img class="feature-section-bg" src="/shapes/hero-waves.svg" alt="Background waves" />-->
+    <div class="feature-section container">
+        <!-- LEFT COLUMN -->
+        <div class="left-column">
+            <h2 class="subheader">Discover Our Latest Indie Game Adventure!</h2>
+            <p>
+                Dive into a whimsical world filled with quirky characters and challenging puzzles. Our latest release promises hours of fun and laughter for players of all ages!
+            </p>
+            <button class="btn-primary">Play</button>
+        </div>
 
-    <!-- RIGHT COLUMN -->
-    <div class="right-column">
-        <div class="video-container">
-            <iframe
-                    title="Symbiosis Trailer"
-                    src="https://www.youtube.com/embed/zi2GvqboQfY"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-            ></iframe>
+        <!-- RIGHT COLUMN -->
+        <div class="right-column">
+            <div class="video-container">
+                <iframe
+                        title="Symbiosis Trailer"
+                        src="https://www.youtube.com/embed/zi2GvqboQfY"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                ></iframe>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="features-section container section">
-    <h2 class="subheader">Key Features</h2>
-    <div class="features-grid">
-        {#each features as feature}
-            <div class="feature-item">
-                <img src={feature.image} alt={feature.heading} />
-                <h3>{feature.heading}</h3>
-                <p>{feature.description}</p>
-                <button class="btn-secondary">{feature.buttonText}</button>
-            </div>
-        {/each}
+<section class="features-section">
+    <div class="container">
+        <h2 class="subheader">Key Features</h2>
+        <div class="features-grid">
+            {#each features as feature}
+                <div class="feature-item">
+                    <img src={feature.image} alt={feature.heading} />
+                    <h3>{feature.heading}</h3>
+                    <p>{feature.description}</p>
+                    <button class="btn-secondary">{feature.buttonText}</button>
+                </div>
+            {/each}
+        </div>
     </div>
 </section>
 

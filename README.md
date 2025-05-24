@@ -50,7 +50,7 @@ To run the website locally on your machine, follow these steps:
 Connect with us on social media:
 <br><br>
 <div align="center">
-  <a href="https://discord.gg/placeholder" style="margin: 0 10px;">
+  <a href="https://discord.gg/W6mWZpNTjK" style="margin: 0 10px;">
     <img src="static/icons/Discord_Logo.png" alt="Discord" height="40">
   </a>
   <a href="https://youtube.com/@losuperninis" style="margin: 0 10px;">

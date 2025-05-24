@@ -69,7 +69,7 @@
     .container {
         position: relative;
         width: 100%;
-        min-height: 700px;
+        min-height: 550px;
         overflow: hidden;
         touch-action: pan-y;
     }
