@@ -14,7 +14,7 @@
         text-align: center;
         font-size: 2.5rem;
         color: #fff;
-        text-shadow: 2px 2px var(--color-dark);
+        text-shadow: 2px 2px var(--color-font);
         margin-bottom: 2rem;
     }
     .licences-container p,
@@ -25,10 +25,10 @@
         padding-left: 20px;
     }
     .licences-container a {
-        color: var(--color-purple);
+        color: var(--color-background);
     }
     .licences-container strong {
-        color: var(--color-pink);
+        color: var(--color-primary);
     }
 </style>
 
@@ -38,7 +38,7 @@
     </strong></p>
     
     <h1>Copyright</h1>
-    <p>All original content, code, and chaotic creativity on this site © {COMPANY_NAME} – which basically means our pixelated creations are ours. While we embrace the indie spirit of sharing, please don’t reproduce/distribute our games, art, or website content without permission. (But hey – fan art? Memes? Speedruns? Those get our official <span style="color: var(--color-purple);">✨nini-approved✨</span> stamp.)</p>
+    <p>All original content, code, and chaotic creativity on this site © {COMPANY_NAME} – which basically means our pixelated creations are ours. While we embrace the indie spirit of sharing, please don’t reproduce/distribute our games, art, or website content without permission. (But hey – fan art? Memes? Speedruns? Those get our official <span style="color: var(--color-background);">✨nini-approved✨</span> stamp.)</p>
 
     <h1>Credits</h1>
     <p>We’re obsessively grateful to these resources that helped build our digital clubhouse (even when not legally required to mention them):</p>

@@ -13,7 +13,7 @@
         text-align: center;
         font-size: 3rem;
         color: #fff;
-        text-shadow: 2px 2px var(--color-dark);
+        text-shadow: 2px 2px var(--color-font);
         margin-bottom: 2rem;
     }
     .team-section { /* Styles from original App.svelte for team section */

@@ -8,7 +8,7 @@
     .markdown :global(h2) {
         font-family: var(--font-subheading);
         font-size: 2rem;
-        color: var(--color-purple);
+        color: var(--color-background);
         margin-top: 2rem;
         margin-bottom: 0.5rem;
     }
@@ -16,7 +16,7 @@
     .markdown :global(h3) {
         font-family: var(--font-subheading);
         font-size: 1.5rem;
-        color: var(--color-yellow);
+        color: var(--color-secundary);
         margin-top: 1.5rem;
         margin-bottom: 0.5rem;
     }
@@ -29,14 +29,14 @@
     }
 
     .markdown :global(a) {
-        color: var(--color-pink);
+        color: var(--color-primary);
         text-decoration: underline dotted;
         font-weight: bold;
         transition: color 0.2s ease;
     }
 
     .markdown :global(a:hover) {
-        color: var(--color-purple);
+        color: var(--color-background);
     }
 
     .markdown :global(img) {
@@ -58,8 +58,8 @@
     }
 
     .markdown :global(pre) {
-        background: var(--color-dark);
-        color: white;
+        background: var(--color-font);
+        color: var(--color-font-complement);
         padding: 1rem;
         border-radius: var(--border-radius-small);
         overflow-x: auto;
@@ -76,7 +76,7 @@
     }
 
     .markdown :global(blockquote) {
-        border-left: 5px solid var(--color-green);
+        border-left: 5px solid var(--color-terciary);
         padding-left: 1rem;
         color: #444;
         font-style: italic;

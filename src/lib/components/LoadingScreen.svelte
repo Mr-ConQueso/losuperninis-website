@@ -8,7 +8,7 @@
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background: var(--color-purple);
+        background: var(--color-background);
     }
 
     .loading-content {
@@ -22,7 +22,7 @@
         height: 50px;
         margin: 0 auto 1.5rem;
         border: 10px solid #e0e0e0;
-        border-top: 10px solid var(--color-pink);
+        border-top: 10px solid var(--color-primary);
         border-radius: 50%;
         animation: spin 1s linear infinite;
     }
@@ -38,13 +38,13 @@
 
     .progress-fill {
         height: 100%;
-        background: var(--color-pink);
+        background: var(--color-primary);
         transition: width 0.3s ease;
     }
 
     .status-text {
-        color: #fff;
-        text-shadow: 2px 2px var(--color-dark);
+        color: var(--color-font-complement);
+        text-shadow: 2px 2px var(--color-font);
         margin: 0.9rem 0;
         font-size: 2rem;
     }

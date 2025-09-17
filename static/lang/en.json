@@ -77,5 +77,11 @@
       "title": "Our Philosophy",
       "description": "At Los Super Ninis, we embrace the \"Nini\" spirit – that spark of genius that strikes when you're *supposed* to be doing something else."
     }
+  },
+
+  "blog": {
+    "title": "Our Blog",
+    "description": "Read our latest news and updates about our games and development.",
+    "read-more": "Read More..."
   }
 }

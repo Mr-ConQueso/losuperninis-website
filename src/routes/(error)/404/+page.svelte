@@ -1,7 +1,7 @@
 <style>
     .error-code {
         font-size: 1.5rem;
-        color: var(--color-pink);
+        color: var(--color-primary);
         font-family: var(--font-subheading);
     }
 </style>

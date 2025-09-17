@@ -2,7 +2,7 @@
     import posthog from "posthog-js";
     import HeroSection from "$lib/components/landing-page/HeroSection.svelte";
     import type { Actions } from './$types';
-    import {_} from "$lib/lang/i18n.js";
+    import {_} from "$lib/lang/i18n.ts";
 
     let email = '';
     let status: { success?: boolean; error?: string } = {};
@@ -103,7 +103,7 @@
     .section-header p {
         max-width: 700px;
         margin: 0 auto;
-        color: var(--color-dark);
+        color: var(--color-font);
         font-size: 1.1rem;
     }
     
@@ -132,11 +132,11 @@
         top: -20px;
         left: 20px;
         font-size: 4rem;
-        color: var(--color-dark);
+        color: var(--color-font);
     }
     
     .rating {
-        color: var(--color-dark);
+        color: var(--color-font);
         font-size: 1.2rem;
         font-weight: bold;
     }
@@ -163,7 +163,7 @@
         flex: 1;
         padding: 1rem;
         border-radius: var(--border-radius-pill);
-        border: 3px solid var(--color-pink);
+        border: 3px solid var(--color-primary);
         font-family: var(--font-body);
     }
     

@@ -7,19 +7,19 @@
         padding: 2rem;
         background: rgba(255, 255, 255, 0.8); /* Light background for readability */
         border-radius: 1rem;
-        color: var(--color-dark);
+        color: var(--color-font);
         line-height: 1.6;
     }
     .privacy-policy-container h1 {
         text-align: center;
         font-size: 2.5rem;
         color: #fff;
-        text-shadow: 2px 2px var(--color-dark);
+        text-shadow: 2px 2px var(--color-font);
         margin-bottom: 2rem;
     }
     .privacy-policy-container h4 {
         font-size: 1.8rem;
-        color: var(--color-dark);
+        color: var(--color-font);
         margin-top: 2rem;
         margin-bottom: 1rem;
     }
@@ -31,10 +31,10 @@
         padding-left: 20px;
     }
     .privacy-policy-container strong {
-        color: var(--color-pink);
+        color: var(--color-primary);
     }
     .privacy-policy-container a {
-        color: var(--color-purple);
+        color: var(--color-background);
     }
 </style>
 

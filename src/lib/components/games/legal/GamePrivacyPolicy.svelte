@@ -15,14 +15,14 @@
         padding: 2rem;
         background: rgba(255, 255, 255, 0.8); /* Light background for readability */
         border-radius: 1rem;
-        color: var(--color-dark);
+        color: var(--color-font);
         line-height: 1.6;
     }
     .privacy-policy-container h1 {
         text-align: center;
         font-size: 2.5rem;
-        color: #fff;
-        text-shadow: 2px 2px var(--color-dark);
+        color: var(--color-font-complement);
+        text-shadow: 2px 2px var(--color-font);
         margin-bottom: 2rem;
     }
     .privacy-policy-container p,
@@ -33,16 +33,16 @@
         padding-left: 20px;
     }
     .privacy-policy-container strong {
-        color: var(--color-pink);
+        color: var(--color-primary);
     }
     .privacy-policy-container a {
-        color: var(--color-purple);
+        color: var(--color-background);
     }
     table {
         width: 100%;
         border-collapse: collapse;
         margin: 2rem 0;
-        background: var(--color-green);
+        background: var(--color-terciary);
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -55,7 +55,7 @@
     th {
         padding: 1.2rem;
         text-align: left;
-        color: var(--color-dark);
+        color: var(--color-font);
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.05em;
@@ -81,7 +81,7 @@
 
     td {
         padding: 1rem;
-        color: var(--color-dark); /* Assuming existing dark variable */
+        color: var(--color-font); /* Assuming existing dark variable */
     }
 
     /* Zebra striping for better readability */

@@ -1,6 +1,6 @@
 ---
 title: "Getting Started"
-date: 2023-11-15
+date: 2024-09-12
 excerpt: "Learn the basics of game development"
 tags: [tutorial, beginner]
 ---

@@ -6,8 +6,8 @@
 
 <style>
     footer {
-        background:  var(--color-dark, #000000);
-        color: white;
+        background:  var(--color-font);
+        color: var(--color-font-complement);
         padding: 2rem 1rem;
     }
 
@@ -52,7 +52,7 @@
     }
 
     .footer-bottom a {
-        color: white;
+        color: var(--color-font-complement);
         text-decoration: underline;
     }
 

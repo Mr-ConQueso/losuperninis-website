@@ -5,42 +5,42 @@
 
     let heroes = [
         {
-            silhouetteImage: '/src/assets/images/our-team/Hero_1.png',
+            silhouetteImage: '/src/assets/images/our-team/hero-1.png',
             coloredImage: '/src/assets/images/our-team/Hero_1_Selected.png',
             chatText: 'I handle the code!',
             left: -220,
             top: 8
         },
         {
-            silhouetteImage: '/src/assets/images/our-team/Hero_3.png',
+            silhouetteImage: '/src/assets/images/our-team/hero-3.png',
             coloredImage: '/src/assets/images/our-team/Hero_3_Selected.png',
             chatText: 'I design the art!',
             left: -120,
             top: -5
         },
         {
-            silhouetteImage: '/src/assets/images/our-team/Hero_3.png',
+            silhouetteImage: '/src/assets/images/our-team/hero-3.png',
             coloredImage: '/src/assets/images/our-team/Hero_3_Selected.png',
             chatText: 'I create the music!',
             left: -20,
             top: -10
         },
         {
-            silhouetteImage: '/src/assets/images/our-team/Hero_1.png',
+            silhouetteImage: '/src/assets/images/our-team/hero-1.png',
             coloredImage: '/src/assets/images/our-team/Hero_1_Selected.png',
             chatText: 'I manage the team!',
             left: 80,
             top: -6
         },
         {
-            silhouetteImage: '/src/assets/images/our-team/Hero_1.png',
+            silhouetteImage: '/src/assets/images/our-team/hero-1.png',
             coloredImage: '/src/assets/images/our-team/Hero_1_Selected.png',
             chatText: 'I manage the team!',
             left: 180,
             top: -10
         },
         {
-            silhouetteImage: '/src/assets/images/our-team/Hero_1.png',
+            silhouetteImage: '/src/assets/images/our-team/hero-1.png',
             coloredImage: '/src/assets/images/our-team/Hero_1_Selected.png',
             chatText: 'I manage the team!',
             left: 220,

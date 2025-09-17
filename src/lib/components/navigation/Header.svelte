@@ -42,7 +42,7 @@
         font-size: 1.25rem;
         font-family: var(--font-subheading);
         text-decoration: none;
-        color: var(--color-dark);
+        color: var(--color-font);
         padding: 0.5rem 1rem;
         border-radius: var(--border-radius-pill);
         transition: all 0.3s;
@@ -75,7 +75,7 @@
         display: block;
         width: 100%;
         height: 3px;
-        background: #fff;
+        background: var(--color-font-complement);
         transition: all 0.3s ease;
         transform-origin: center;
     }
@@ -87,7 +87,7 @@
         right: 0;
         width: 70%;
         height: 100vh;
-        background: linear-gradient(45deg, var(--color-green), var(--color-purple));
+        background: linear-gradient(45deg, var(--color-terciary), var(--color-background));
         z-index: 15;
         padding-top: 5rem;
         transform: translateX(100%);

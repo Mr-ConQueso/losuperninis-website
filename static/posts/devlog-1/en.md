@@ -1,6 +1,6 @@
 ---
 title: "Devlog 1"
-date: 2023-11-15
+date: 2025-02-02
 excerpt: "Our first development roadmap"
 tags: [tutorial, beginner]
 ---

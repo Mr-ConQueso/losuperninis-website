@@ -51,15 +51,15 @@ Connect with us on social media:
 <br><br>
 <div align="center">
   <a href="https://discord.gg/placeholder" style="margin: 0 10px;">
-    <img src="static/icons/Discord_Logo.png" alt="Discord" height="40">
+    <img src="static/icons/socials/discord-logo.png" alt="Discord" height="40">
   </a>
   <a href="https://youtube.com/@losuperninis" style="margin: 0 10px;">
-    <img src="static/icons/Youtube_Logo.png" alt="YouTube" height="40">
+    <img src="static/icons/socials/youtube-logo.png" alt="YouTube" height="40">
   </a>
   <a href="https://bsky.app/profile/losuperninis.bsky.social" style="margin: 0 10px;">
-    <img src="static/icons/Bluesky_Logo.png" alt="Bluesky" height="40">
+    <img src="static/icons/socials/bluesky-logo.png" alt="Bluesky" height="40">
   </a>
   <a href="https://steamcommunity.com/id/losuperninis" style="margin: 0 10px;">
-    <img src="static/icons/Steam_Logo.png" alt="Steam" height="40">
+    <img src="static/icons/socials/steam-logo.png" alt="Steam" height="40">
   </a>
 </div>

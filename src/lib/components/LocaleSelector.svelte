@@ -23,7 +23,7 @@
         font-family: var(--font-subheading);
         background: rgba(255,255,255,0);
         border-color: rgba(255,255,255,0);
-        color: var(--color-dark);
+        color: var(--color-font);
         padding: 0.5rem 1rem;
         border-radius: var(--border-radius-pill);
         transition: all 0.3s;

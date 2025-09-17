@@ -33,7 +33,7 @@
     .game-header {
         padding: 2rem;
         text-align: center;
-        color: var(--color-dark);
+        color: var(--color-font);
         position: relative;
     }
     
@@ -56,7 +56,7 @@
 
     .game-description {
         margin-bottom: 1.5rem;
-        color: var(--color-dark);
+        color: var(--color-font);
     }
 
     .game-features {

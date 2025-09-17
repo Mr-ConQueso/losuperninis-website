@@ -14,12 +14,12 @@
         text-align: center;
         font-size: 2.5rem;
         color: #fff;
-        text-shadow: 2px 2px var(--color-dark);
+        text-shadow: 2px 2px var(--color-font);
         margin-bottom: 2rem;
     }
     .terms-container h3 {
         font-size: 1.8rem;
-        color: var(--color-dark);
+        color: var(--color-font);
         margin-top: 2rem;
         margin-bottom: 1rem;
     }
@@ -31,10 +31,10 @@
         padding-left: 20px;
     }
     .terms-container strong {
-        color: var(--color-pink);
+        color: var(--color-primary);
     }
     .terms-container a {
-        color: var(--color-purple);
+        color: var(--color-background);
     }
 </style>
 

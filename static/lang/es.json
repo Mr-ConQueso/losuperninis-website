@@ -77,5 +77,11 @@
       "title": "Nuestra filosofía",
       "description": "En Los Super Ninis, abrazamos el espíritu 'Nini' - esa chispa de genialidad que llega cuando *se supone* que deberías estar haciendo otra cosa."
     }
+  },
+
+  "blog": {
+    "title": "Nuestro Blog",
+    "description": "Lee las últimas noticias y actualizaciones sobre los juegos de Los Super Ninis.",
+    "read-more": "Leer más..."
   }
 }
