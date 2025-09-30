@@ -7,12 +7,12 @@
         padding: 2rem;
         background: rgba(255, 255, 255, 0.05);
         border-radius: 1rem;
-        color: #fff;
+        color: var(--color-font);
     }
     .about-us-container h1 {
         text-align: center;
         font-size: 3rem;
-        color: #fff;
+        color: var(--color-font);
         text-shadow: 2px 2px var(--color-font);
         margin-bottom: 2rem;
     }
@@ -22,12 +22,12 @@
     }
     .team-section h3 {
         font-size: 2.5rem;
-        color: #fff;
+        color: var(--color-font);
         margin-bottom: 1rem;
     }
     .team-section p {
         font-size: 1.1rem;
-        color: #eee;
+        color: var(--color-font);
         max-width: 700px;
         margin: 0 auto 2rem auto;
     }
@@ -69,7 +69,7 @@
 
     <section style="text-align: center; margin-top: 3rem;">
         <h2>{$_("about-us.our-philosophy.title")}</h2>
-        <p style="max-width: 700px; margin: 1rem auto; color: #eee;">
+        <p style="max-width: 700px; margin: 1rem auto;">
             {$_("about-us.our-philosophy.description")}
         </p>
     </section>

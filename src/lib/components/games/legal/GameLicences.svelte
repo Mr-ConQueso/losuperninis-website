@@ -15,7 +15,7 @@
     .licences-container h1 {
         text-align: center;
         font-size: 2.5rem;
-        color: var(--color-font-complement);
+        color: var(--color-font-light);
         text-shadow: 2px 2px var(--color-font);
         margin-bottom: 2rem;
     }

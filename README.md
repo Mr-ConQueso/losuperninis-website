@@ -63,3 +63,7 @@ Connect with us on social media:
     <img src="static/icons/socials/steam-logo.png" alt="Steam" height="40">
   </a>
 </div>
+
+
+9c89b8
+88498F

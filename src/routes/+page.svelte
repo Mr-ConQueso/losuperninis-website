@@ -183,7 +183,7 @@
 </svelte:head>
 
 <section class="games">
-    <img src="/icons/logotype.png" class="title" alt="A letter S with glasses and a cape"/>
+    <img src="/icons/favicon.svg" class="title" alt="A letter S with glasses and a cape"/>
     <h2>{@html $_("app_desc")}</h2>
     <HeroSection/>
 </section>

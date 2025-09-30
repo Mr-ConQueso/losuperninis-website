@@ -43,7 +43,7 @@
     }
 
     .status-text {
-        color: var(--color-font-complement);
+        color: var(--color-font-light);
         text-shadow: 2px 2px var(--color-font);
         margin: 0.9rem 0;
         font-size: 2rem;

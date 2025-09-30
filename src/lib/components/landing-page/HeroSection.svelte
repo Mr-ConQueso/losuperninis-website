@@ -42,8 +42,8 @@
 <style>
     .cards-container {
         position: relative;
-        width: 100%;
-        max-width: 1400px;
+        width: 80%;
+        max-width: 800px;
         height: 800px;
         margin: 0 auto;
     }

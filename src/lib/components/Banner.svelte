@@ -62,7 +62,7 @@
     }
     
     .cookie-banner {
-        background: var(--color-terciary);
+        background: var(--color-secundary);
         color: var(--color-font);
         border-radius: var(--border-radius-medium, 1rem);
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
@@ -121,8 +121,8 @@
     
     /* Minimized cookie icon */
     .cookie-icon {
-        background-color: var(--color-terciary);
-        color: var(--color-font-complement);
+        background-color: var(--color-secundary);
+        color: var(--color-font);
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -166,13 +166,13 @@
     }
 
     .privacy-link a {
-        color: var(--color-font);
+        color: var(--color-primary);
         text-decoration: underline;
         transition: color 0.2s;
     }
 
     .privacy-link a:hover {
-        color: var(--color-background);
+        color: var(--color-terciary);
     }
 </style>
 
@@ -200,7 +200,7 @@
                     {$_("cookie-banner.message")}
                 </p>
                 <p class="privacy-link">
-                    <a href="/privacy-policy">{$_("cookie-banner.privacy-policy")}</a>
+                    <a href="/privacy-policy">{$_("cookie-banner.privacy")}</a>
                 </p>
                 <div class="buttons">
                     <button

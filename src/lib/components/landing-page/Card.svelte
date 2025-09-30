@@ -13,7 +13,7 @@
     .card {
         width: 500px;
         height: 700px;
-        background-color: #c1713f;
+        background-color: var(--color-terciary);
         border-radius: 30px;
         box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.2);
         display: flex;

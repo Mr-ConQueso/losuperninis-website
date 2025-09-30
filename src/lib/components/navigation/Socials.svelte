@@ -9,7 +9,7 @@
     }
 
     .social-icons a {
-        color: var(--color-font-complement);
+        color: var(--color-font-light);
         font-size: 1.5rem;
         transition: opacity 0.3s;
     }

@@ -59,7 +59,7 @@
 
     .markdown :global(pre) {
         background: var(--color-font);
-        color: var(--color-font-complement);
+        color: var(--color-font-light);
         padding: 1rem;
         border-radius: var(--border-radius-small);
         overflow-x: auto;

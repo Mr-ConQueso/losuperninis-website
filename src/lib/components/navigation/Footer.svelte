@@ -7,11 +7,12 @@
 <style>
     footer {
         background:  var(--color-font);
-        color: var(--color-font-complement);
+        color: var(--color-font-light);
         padding: 2rem 1rem;
     }
 
     .footer-container {
+				color: var(--color-font-light);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -38,7 +39,7 @@
     .footer-divider {
         width: 100%;
         height: 2px;
-        background: linear-gradient(to right, #ff4dd2, #7f00ff); /* pink to purple line */
+        background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); /* pink to purple line */
         margin: 1.5rem 0;
     }
 
@@ -52,7 +53,7 @@
     }
 
     .footer-bottom a {
-        color: var(--color-font-complement);
+        color: var(--color-font-light);
         text-decoration: underline;
     }
 
@@ -86,7 +87,7 @@
     <div class="footer-container container">
         <div class="footer-top">
             <div class="footer-logo">
-                <img src="/icons/favicon.svg" alt="Los Super Ninis Logo" class="logo" />
+                <img src="/icons/logo-inverted.png" alt="Los Super Ninis Logo" class="logo" />
                 <h3>{$_("app_slogan")}</h3>
             </div>
             <Socials/>
@@ -102,8 +103,9 @@
         <div class="footer-bottom">
             <span>© {new Date().getFullYear()} {$_("app_title")}</span>
             <a href="/licences">{$_("navigation.licences")}</a>
-            <a href="/privacy-policy">{$_("navigation.privacy")}</a>
-            <a href="/terms-of-use">{$_("navigation.terms")}</a>
+						<a href="/privacy">{$_("navigation.privacy")}</a>
+						<a href="/cookies">{$_("navigation.cookies")}</a>
+						<a href="/terms">{$_("navigation.terms")}</a>
         </div>
     </div>
 </footer>

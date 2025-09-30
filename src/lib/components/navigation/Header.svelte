@@ -75,7 +75,7 @@
         display: block;
         width: 100%;
         height: 3px;
-        background: var(--color-font-complement);
+        background: var(--color-font-light);
         transition: all 0.3s ease;
         transform-origin: center;
     }
