@@ -13,7 +13,6 @@
         text-align: center;
         font-size: 3rem;
         color: var(--color-font);
-        text-shadow: 2px 2px var(--color-font);
         margin-bottom: 2rem;
     }
     .team-section { /* Styles from original App.svelte for team section */
@@ -39,7 +38,7 @@
     }
 </style>
 
-<div class="about-us-container">
+<div class="about-us-container" id="title">
     <section class="team-section">
         <h1>{$_("about-us.title")}</h1>
         <p>{$_("about-us.description")}</p>

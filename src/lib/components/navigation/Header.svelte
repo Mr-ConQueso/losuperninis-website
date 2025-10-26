@@ -8,7 +8,7 @@
     let navItems = [
         { icon: '🏠', key: 'navigation.home', href: '/' },
         { icon: '🎮', key: 'navigation.games', href: '/#games' },
-        { icon: '👥', key: 'navigation.about', href: '/about-us' },
+        { icon: '👥', key: 'navigation.about', href: '/about-us/#title' },
         { icon: '📰', key: 'navigation.news', href: '/blog' }
     ];
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { WEBSITE_URL, COMPANY_NAME, INFO_EMAIL } from '$lib/utils/constants.js';
+    import { WEBSITE_URL, COMPANY_NAME, CONTACT_EMAIL } from '$lib/utils/constants.js';
 </script>
 
 <style>
@@ -13,8 +13,7 @@
     .privacy-policy-container h1 {
         text-align: center;
         font-size: 2.5rem;
-        color: #fff;
-        text-shadow: 2px 2px var(--color-font);
+        color: var(--color-font);
         margin-bottom: 2rem;
     }
     .privacy-policy-container h4 {
@@ -34,13 +33,13 @@
         color: var(--color-primary);
     }
     .privacy-policy-container a {
-        color: var(--color-background);
+        color: var(--color-primary);
     }
 </style>
 
 <div class="privacy-policy-container container">
     <h1>Privacy Policy</h1>
-    <p><strong>
+    <p id="date"><strong>
         Last Updated: <time datetime="12-05-25">12/05/25</time>
     </strong></p>
     
@@ -48,7 +47,7 @@
         This Privacy Notice for {COMPANY_NAME} LLC ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:
         <br>• Visit our website at <a href="{WEBSITE_URL}">{WEBSITE_URL}</a>, or any website of ours that links to this Privacy Notice.
         <br>• Engage with us in other related ways, including any sales, marketing, or events<br><br>
-        Questions or concerns? Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at <a href="mailto:{INFO_EMAIL}">{INFO_EMAIL}</a><br>.
+        Questions or concerns? Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a><br>.
     </p>
     
     <h1>
@@ -181,12 +180,12 @@
         <li>Withdraw consent at any time</li>
         <li>Lodge a complaint with your local data authority</li>
     </ul>
-    <p>To exercise your rights, contact us at: <a href="mailto:{INFO_EMAIL}">{INFO_EMAIL}</a></p>
+    <p>To exercise your rights, contact us at: <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a></p>
 
     <h3>7. Contact Us</h3>
     <p>For questions or concerns about this Privacy Policy, contact us:</p>
     <p><strong>{COMPANY_NAME}</strong><br>
-        Email: <a href="mailto:{INFO_EMAIL}">{INFO_EMAIL}</a><br>
+        Email: <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a><br>
         Website: <a href="{WEBSITE_URL}">{WEBSITE_URL}</a>
     </p>
 </div>

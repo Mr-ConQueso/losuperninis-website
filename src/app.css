@@ -4,12 +4,12 @@
 @plugin '@tailwindcss/typography';
 
 :root {
-    --color-background: #FFFFFF;
-    --color-primary: #FF160A;
+    --color-background: #1a1a1a;
+    --color-primary: #d02329;
     --color-secundary: rgb(189, 189, 189);
-    --color-terciary: #8B1329;
-    --color-font: #1E1E1E;
-    --color-font-light: #FFFFFF;
+    --color-terciary: #043253;
+    --color-font: #fae3ad;
+    --color-font-light: #1a1a1a;
 
     --gradient-start: #FF160A;
     --gradient-middle: oklch(from var(--gradient-start) clamp(0, l + 0.22, 1) calc(c * 0.9) h);

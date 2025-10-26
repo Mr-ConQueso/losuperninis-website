@@ -87,7 +87,7 @@
     <div class="footer-container container">
         <div class="footer-top">
             <div class="footer-logo">
-                <img src="/icons/logo-inverted.png" alt="Los Super Ninis Logo" class="logo" />
+                <img src="/icons/logo-inverted.webp" alt="Los Super Ninis Logo" class="logo" />
                 <h3>{$_("app_slogan")}</h3>
             </div>
             <Socials/>
@@ -102,10 +102,10 @@
 
         <div class="footer-bottom">
             <span>© {new Date().getFullYear()} {$_("app_title")}</span>
-            <a href="/licences">{$_("navigation.licences")}</a>
-						<a href="/privacy">{$_("navigation.privacy")}</a>
-						<a href="/cookies">{$_("navigation.cookies")}</a>
-						<a href="/terms">{$_("navigation.terms")}</a>
+            <a href="/licences/#date">{$_("navigation.licences")}</a>
+						<a href="/privacy/#date">{$_("navigation.privacy")}</a>
+						<a href="/cookies/#date">{$_("navigation.cookies")}</a>
+						<a href="/terms/#date">{$_("navigation.terms")}</a>
         </div>
     </div>
 </footer>

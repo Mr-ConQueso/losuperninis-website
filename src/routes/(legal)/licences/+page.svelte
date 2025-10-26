@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { WEBSITE_URL, COMPANY_NAME, INFO_EMAIL } from '$lib/utils/constants.js';
+    import { WEBSITE_URL, COMPANY_NAME, CONTACT_EMAIL } from '$lib/utils/constants.js';
 </script>
 
 <style>
@@ -13,8 +13,7 @@
     .licences-container h1 {
         text-align: center;
         font-size: 2.5rem;
-        color: #fff;
-        text-shadow: 2px 2px var(--color-font);
+        color: var(--color-font);
         margin-bottom: 2rem;
     }
     .licences-container p,
@@ -25,7 +24,7 @@
         padding-left: 20px;
     }
     .licences-container a {
-        color: var(--color-background);
+        color: var(--color-primary);
     }
     .licences-container strong {
         color: var(--color-primary);
@@ -33,7 +32,7 @@
 </style>
 
 <div class="licences-container">
-    <p><strong>
+    <p id="date"><strong>
         Last Updated: <time datetime="12-05-25">12/05/25</time>
     </strong></p>
     

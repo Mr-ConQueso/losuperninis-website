@@ -1,5 +1,6 @@
 <script lang="ts">
     import '../../../app.css';
+		import { INSTAGRAM_URL, BLUESKY_URL, YOUTUBE_URL, DISCORD_INVITE, STEAM_URL } from '$lib/utils/constants.js';
 </script>
 
 <style>
@@ -25,16 +26,16 @@
 </style>
 
 <div class="social-icons">
-    <a href="https://bsky.app/profile/losuperninis.bsky.social" aria-label="Bluesky">
-        <img src="/icons/socials/bluesky-logo.png" alt="Bluesky Logo" class="icon" />
+    <a href={BLUESKY_URL} aria-label="Bluesky">
+        <img src="/icons/socials/bluesky-logo.webp" alt="Bluesky Logo" class="icon" />
     </a>
-    <a href="https://www.youtube.com/@losuperninis" aria-label="YouTube">
-        <img src="/icons/socials/youtube-logo.png" alt="YouTube Logo" class="icon" />
+    <a href={YOUTUBE_URL} aria-label="YouTube">
+        <img src="/icons/socials/youtube-logo.webp" alt="YouTube Logo" class="icon" />
     </a>
-    <a href="https://discord.gg/kMnYg9FkYP" aria-label="Discord">
-        <img src="/icons/socials/discord-logo.png" alt="Discord Logo" class="icon" />
+    <a href={DISCORD_INVITE} aria-label="Discord">
+        <img src="/icons/socials/discord-logo.webp" alt="Discord Logo" class="icon" />
     </a>
-    <a href="https://steamcommunity.com/id/losuperninis/" aria-label="Steam">
-        <img src="/icons/socials/steam-logo.png" alt="Steam Logo" class="icon" />
+    <a href={STEAM_URL} aria-label="Steam">
+        <img src="/icons/socials/steam-logo.webp" alt="Steam Logo" class="icon" />
     </a>
 </div>

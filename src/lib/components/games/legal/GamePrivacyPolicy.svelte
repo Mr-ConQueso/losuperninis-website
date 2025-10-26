@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { WEBSITE_URL, COMPANY_NAME, INFO_EMAIL } from '$lib/utils/constants.js';
+    import { WEBSITE_URL, COMPANY_NAME, CONTACT_EMAIL } from '$lib/utils/constants.js';
     export let gameTitlte = '';
     
     export let lastUpdated = '';
@@ -183,12 +183,12 @@
         <li>Request deletion</li>
         <li>Restrict processing</li>
     </ul>
-    <p>Contact us at: <a href="mailto:{INFO_EMAIL}">{INFO_EMAIL}</a></p>
+    <p>Contact us at: <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a></p>
 
     <h2>6. Contact Us</h2>
     <p>Questions? We're all ears:</p>
     <p><strong>{COMPANY_NAME}</strong><br>
-        Email: <a href="mailto:{INFO_EMAIL}">{INFO_EMAIL}</a><br>
+        Email: <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a><br>
         Website: <a href={WEBSITE_URL}>{WEBSITE_URL}</a></p>
 
     <p style="color: var(--nini-purple); margin-top: 2rem;">Making procrastination productive since 2025 ✨</p>
