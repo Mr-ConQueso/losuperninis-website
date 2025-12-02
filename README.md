@@ -1,69 +1,38 @@
-<div align="center">
-  <img src="https://github.com/Mr-ConQueso/losuperninis-website/blob/production/static/icons/logotype.png?raw=true" alt="Project Name" />
-</div>
+# sv
 
-# Losuperninis Website
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-The official website for Losuperninis, a game development studio. Features information about our games, blog posts, and team.
+## Creating a project
 
-## About the Project
+If you're seeing this, you've probably already done this step. Congrats!
 
-This website serves as the central hub for Losuperninis, providing information about our studio and the games we develop. Key sections include:
+```sh
+# create a new project in the current directory
+npx sv create
 
-*   **Games**: Detailed information about all games developed by Losuperninis, including trailers, screenshots, and descriptions.
-*   **Blog**: Regular updates, articles about game development, and news from the studio.
-*   **Our Team**: Introductions to the talented individuals behind Losuperninis.
-*   **Localization**: The website supports multiple languages, currently including English and Spanish, to reach a wider audience.
+# create a new project in my-app
+npx sv create my-app
+```
 
-## Technologies Used
+## Developing
 
-The website is built using a modern tech stack to ensure a high-quality user experience:
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-*   **SvelteKit**: A UI framework for building performant web applications.
-*   **TypeScript**: A statically typed superset of JavaScript that enhances code quality and maintainability.
-*   **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
-*   **svelte-i18n**: A library for internationalization and localization in Svelte applications.
+```sh
+npm run dev
 
-## Running Locally
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-To run the website locally on your machine, follow these steps:
+## Building
 
-1.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/losuperninis/losuperninis-website.git
-    ```
-2.  **Navigate to the project directory**:
-    ```bash
-    cd losuperninis-website
-    ```
-3.  **Install dependencies**:
-    ```bash
-    npm install
-    ```
-4.  **Run the development server**:
-    ```bash
-    npm run dev
-    ```
-    The site will typically be accessible at `http://localhost:5173`.
+To create a production version of your app:
 
-## Find Us
-Connect with us on social media:
-<br><br>
-<div align="center">
-  <a href="https://discord.gg/placeholder" style="margin: 0 10px;">
-    <img src="static/icons/socials/discord-logo.png" alt="Discord" height="40">
-  </a>
-  <a href="https://youtube.com/@losuperninis" style="margin: 0 10px;">
-    <img src="static/icons/socials/youtube-logo.png" alt="YouTube" height="40">
-  </a>
-  <a href="https://bsky.app/profile/losuperninis.bsky.social" style="margin: 0 10px;">
-    <img src="static/icons/socials/bluesky-logo.png" alt="Bluesky" height="40">
-  </a>
-  <a href="https://steamcommunity.com/id/losuperninis" style="margin: 0 10px;">
-    <img src="static/icons/socials/steam-logo.png" alt="Steam" height="40">
-  </a>
-</div>
+```sh
+npm run build
+```
 
+You can preview the production build with `npm run preview`.
 
-9c89b8
-88498F
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
