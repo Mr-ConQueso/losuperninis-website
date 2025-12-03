@@ -1,11 +1,21 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '/icons/favicon.svg?url';
+	import '../app.css';
+	import Navbar from '$lib/components/navigation/Navbar.svelte';
+	import Footer from '$lib/components/navigation/Footer.svelte';
 
 	let { children } = $props();
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<title>Los Super Ninis</title>
 </svelte:head>
 
+<Navbar />
+
 {@render children()}
+
+<!--<Banner />-->
+
+<Footer />
