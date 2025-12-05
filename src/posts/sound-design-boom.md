@@ -1,10 +1,10 @@
 ---
-title: The Great Physics Meltdown of '25
-date: Dec 10, 2025
-excerpt: We tried to implement a double-jump mechanic and accidentally invented anti-gravity.
-image: https://images.unsplash.com/photo-1537498425277-228ee1a47196?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80
-featured: true
-tags: ["Bugfix", "Unity", "Funny"]
+title: "Sound Design: Making Things Go BOOM"
+date: Oct 30, 2025
+excerpt: How we record foley using household items. Did you know a celery stick sounds like a breaking bone?
+image: https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80
+featured: false
+tags: ["Audio", "Tutorial"]
 ---
 <script>
 import ComicPanel from '$lib/components/generic/ComicPanel.svelte';

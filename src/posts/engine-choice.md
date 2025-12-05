@@ -1,10 +1,10 @@
 ---
-title: The Great Physics Meltdown of '25
-date: Dec 10, 2025
-excerpt: We tried to implement a double-jump mechanic and accidentally invented anti-gravity.
-image: https://images.unsplash.com/photo-1537498425277-228ee1a47196?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80
-featured: true
-tags: ["Bugfix", "Unity", "Funny"]
+title: "Unity vs Unreal: Why We Chose Chaos"
+date: Sep 20, 2025
+excerpt: "A technical deep dive into our engine choice. Spoiler: It involved a coin flip."
+image: https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80
+featured: false
+tags: ["Tech", "Code"]
 ---
 <script>
 import ComicPanel from '$lib/components/generic/ComicPanel.svelte';

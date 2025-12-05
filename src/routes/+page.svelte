@@ -1,10 +1,18 @@
 <script lang="ts">
 import ComicButton from '$lib/components/generic/ComicButton.svelte';
 import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
-</script>
+import LandingBlogCard from '$lib/components/blog/LandingBlogCard.svelte';
 
-<!-- Noise Overlay -->
-<div class="noise-overlay"></div>
+// Receive data from the loader
+let { data } = $props();
+
+// Filter for featured posts (limit to 3 to keep layout clean if there are too many)
+let featuredPosts = $derived(
+	data.posts
+		.filter((p: any) => p.featured)
+		.slice(0, 3)
+);
+</script>
 
 <!-- Hero Section -->
 <header class="hero-section">
@@ -149,28 +157,6 @@ import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 	</div>
 </section>
 
-<!-- Testimonial Section -->
-<section class="section testimonial-section">
-	<div class="bg-layer halftone-beige-overlay"></div>
-	<div class="container testimonial-container">
-		<h2 class="section-title text-stroke center-text">WHAT PLAYERS SAY</h2>
-
-		<div class="testimonial-content">
-			<div class="avatar">
-				<img src="https://randomuser.me/api/portraits/lego/1.jpg" alt="Player">
-			</div>
-
-			<div class="speech-box-wrapper">
-				<div class="speech-box">
-					<p>"Los Super Ninis bring back the fun I missed in modern gaming. The art style is absolutely bonkers in the best way possible!"</p>
-					<div class="author">- SuperFan99</div>
-				</div>
-				<div class="box-tail"></div>
-			</div>
-		</div>
-	</div>
-</section>
-
 <!-- About & Team Section -->
 <section class="section about-section">
 	<div class="container about-grid">
@@ -207,41 +193,29 @@ import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 	</div>
 </section>
 
-<!-- Devlog Section -->
+<!-- Latest Devlog (Blog List) -->
 <section class="section devlog-section">
 	<div class="container">
 		<h2 class="section-title center-text text-white"><span class="highlight-red">DEV</span>LOGS</h2>
 
 		<div class="blog-list">
-			<!-- Blog 1 -->
-			<a href="/devlog/boom" class="blog-card blog-blue">
-				<div class="blog-thumb">
-					<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Blog Thumb">
-				</div>
-				<div class="blog-info">
-					<div class="blog-header">
-						<h3 class="blog-title text-beige">Developing the 'Boom' Mechanic</h3>
-						<span class="date-badge dark">Dec 01, 2025</span>
-					</div>
-					<p class="blog-excerpt">We spent three weeks perfecting the explosion particles. Here is why it matters for game feel...</p>
-					<span class="read-more red">Read More ></span>
-				</div>
-			</a>
+			{#each featuredPosts as post, i}
+				<LandingBlogCard
+					title={post.title}
+					date={post.date}
+					excerpt={post.excerpt}
+					image={post.image}
+					slug={post.slug}
+					index={i}
+				/>
+			{/each}
 
-			<!-- Blog 2 -->
-			<a href="/devlog/jam" class="blog-card blog-dark">
-				<div class="blog-thumb border-beige">
-					<img src="https://images.unsplash.com/photo-1558655146-d09347e0b7a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Blog Thumb">
+			<!-- Fallback if no posts exist -->
+			{#if featuredPosts.length === 0}
+				<div class="text-center text-white font-fredoka">
+					<p>No featured posts yet! Check back soon.</p>
 				</div>
-				<div class="blog-info">
-					<div class="blog-header">
-						<h3 class="blog-title text-white">Our First Game Jam Experience</h3>
-						<span class="date-badge light">Nov 15, 2025</span>
-					</div>
-					<p class="blog-excerpt">Sleep deprivation, pizza, and buggy code. The full story of how we survived 48 hours.</p>
-					<span class="read-more white">Read More ></span>
-				</div>
-			</a>
+			{/if}
 		</div>
 	</div>
 </section>
@@ -506,7 +480,7 @@ import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
         position: absolute;
         left: -50px;
         top: 20px;
-        font-family: "Luckiest Guy";
+        font-family: var(--font-h1);
         font-size: 15rem;
         color: white;
         opacity: 0.05;
@@ -527,7 +501,7 @@ import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
     .view-all-link {
         display: none;
         color: var(--nini-red);
-        font-family: "Luckiest Guy";
+        font-family: var(--font-h1);
         font-size: 1.25rem;
     }
     .view-all-link:hover { text-decoration: underline; }
@@ -547,16 +521,6 @@ import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
         background: black;
         transform: translate(8px, 8px);
         z-index: 0;
-    }
-
-    /* We need to override the ComicPanel default shadow to control it manually with bg-shadow if desired,
-       but standard component has shadow too. Let's just use component styling for consistency. */
-
-    .project-panel {
-        background: white;
-        height: 320px;
-        overflow: hidden;
-        position: relative;
     }
 
     .project-img {
@@ -592,85 +556,13 @@ import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
         right: 1rem;
         background: #FFD700;
         color: black;
-        font-family: "Luckiest Guy";
+        font-family: var(--font-h1);
         padding: 0.25rem 0.75rem;
         border: 2px solid black;
         transform: rotate(12deg);
     }
 
     .mobile-cta { margin-top: 2rem; text-align: center; }
-
-    /* --- TESTIMONIAL --- */
-    .testimonial-section {
-        background-color: var(--nini-green);
-        border-top: 4px solid black;
-        border-bottom: 4px solid black;
-    }
-
-    .halftone-beige-overlay {
-        background-image: radial-gradient(circle, var(--nini-beige) 1px, transparent 1px);
-        background-size: 10px 10px;
-        opacity: 0.2;
-        pointer-events: none;
-    }
-
-    .testimonial-container { max-width: 800px; }
-
-    .testimonial-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    .avatar {
-        width: 100px;
-        height: 100px;
-        background: var(--nini-beige);
-        border-radius: 50%;
-        border: 4px solid black;
-        overflow: hidden;
-        box-shadow: 4px 4px 0 #000;
-        flex-shrink: 0;
-    }
-    .avatar img { width: 100%; height: 100%; object-fit: cover; }
-
-    .speech-box-wrapper { position: relative; flex: 1; width: 100%; }
-
-    .speech-box {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 1rem;
-        border: 4px solid black;
-        box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
-    }
-
-    .speech-box p { font-size: 1.1rem; color: black; font-style: italic; }
-    .author { margin-top: 1rem; text-align: right; font-family: "Luckiest Guy"; color: var(--nini-red); }
-
-    .box-tail {
-        /* CSS Triangle */
-        position: absolute;
-        top: -20px;
-        left: 50%;
-        transform: translateX(-50%) rotate(180deg);
-        width: 0;
-        height: 0;
-        border-left: 15px solid transparent;
-        border-right: 15px solid transparent;
-        border-bottom: 20px solid black;
-    }
-    .box-tail::after {
-        content: '';
-        position: absolute;
-        top: 4px;
-        left: -11px;
-        width: 0;
-        height: 0;
-        border-left: 11px solid transparent;
-        border-right: 11px solid transparent;
-        border-bottom: 16px solid white;
-    }
 
     /* --- ABOUT & TEAM --- */
     .about-section { background-color: white; }
@@ -734,54 +626,25 @@ import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
     .devlog-section {
         background-color: var(--nini-bg);
         border-top: 4px dashed white;
+        padding: 5rem 0;
     }
 
     .blog-list {
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        max-width: 900px;
+        margin: 0 auto;
     }
 
-    .blog-card {
-        display: flex;
-        flex-direction: column;
-        border: 2px solid black;
-        padding: 1rem;
-        gap: 1.5rem;
-        box-shadow: 4px 4px 0 white;
-        transition: transform 0.2s;
+    .section-title {
+        font-size: 3rem;
+        color: var(--nini-white);
+        margin-bottom: 3rem;
     }
 
-    .blog-blue { background-color: var(--nini-blue); box-shadow: 4px 4px 0 white; }
-    .blog-dark { background-color: var(--nini-bg); border-color: var(--nini-beige); box-shadow: 4px 4px 0 var(--nini-beige); }
-
-    .blog-card:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0; }
-
-    .blog-thumb {
-        height: 200px;
-        background: black;
-        border: 2px solid white;
-        flex-shrink: 0;
-    }
-    .blog-thumb.border-beige { border-color: var(--nini-beige); }
-    .blog-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
-
-    .blog-info { flex: 1; }
-    .blog-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; }
-    .blog-title { font-size: 1.5rem; margin: 0; }
-
-    .date-badge {
-        font-size: 0.75rem;
-        padding: 2px 6px;
-        border: 1px solid;
-    }
-    .date-badge.dark { background: black; color: white; border-color: white; }
-    .date-badge.light { background: var(--nini-beige); color: black; border-color: black; }
-
-    .blog-excerpt { color: #ccc; margin-bottom: 1rem; }
-    .read-more { font-weight: bold; font-size: 0.9rem; }
-    .read-more.red { color: var(--nini-red); }
-    .read-more.white { color: white; }
+    .section-title.center-text { text-align: center; }
+    .highlight-red { color: var(--nini-red); }
 
     /* --- NEWSLETTER --- */
     .newsletter-section {
@@ -811,7 +674,7 @@ import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
     .email-input {
         padding: 1rem;
         border: 2px solid black;
-        font-family: "Fredoka";
+        font-family: var(--font-h1);
         font-size: 1rem;
     }
 
@@ -828,15 +691,6 @@ import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
         .portfolio-grid { grid-template-columns: 1fr 1fr; }
         .view-all-link { display: block; }
         .mobile-cta { display: none; }
-
-        .testimonial-content { flex-direction: row; align-items: flex-start; }
-        .box-tail {
-            top: 20px; left: -20px;
-            transform: rotate(-90deg);
-        }
-
-        .blog-card { flex-direction: row; }
-        .blog-thumb { width: 200px; height: 130px; }
 
         .newsletter-form { flex-direction: row; }
         .email-input { flex: 1; }

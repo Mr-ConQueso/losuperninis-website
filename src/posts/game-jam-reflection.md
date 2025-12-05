@@ -1,10 +1,10 @@
 ---
-title: The Great Physics Meltdown of '25
-date: Dec 10, 2025
-excerpt: We tried to implement a double-jump mechanic and accidentally invented anti-gravity.
-image: https://images.unsplash.com/photo-1537498425277-228ee1a47196?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80
-featured: true
-tags: ["Bugfix", "Unity", "Funny"]
+title: "Post-Jam Clarity"
+date: Oct 05, 2025
+excerpt: Reflecting on our 48-hour crunch. What we learned about sleep deprivation and pizza consumption.
+image: https://images.unsplash.com/photo-1504384308090-c54be3855091?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80
+featured: false
+tags: ["Game Jam", "Reflection"]
 ---
 <script>
 import ComicPanel from '$lib/components/generic/ComicPanel.svelte';

@@ -10,6 +10,9 @@
     --nini-black: #000000;
     --nini-white: #FFFFFF;
 
+    --font-h1: "Luckiest Guy", cursive;
+    --font-body: "Fredoka", sans-serif;
+
     /* Spacing & Sizes */
     --border-thick: 4px;
     --border-thin: 2px;

@@ -14,6 +14,9 @@
 
 <Navbar />
 
+<!-- Noise Overlay -->
+<!--<div class="noise-overlay"></div>-->
+
 {@render children()}
 
 <!--<Banner />-->

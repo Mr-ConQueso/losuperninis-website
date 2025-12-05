@@ -1,10 +1,10 @@
 ---
-title: The System Works!
-date: Dec 05, 2025
-excerpt: If you can read this, the markdown pipeline is successfully reading files from the src/posts folder.
-image: https://www.google.com/search?q=https://images.unsplash.com/photo-1550745165-9bc0b252726f
+title: "Art Style: Why We Chose Comic Sans (Joking)"
+date: Nov 28, 2025
+excerpt: Just kidding. But seriously, here is how we developed our unique 'Super Nini' visual identity using halftone patterns and bold outlines.
+image: https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80
 featured: true
-tags: ['System', 'Debug']
+tags: ["Art", "Design"]
 ---
 <script>
 import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
