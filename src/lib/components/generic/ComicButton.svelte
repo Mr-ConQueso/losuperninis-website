@@ -50,23 +50,11 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         border: 2px solid var(--nini-black);
+        filter: drop-shadow(6px 6px 0px var(--nini-black));
+        transition: transform 0.1s ease, filter 0.1s ease;
         cursor: pointer;
-        transition: transform 0.1s;
         text-align: center;
         text-decoration: none;
-    }
-
-    /* Solid shadow effect */
-    .comic-btn::after {
-        content: '';
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        width: 100%;
-        height: 100%;
-        background-color: var(--nini-black);
-        z-index: -1;
-        transition: transform 0.1s;
     }
 
     /* Variants */
@@ -88,16 +76,11 @@
 
     /* Interactions */
     .comic-btn:hover {
-        transform: translate(-2px, -2px);
-    }
-    .comic-btn:hover::after {
         transform: translate(2px, 2px);
+        filter: drop-shadow(0px 0px 0px var(--nini-black));
     }
 
     .comic-btn:active {
         transform: translate(4px, 4px);
-    }
-    .comic-btn:active::after {
-        transform: translate(-4px, -4px);
     }
 </style>

@@ -69,10 +69,12 @@
 			<div class="header-visual">
 				<ComicPanel variant={2} className="hero-panel">
 					<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Studio Life" class="hero-img">
-					<div class="speech-bubble">
-						<p>IT STARTED<br>WITH A PIZZA!</p>
-						<div class="bubble-tail"></div>
-					</div>
+					{#snippet bubble()}
+						<div class="speech-bubble">
+							<p>IT STARTED<br>WITH A PIZZA!</p>
+							<div class="bubble-tail"></div>
+						</div>
+					{/snippet}
 				</ComicPanel>
 			</div>
 		</div>
@@ -419,7 +421,6 @@
 
     .team-card-inner {
         background: var(--nini-bg);
-        border: 2px solid black;
         height: 100%;
         display: flex;
         flex-direction: column;

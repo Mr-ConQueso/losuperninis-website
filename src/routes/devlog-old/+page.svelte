@@ -2,12 +2,68 @@
 	import BlogCard from '$lib/components/blog/BlogCard.svelte';
 	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 
-	// Receive data from +page.ts
-	let { data } = $props();
+	const posts = [
+		{
+			id: 1,
+			title: "The Great Physics Meltdown of '25",
+			date: "Dec 10, 2025",
+			excerpt: "We tried to implement a double-jump mechanic and accidentally invented anti-gravity. Here is a breakdown of what went wrong (and right).",
+			image: "https://images.unsplash.com/photo-1537498425277-228ee1a47196?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+			slug: "physics-meltdown",
+			tags: ["Bugfix", "Unity", "Funny"],
+			featured: true
+		},
+		{
+			id: 2,
+			title: "Art Style: Why We Chose Comic Sans (Joking)",
+			date: "Nov 28, 2025",
+			excerpt: "Just kidding. But seriously, here is how we developed our unique 'Super Nini' visual identity using halftone patterns and bold outlines.",
+			image: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+			slug: "art-style-evolution",
+			tags: ["Art", "Design"],
+			featured: true
+		},
+		{
+			id: 3,
+			title: "Meet the Studio Cat: Chief Morale Officer",
+			date: "Nov 15, 2025",
+			excerpt: "Productivity is down 20%, but happiness is up 200%. An exclusive interview with our feline overlord.",
+			image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+			slug: "studio-cat",
+			tags: ["Studio Life", "Cats"]
+		},
+		{
+			id: 4,
+			title: "Sound Design: Making Things Go BOOM",
+			date: "Oct 30, 2025",
+			excerpt: "How we record foley using household items. Did you know a celery stick sounds like a breaking bone?",
+			image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+			slug: "sound-design-boom",
+			tags: ["Audio", "Tutorial"]
+		},
+		{
+			id: 5,
+			title: "Post-Jam Clarity",
+			date: "Oct 05, 2025",
+			excerpt: "Reflecting on our 48-hour crunch. What we learned about sleep deprivation and pizza consumption.",
+			image: "https://images.unsplash.com/photo-1504384308090-c54be3855091?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+			slug: "game-jam-reflection",
+			tags: ["Game Jam", "Reflection"]
+		},
+		{
+			id: 6,
+			title: "Unity vs Unreal: Why We Chose Chaos",
+			date: "Sep 20, 2025",
+			excerpt: "A technical deep dive into our engine choice. Spoiler: It involved a coin flip.",
+			image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+			slug: "engine-choice",
+			tags: ["Tech", "Code"]
+		}
+	];
 
-	// Derived values update automatically when data changes
-	let featuredPosts = $derived(data.posts.filter((p: any) => p.featured));
-	let regularPosts = $derived(data.posts.filter((p: any) => !p.featured));
+	// Split posts into Featured and Regular lists
+	const featuredPosts = posts.filter(p => p.featured);
+	const regularPosts = posts.filter(p => !p.featured);
 </script>
 
 <div class="page-wrapper">
@@ -32,7 +88,7 @@
 					<i class="fas fa-star text-yellow-400"></i> MUST READ
 				</h2>
 				<div class="featured-grid">
-					{#each featuredPosts as post}
+					{#each featuredPosts as post, i}
 						<BlogCard
 							{...post}
 							variant={2}
@@ -61,11 +117,6 @@
 
 			<div class="posts-grid">
 				{#each regularPosts as post, i}
-					<!--
-							The BlogCard component (from previous steps) already wraps the
-							title/image in an <a> tag pointing to /devlog/{slug},
-							so clicking it will take you to the blog post.
-					-->
 					<BlogCard
 						{...post}
 						variant={((i % 3) + 1) as 1|2|3}
@@ -74,7 +125,7 @@
 				{/each}
 			</div>
 
-			<!-- Pagination (Visual Only for now) -->
+			<!-- Pagination (Visual Only) -->
 			<div class="pagination">
 				<button class="page-btn active">1</button>
 				<button class="page-btn">2</button>

@@ -46,10 +46,12 @@ import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 					</div>
 				</div>
 				<!-- Speech Bubble -->
-				<div class="speech-bubble">
-					<p>IT'S<br>FUN!</p>
-					<div class="bubble-tail"></div>
-				</div>
+				{#snippet bubble()}
+					<div class="speech-bubble">
+						<p>IT'S<br>FUN!</p>
+						<div class="bubble-tail"></div>
+					</div>
+				{/snippet}
 			</ComicPanel>
 		</div>
 	</div>

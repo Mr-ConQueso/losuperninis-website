@@ -1,234 +1,212 @@
 <script lang="ts">
-	// No script needed for this static component
+	import {
+		COMPANY_TAGLINE,
+		INSTAGRAM_URL,
+		BLUESKY_URL,
+		YOUTUBE_URL,
+		DISCORD_INVITE,
+		COMPANY_NAME
+	} from '$lib/utils/constants.ts';
+
+	const year = new Date().getFullYear();
+
+	const sitemap = [
+		{ name: "Home", href: "/" },
+		{ name: "Projects", href: "/projects" },
+		{ name: "Devlog", href: "/devlog" },
+		{ name: "About", href: "/about" }
+	];
+
+	const legal = [
+		{ name: "Cookies", href: "/cookies" },
+		{ name: "Licences", href: "/licences" },
+		{ name: "Privacy", href: "/privacy" },
+		{ name: "Terms", href: "/terms" }
+	];
+
+	const socials = [
+		{ name: "Instagram", href: INSTAGRAM_URL, icon: "/icons/instagram.svg" },
+		{ name: "Bluesky", href: BLUESKY_URL, icon: "/icons/bluesky.svg" },
+		{ name: "YouTube", href: YOUTUBE_URL, icon: "/icons/youtube.svg" },
+		{ name: "Discord", href: DISCORD_INVITE, icon: "/icons/discord.svg" },
+	];
 </script>
 
 <footer class="footer">
-	<div class="container footer-content">
+	<div class="container">
 
-		<!-- Main Column Left: Brand Info -->
-		<div class="footer-brand">
-			<div class="brand-header">
-				<!-- Simple SVG Logo Placeholder -->
-				<svg class="brand-logo" viewBox="0 0 100 100">
-					<path d="M20,80 L20,30 C20,20 40,20 40,30 L40,40 L60,20 L80,20 L80,80 L60,80 L60,70 L40,90 L20,90 Z" fill="var(--nini-red)" stroke="black" stroke-width="3"/>
-					<text x="50" y="70" font-family="Luckiest Guy" font-size="50" fill="white" text-anchor="middle">SN</text>
-				</svg>
-				<h3>LOS SUPER NINIS</h3>
+		<!-- BRAND COLUMN -->
+		<div class="col col-brand">
+			<div class="brand-flex">
+				<div class="brand-logo">
+					<!-- Ensure this path exists or use a fallback -->
+					<img src="/icons/icon-white.svg" alt="Cheesy Labs Logo" />
+				</div>
+
+				<div class="brand-text">
+					<h3 class="footer-title">{COMPANY_NAME}</h3>
+					<p>{COMPANY_TAGLINE}</p>
+					<p>© {year} {COMPANY_NAME}, S.L.</p>
+				</div>
 			</div>
-			<p class="tagline">Saving the world from boredom, one pixel at a time.</p>
-			<div class="meta">
-				<p class="copyright">© 2025 Indie Game Studio</p>
-				<p class="subtext">Made with Svelte & Chaos</p>
+
+			<div class="socials-row">
+				{#each socials as link}
+					<a href={link.href} aria-label={link.name} target="_blank" rel="noreferrer">
+						<img src={link.icon} alt={link.name}>
+					</a>
+				{/each}
 			</div>
 		</div>
 
-		<!-- Main Column Right: Links Group -->
-		<div class="footer-links-group">
-
-			<!-- Sub-col 1: Explore -->
-			<div class="footer-column">
-				<h3>EXPLORE</h3>
-				<div class="vertical-links">
-					<a href="/">Home</a>
-					<a href="/projects">Projects</a>
-					<a href="/devlog">Devlog</a>
-					<a href="/about">About</a>
-					<a href="/contact">Contact</a>
-				</div>
-			</div>
-
-			<!-- Sub-col 2: Legal -->
-			<div class="footer-column">
-				<h3>LEGAL</h3>
-				<div class="vertical-links">
-					<a href="/cookies">Cookies</a>
-					<a href="/licences">Licences</a>
-					<a href="/privacy">Privacy Policy</a>
-					<a href="/terms">Terms of Use</a>
-				</div>
-			</div>
-
-			<!-- Sub-col 3: Socials (Vertical) -->
-			<div class="footer-column socials-column">
-				<h3>SOCIALS</h3>
-				<div class="social-links-vertical">
-					<a href="#" class="social-icon" aria-label="Twitter">
-						<i class="fab fa-twitter"></i>
-					</a>
-					<a href="#" class="social-icon" aria-label="Discord">
-						<i class="fab fa-discord"></i>
-					</a>
-					<a href="#" class="social-icon" aria-label="YouTube">
-						<i class="fab fa-youtube"></i>
-					</a>
-				</div>
-			</div>
-
+		<!-- SITEMAP -->
+		<div class="col col-sitemap">
+			<h4 class="footer-head">Sitemap</h4>
+			{#each sitemap as link}
+				<a href={link.href}>{link.name}</a>
+			{/each}
 		</div>
+
+		<!-- LEGAL -->
+		<div class="col col-legal">
+			<h4 class="footer-head">Legal</h4>
+			{#each legal as link}
+				<a href={link.href}>{link.name}</a>
+			{/each}
+		</div>
+
 	</div>
 </footer>
 
 <style>
     .footer {
-        background-color: var(--nini-black);
-        border-top: 4px solid var(--nini-beige);
-        padding: 60px 0;
-        color: var(--nini-white);
+        margin-top: 4rem;
+        border-top: var(--border-big);
+        background: var(--dark);
+        color: var(--light);
+        padding: 4rem 1.5rem;
+        font-family: var(--font-body);
     }
 
-    .footer-content {
+    /* ===== DESKTOP LAYOUT (DEFAULT) ===== */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
         display: flex;
-        flex-direction: column;
-        gap: 50px;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
     }
 
-    /* --- Left Side: Brand --- */
-    .footer-brand {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Center on mobile */
-        text-align: center;
-        max-width: 100%;
+    /* Brand Column (Left Side) */
+    .col-brand {
+        flex: 0 0 40%;
+        text-align: left;
     }
 
-    .brand-header {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 15px;
-    }
-
-    .brand-logo {
-        width: 50px;
-        height: 50px;
-    }
-
-    .footer-brand h3 {
-        font-family: "Luckiest Guy", cursive;
-        font-size: 2rem;
-        margin: 0;
-        line-height: 1;
-    }
-
-    .tagline {
-        color: var(--nini-beige);
-        font-size: 1.1rem;
-        margin-bottom: 20px;
-        font-style: italic;
-    }
-
-    .copyright {
-        color: #888;
-        font-weight: bold;
-        font-size: 0.9rem;
-    }
-
-    .subtext {
-        color: #666;
-        font-size: 0.8rem;
-    }
-
-    /* --- Right Side: Links Wrapper --- */
-    .footer-links-group {
-        display: flex;
-        flex-direction: column; /* Stack on mobile */
-        align-items: center;
-        gap: 40px;
-    }
-
-    /* --- Columns Shared Styles --- */
-    .footer-column {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Center on mobile */
-        text-align: center;
-    }
-
-    .footer-column h3 {
-        font-family: "Luckiest Guy", cursive;
-        color: var(--nini-beige);
-        margin-bottom: 15px;
-        font-size: 1.5rem;
-        letter-spacing: 1px;
-    }
-
-    .vertical-links {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .vertical-links a {
-        color: var(--nini-white);
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.2s;
-        font-size: 1rem;
-    }
-
-    .vertical-links a:hover {
-        color: var(--nini-red);
-    }
-
-    /* --- Socials Vertical --- */
-    .social-links-vertical {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .social-icon {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
+    .brand-flex {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.2rem;
-        border: 2px solid var(--nini-white);
-        transition: all 0.2s;
-        color: var(--nini-white);
-        text-decoration: none;
+        gap: 1.5rem;
     }
 
-    .social-icon:hover { background-color: var(--nini-red); border-color: var(--nini-red); }
+    .brand-logo img {
+        width: 128px;
+        height: auto;
+    }
 
-    /* --- Responsive Layout (Desktop) --- */
-    @media (min-width: 900px) {
-        .footer-content {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
+    .socials-row {
+        flex: 1;
+        display: flex;
+        flex-direction: row; /* Horizontal icons on mobile */
+        gap: 1.5rem;
+        justify-content: center;
+        padding-top: 2rem;
+    }
+
+    .socials-row img {
+        width: 2rem;
+        height: 2rem;
+        transition: transform 0.2s;
+    }
+
+    .socials-row a:hover img {
+        transform: scale(1.1);
+    }
+
+    /* Typography */
+    .footer-title {
+        font-family: var(--font-h1);
+        color: var(--primary);
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+    }
+
+    .footer-head {
+        font-family: var(--font-h1);
+        color: var(--pink);
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        margin-top: 0;
+        text-transform: uppercase;
+    }
+
+    a {
+        color: var(--light);
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+        display: block;
+        opacity: 0.8;
+        transition: color 0.2s;
+    }
+    a:hover {
+        color: var(--primary);
+        opacity: 1;
+    }
+
+    /* ===== MOBILE LAYOUT (OVERRIDES) ===== */
+    @media (max-width: 768px) {
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem 1.5rem;
+            justify-items: center;
         }
 
-        /* Left Side */
-        .footer-brand {
-            align-items: flex-start;
-            text-align: left;
-            max-width: 350px;
-        }
-
-        /* Right Side Wrapper */
-        .footer-links-group {
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 60px; /* Space between the three columns */
-        }
-
-        /* Columns */
-        .footer-column {
-            align-items: flex-start; /* Left align text in columns */
-            text-align: left;
-        }
-
-        /* Center the Social Icons column relative to its header if preferred,
-           but 'flex-start' keeps it consistent with the text links */
-        .socials-column {
-            align-items: center; /* Keep icons centered in their column or left aligned? */
-            /* Let's keep them centered relative to the column header for a cleaner look or left aligned */
+        .container > .col {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
             align-items: center;
         }
 
-        /* Actually, usually vertical icons look better centered under their header */
+        /* 1. Brand takes full top row */
+        .col-brand {
+            grid-column: span 2;
+            grid-row: 1;
+            flex: auto;
+        }
+
+        .brand-flex {
+            justify-content: center;
+            text-align: left; /* Keep text aligned left relative to logo, but block is centered */
+        }
+
+        .socials-row img {
+            width: 3rem; /* Larger touch targets */
+            height: 3rem;
+        }
+
+        /* 3. Sitemap & Legal sit side-by-side on bottom row */
+        .col-sitemap {
+            grid-row: 3;
+        }
+
+        .col-legal {
+            grid-row: 3;
+        }
     }
 </style>

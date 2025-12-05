@@ -31,7 +31,7 @@
 			<!-- Image Section -->
 			<div class="blog-image-container">
 				<img src={image} alt={title} class="blog-image">
-				<div class="date-badge">
+				<div class="{featured ? 'date-badge-featured' : 'date-badge'}">
 					{date}
 				</div>
 			</div>
@@ -114,6 +114,20 @@
         border-right: 2px solid white;
         border-bottom: 2px solid white;
     }
+
+		.date-badge-featured {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: var(--nini-black);
+        color: white;
+        font-family: "Fredoka", sans-serif;
+        font-weight: bold;
+        padding: 4px 30px 4px 60px;
+        border-bottom-right-radius: 8px;
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+		}
 
     .blog-content {
         padding: 1.5rem;

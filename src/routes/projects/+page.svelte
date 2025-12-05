@@ -3,6 +3,8 @@
 	import ComicButton from '$lib/components/generic/ComicButton.svelte';
 	import FAQItem from '$lib/components/generic/FAQItem.svelte';
 
+	import { COMPANY_TAGLINE, INSTAGRAM_URL, BLUESKY_URL, YOUTUBE_URL, DISCORD_INVITE } from '$lib/utils/constants.ts';
+
 	const projects = [
 		{
 			title: "Super Nini Bros",
@@ -117,8 +119,8 @@
 						<p class="text-black font-bold">We are always looking for new friends, artists, and pizza sponsors.</p>
 					</div>
 					<div class="cta-buttons">
-						<ComicButton text="Contact Us" variant="dark" href="/contact" />
-						<ComicButton text="Follow on Twitter" variant="secondary" href="#" />
+						<ComicButton text="Contact Us" variant="dark" href="/#contact" />
+						<ComicButton text="Follow on Bluesky" variant="secondary" href={BLUESKY_URL} />
 					</div>
 				</div>
 			</ComicPanel>

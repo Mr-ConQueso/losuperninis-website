@@ -13,10 +13,7 @@
 		<!-- Logo -->
 		<a href="/" class="logo-area">
 			<div class="logo-svg">
-				<svg viewBox="0 0 100 100">
-					<path d="M20,80 L20,30 C20,20 40,20 40,30 L40,40 L60,20 L80,20 L80,80 L60,80 L60,70 L40,90 L20,90 Z" fill="var(--nini-red)" stroke="black" stroke-width="3"/>
-					<text x="50" y="70" font-family="Luckiest Guy" font-size="50" fill="white" text-anchor="middle">SN</text>
-				</svg>
+				<img src="/icons/icon-white.svg" alt="logo" />
 			</div>
 			<span class="logo-text">LOS SUPER NINIS</span>
 		</a>
@@ -83,8 +80,8 @@
     }
 
     .logo-svg {
-        width: 48px;
-        height: 48px;
+        width: 40px;
+        height: 40px;
     }
 
     .logo-text {
@@ -92,6 +89,7 @@
         font-size: 1.5rem;
         color: var(--nini-white);
         text-shadow: 2px 2px 0 var(--nini-black);
+				padding-top: 10px;
         letter-spacing: 1px;
     }
 
