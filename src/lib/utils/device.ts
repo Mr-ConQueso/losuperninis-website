@@ -1,6 +1,5 @@
 export let isMobile = false;
 
-// Detect mobile layout
 const checkMobile = () => {
 	isMobile = window.innerWidth <= 768;
 };

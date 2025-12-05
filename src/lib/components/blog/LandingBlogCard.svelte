@@ -10,7 +10,6 @@
 
 	let { title, date, excerpt, image, slug, index }: Props = $props();
 
-	// Determine variant based on index (Even = Blue style, Odd = Dark style)
 	const isBlue = index % 2 === 0;
 </script>
 

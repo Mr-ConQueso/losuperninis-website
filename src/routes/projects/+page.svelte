@@ -2,45 +2,9 @@
 	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 	import ComicButton from '$lib/components/generic/ComicButton.svelte';
 	import FAQItem from '$lib/components/generic/FAQItem.svelte';
-
 	import { COMPANY_TAGLINE, INSTAGRAM_URL, BLUESKY_URL, YOUTUBE_URL, DISCORD_INVITE } from '$lib/utils/constants.ts';
+	import { projects } from '$lib/components/projects/project-info.ts';
 
-	const projects = [
-		{
-			title: "Super Nini Bros",
-			genre: "Platformer",
-			desc: "A game where you win by doing absolutely nothing. Sleep through levels and avoid responsibilities!",
-			img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-			status: "Released",
-			variant: 1
-		},
-		{
-			title: "Code Crunch Saga",
-			genre: "Puzzle",
-			desc: "Match 3 bugs to create a feature. Don't let the deadline bar hit zero or the server explodes.",
-			img: "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-			status: "Early Access",
-			variant: 2
-		},
-		{
-			title: "Siesta Simulator",
-			genre: "Strategy",
-			desc: "Manage your energy levels. Find the perfect spot. Defend your nap from noisy neighbors.",
-			img: "https://images.unsplash.com/photo-1533236897111-3e94666b2edf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-			status: "Released",
-			variant: 3
-		},
-		{
-			title: "Cafe Chaos",
-			genre: "Time Management",
-			desc: "Serve coffee to superheroes who are late for saving the world. Don't spill the latte!",
-			img: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-			status: "In Dev",
-			variant: 1
-		}
-	];
-
-	// Mock Data for FAQ
 	const faqs = [
 		{ q: "Are your games free to play?", a: "Most of our web games are free! We also have premium versions on Steam with extra hats and zero ads." },
 		{ q: "Can I stream your games?", a: "Absolutely! We love streamers. If you find a bug live on stream, just pretend it's a feature." },
@@ -70,7 +34,7 @@
 					<div class="project-card-wrapper">
 						<ComicPanel variant={project.variant as 1|2|3} className="project-card">
 							<div class="card-image">
-								<img src={project.img} alt={project.title}>
+								<img src={project.banner} alt={project.title}>
 								<div class="status-badge">{project.status}</div>
 							</div>
 							<div class="card-content">
@@ -78,7 +42,11 @@
 								<h2 class="project-title">{project.title}</h2>
 								<p class="project-desc">{project.desc}</p>
 								<div class="card-actions">
-									<ComicButton text="View Game" variant="primary" className="btn-sm" />
+									{#if project.link === ""}
+										<ComicButton text="Coming Soon..." variant="disabled" className="btn-sm" />
+									{:else}
+										<ComicButton text="View Game" href={project.link} target="_blank" rel="noreferrer" variant="primary" className="btn-sm" />
+									{/if}
 								</div>
 							</div>
 						</ComicPanel>

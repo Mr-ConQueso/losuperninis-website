@@ -9,7 +9,6 @@ export interface Post {
 }
 
 export async function getPosts() {
-	// This looks for all .md files in the src/posts folder
 	const modules = import.meta.glob('/src/posts/*.md', { eager: true });
 
 	const posts: Post[] = [];
@@ -18,7 +17,6 @@ export async function getPosts() {
 		const file = modules[path] as any;
 		const metadata = file.metadata as Omit<Post, 'slug'>;
 
-		// Extract slug from filename (e.g., /src/posts/my-post.md -> my-post)
 		const slug = path.split('/').pop()?.replace('.md', '') ?? '';
 
 		if (metadata) {

@@ -2,8 +2,8 @@
 	import type { Snippet } from 'svelte';
 
 	interface Props {
-		children: Snippet;     // Main content (Will be CROPPED)
-		bubble?: Snippet;      // Floating content (Will NOT be cropped)
+		children: Snippet;
+		bubble?: Snippet;
 		variant?: 1 | 2 | 3;
 		bgColor?: string;
 		className?: string;

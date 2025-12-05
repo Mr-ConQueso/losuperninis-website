@@ -4,7 +4,7 @@
 	interface Props {
 		text?: string;
 		href?: string | null;
-		variant?: 'primary' | 'secondary' | 'dark';
+		variant?: 'primary' | 'secondary' | 'dark' | 'disabled';
 		className?: string;
 		onclick?: (event: MouseEvent) => void;
 		children?: Snippet;
@@ -74,6 +74,14 @@
         border: 2px solid var(--nini-white);
     }
 
+    .comic-btn.disabled {
+        background-color: var(--nini-bg);
+        color: rgba(255, 255, 255, 0.35);
+        border: 2px solid var(--nini-bg);
+        filter: drop-shadow(0px 0px 0px var(--nini-black)) !important;
+        transition: none !important;
+    }
+
     /* Interactions */
     .comic-btn:hover {
         transform: translate(2px, 2px);
@@ -82,5 +90,10 @@
 
     .comic-btn:active {
         transform: translate(4px, 4px);
+    }
+
+    .comic-btn.disabled:hover {
+        transform: translate(0px, 0px) !important;
+        filter: drop-shadow(0px 0px 0px var(--nini-black)) !important;
     }
 </style>

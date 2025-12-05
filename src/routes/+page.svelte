@@ -2,11 +2,10 @@
 import ComicButton from '$lib/components/generic/ComicButton.svelte';
 import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 import LandingBlogCard from '$lib/components/blog/LandingBlogCard.svelte';
+import { projects } from '$lib/components/projects/project-info.ts';
 
-// Receive data from the loader
 let { data } = $props();
 
-// Filter for featured posts (limit to 3 to keep layout clean if there are too many)
 let featuredPosts = $derived(
 	data.posts
 		.filter((p: any) => p.featured)
@@ -126,29 +125,31 @@ let featuredPosts = $derived(
 
 		<div class="portfolio-grid">
 			<!-- Project 1 -->
-			<div class="project-item">
-				<div class="bg-shadow"></div>
-				<ComicPanel variant={2} className="project-panel">
-					<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Game 1" class="project-img">
-					<div class="project-info info-red">
-						<h3>Retro Shooter</h3>
-						<p>Arcade • Action</p>
-					</div>
-					<div class="badge-new">NEW!</div>
-				</ComicPanel>
-			</div>
+			<a href={projects[0].link} target="_blank" rel="noreferrer" >
+				<div class="project-item">
+					<ComicPanel variant={2} className="project-panel">
+						<img src={projects[0].img} alt="Game 1" class="project-img">
+						<div class="project-info info-red">
+							<h3>{projects[0].title}</h3>
+							<p>{projects[0].genre}</p>
+						</div>
+						<div class="badge-new">NEW!</div>
+					</ComicPanel>
+				</div>
+			</a>
 
 			<!-- Project 2 -->
-			<div class="project-item">
-				<div class="bg-shadow"></div>
-				<ComicPanel variant={3} className="project-panel">
-					<img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Game 2" class="project-img">
-					<div class="project-info info-blue">
-						<h3>Puzzle Quest</h3>
-						<p>Logic • Adventure</p>
-					</div>
-				</ComicPanel>
-			</div>
+			<a href={projects[1].link} target="_blank" rel="noreferrer" >
+				<div class="project-item">
+					<ComicPanel variant={3} className="project-panel">
+						<img src={projects[1].img} alt="Game 2" class="project-img">
+						<div class="project-info info-blue">
+							<h3>{projects[1].title}</h3>
+							<p>{projects[1].genre}</p>
+						</div>
+					</ComicPanel>
+				</div>
+			</a>
 		</div>
 
 		<div class="mobile-cta">
@@ -513,15 +514,6 @@ let featuredPosts = $derived(
     }
 
     .project-item { position: relative; }
-
-    /* Custom shadow behind comic panel for depth */
-    .bg-shadow {
-        position: absolute;
-        inset: 0;
-        background: black;
-        transform: translate(8px, 8px);
-        z-index: 0;
-    }
 
     .project-img {
         width: 100%;

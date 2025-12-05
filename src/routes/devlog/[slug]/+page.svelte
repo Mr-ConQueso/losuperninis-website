@@ -1,8 +1,6 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 
-	// This data comes from the +page.ts loader below
 	let { data } = $props();
 </script>
 
