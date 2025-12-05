@@ -13,11 +13,29 @@
 	function toggle() {
 		isOpen = !isOpen;
 	}
+
+	function handleKeydown(e: KeyboardEvent) {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			toggle();
+		}
+	}
 </script>
 
 <div class="faq-wrapper">
-	<!-- Question Header -->
-	<button onclick={toggle} class="question-btn" aria-expanded={isOpen}>
+	<!--
+			Question Header
+			Changed from <button> to <div> to avoid invalid HTML (div inside button).
+			Added role="button" and tabindex="0" to keep it accessible.
+	-->
+	<div
+		role="button"
+		tabindex="0"
+		class="question-trigger"
+		aria-expanded={isOpen}
+		onclick={toggle}
+		onkeydown={handleKeydown}
+	>
 		<ComicPanel variant={variant} bgColor={isOpen ? 'var(--nini-red)' : 'white'} className="question-panel">
 			<div class="question-content">
 				<span class="q-mark">Q.</span>
@@ -25,7 +43,7 @@
 				<i class="fas fa-chevron-down arrow {isOpen ? 'rotated' : ''}"></i>
 			</div>
 		</ComicPanel>
-	</button>
+	</div>
 
 	<!-- Answer Body -->
 	{#if isOpen}
@@ -40,15 +58,23 @@
 <style>
     .faq-wrapper {
         margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 1; /* Establish a localized stacking context */
     }
 
-    .question-btn {
+    .question-trigger {
         width: 100%;
-        background: none;
-        border: none;
-        padding: 0;
         cursor: pointer;
         text-align: left;
+        outline: none;
+        position: relative;
+        z-index: 10; /* Ensure header stays on top of the answer */
+    }
+
+    /* Focus styles for accessibility */
+    .question-trigger:focus-visible :global(.comic-panel) {
+        outline: 2px solid white;
+        outline-offset: 2px;
     }
 
     .question-content {
@@ -64,7 +90,8 @@
         color: var(--nini-black);
     }
 
-    .question-panel h3 {
+    /* Target the h3 inside the panel */
+    :global(.question-panel h3) {
         flex: 1;
         font-family: "Fredoka", sans-serif;
         font-weight: bold;
@@ -90,7 +117,12 @@
         margin-top: -10px; /* Overlap slightly for visual connection */
         padding: 0 1rem;
         position: relative;
-        z-index: -1;
+        /* Fixed Z-Index Logic:
+           Instead of -1 (which might hide it behind the page background),
+           we rely on the Header having z-index: 10 and this having z-index: 5.
+           This keeps it under the header but above the page.
+        */
+        z-index: 5;
         animation: slideDown 0.3s ease-out forwards;
     }
 

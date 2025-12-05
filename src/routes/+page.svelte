@@ -564,6 +564,16 @@ let featuredPosts = $derived(
 
     .mobile-cta { margin-top: 2rem; text-align: center; }
 
+    .halftone-beige-overlay {
+        background-image: radial-gradient(circle, var(--nini-beige) 4px, transparent 1px);
+        background-size: 20px 20px;
+        opacity: 0.4;
+        pointer-events: none;
+    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+    .speech-box p { font-size: 1.1rem; color: black; font-style: italic; }
+
     /* --- ABOUT & TEAM --- */
     .about-section { background-color: white; }
 
