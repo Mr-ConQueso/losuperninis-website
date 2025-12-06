@@ -19,6 +19,8 @@
     --shadow-distance: 6px;
     --container-max-width: 1200px;
     --header-height: 80px;
+
+    --nini-container-max-width: 1200px;
 }
 
 /* Reset & Base */

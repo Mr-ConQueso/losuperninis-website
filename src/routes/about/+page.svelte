@@ -107,6 +107,7 @@
 						variant={member.variant as 1|2|3}
 						kryptonite={member.kryptonite}
 						favoriteGame={member.favoriteGame}
+						id={member.name}
 					/>
 				{/each}
 			</div>

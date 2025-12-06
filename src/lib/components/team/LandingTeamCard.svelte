@@ -7,6 +7,7 @@
 		color: string;
 		rotation?: string; // e.g. "3deg"
 		className?: string;
+		[key: string]: any;
 	}
 
 	let {
@@ -16,21 +17,25 @@
 		quote,
 		color,
 		rotation = '0deg',
-		className = ''
+		className = '',
+		...rest
 	}: Props = $props();
 </script>
 
-<div
-	class="team-card {className}"
-	style="background-color: {color}; transform: rotate({rotation});"
->
-	<div class="member-img">
-		<img src={img} alt={name}>
+<a href="/about/#{name}" aria-label="Team member button">
+	<div
+		class="team-card {className}"
+		style="background-color: {color}; transform: rotate({rotation});"
+		{...rest}
+	>
+		<div class="member-img">
+			<img src={img} alt={name}>
+		</div>
+		<h3 class="member-role">{role}</h3>
+		<p class="member-name">{name}</p>
+		<p class="member-quote">"{quote}"</p>
 	</div>
-	<h3 class="member-role">{role}</h3>
-	<p class="member-name">{name}</p>
-	<p class="member-quote">"{quote}"</p>
-</div>
+</a>
 
 <style>
     .team-card {
@@ -66,12 +71,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        filter: grayscale(100%);
         transition: filter 0.3s;
-    }
-
-    .team-card:hover .member-img img {
-        filter: grayscale(0%);
     }
 
     .member-role {

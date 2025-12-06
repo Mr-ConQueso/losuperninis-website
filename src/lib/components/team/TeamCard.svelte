@@ -12,9 +12,9 @@
 		linkText?: string;
 		color?: string;
 		variant?: 1 | 2 | 3;
-		// New Props
 		kryptonite?: string;
 		favoriteGame?: string;
+		[key: string]: any;
 	}
 
 	let {
@@ -28,12 +28,13 @@
 		color = "white",
 		variant = 1,
 		kryptonite,
-		favoriteGame
+		favoriteGame,
+		...rest
 	}: Props = $props();
 </script>
 
 <div class="team-card-wrapper">
-	<ComicPanel variant={variant} bgColor={color} className="h-full">
+	<ComicPanel variant={variant} bgColor={color} className="h-full" {...rest}>
 		<div class="team-card-inner">
 			<!-- Photo -->
 			<div class="member-photo">

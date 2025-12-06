@@ -4,9 +4,7 @@ import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 import LandingBlogCard from '$lib/components/blog/LandingBlogCard.svelte';
 import { projects } from '$lib/components/projects/project-info.ts';
 import { team } from '$lib/components/team/team-info.ts';
-import { device } from '../lib/utils/device.svelte.ts';
 import MobileTeam from '$lib/components/team/MobileTeam.svelte';
-import DesktopTeam from '$lib/components/team/DesktopTeam.svelte';
 
 let { data } = $props();
 
@@ -163,34 +161,28 @@ let featuredPosts = $derived(
 </section>
 
 <!-- About & Team Section -->
-<section class="section about-section bg-white py-20">
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<section class="section about-section">
+	<div class="container about-grid">
 
-			<!-- About Text -->
-			<div class="about-text">
-				<h2 class="text-5xl text-black mb-6 drop-shadow-[2px_2px_0_rgba(0,0,0,0.2)]">WHO ARE WE?</h2>
-				<p class="text-lg text-gray-800 mb-6 leading-relaxed font-fredoka">
-					Los Super Ninis started as a late-night joke and turned into a dedicated indie studio. We believe in games that don't take themselves too seriously but are seriously fun to play.
-				</p>
-				<p class="text-lg text-gray-800 mb-8 font-fredoka">
-					Our mission? To save the world from boredom, one pixel at a time.
-				</p>
-				<div class="team-btn-wrapper transform rotate-1">
-					<ComicButton text="Meet the Full Team" variant="dark" href="/about" />
-				</div>
+		<!-- About Text -->
+		<div class="about-text">
+			<h2 class="about-title">WHO ARE WE?</h2>
+			<p class="body-text">
+				Los Super Ninis started as a late-night joke and turned into a dedicated indie studio. We believe in games that don't take themselves too seriously but are seriously fun to play.
+			</p>
+			<p class="body-text">
+				Our mission? To save the world from boredom, one pixel at a time.
+			</p>
+			<div class="team-btn-wrapper">
+				<ComicButton text="Meet the Full Team" variant="dark" href="/about" />
 			</div>
-
-			<!-- Team Visuals (Dynamic) -->
-			<div class="team-visuals-container">
-				{#if device.isMobile}
-					<MobileTeam {team} />
-				{:else}
-					<DesktopTeam {team} />
-				{/if}
-			</div>
-
 		</div>
+
+		<!-- Team Visuals (Dynamic) -->
+		<div class="team-visuals-container">
+			<MobileTeam {team} />
+		</div>
+
 	</div>
 </section>
 
@@ -566,7 +558,75 @@ let featuredPosts = $derived(
 
     .speech-box p { font-size: 1.1rem; color: black; font-style: italic; }
 
-    /* --- ABOUT & TEAM --- */
+    /* --- ABOUT SECTION --- */
+    .about-section {
+        background-color: white;
+        padding: 5rem 0;
+        border-top: 4px solid var(--nini-black);
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    /* Text Column */
+    .about-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center on mobile */
+        text-align: center;
+    }
+
+    .about-title {
+        font-family: "Luckiest Guy", cursive;
+        font-size: 3rem;
+        color: var(--nini-black);
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+        line-height: 1;
+    }
+
+    .body-text {
+        font-family: "Fredoka", sans-serif;
+        font-size: 1.125rem; /* Equivalent to text-lg */
+        color: #1f2937; /* Dark gray */
+        margin-bottom: 1.5rem;
+        line-height: 1.625;
+        max-width: 600px; /* Readability limit */
+    }
+
+    .team-btn-wrapper {
+        margin-top: 1rem;
+        transform: rotate(1deg);
+        display: inline-block;
+    }
+
+    /* Visuals Column */
+    .team-visuals-container {
+        position: relative;
+        min-height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (min-width: 1024px) {
+        .about-grid {
+            grid-template-columns: 1fr 1fr; /* 2 Columns on Desktop */
+            text-align: left;
+        }
+
+        .about-text {
+            align-items: flex-start; /* Left align on Desktop */
+            text-align: left;
+        }
+    }
+
     .about-section { background-color: white; }
     .team-btn-wrapper { display: inline-block; transform: rotate(1deg); }
 
