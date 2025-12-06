@@ -180,7 +180,7 @@
 				{t.team.desc_2}
 			</p>
 			<div class="team-btn-wrapper">
-				<ComicButton text={t.team.link} variant="dark" href={link('/#contact')} />
+				<ComicButton text={t.team.link} variant="dark" href={link('/about')} />
 			</div>
 		</div>
 

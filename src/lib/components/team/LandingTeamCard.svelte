@@ -20,9 +20,17 @@
 		className = '',
 		...rest
 	}: Props = $props();
+
+	import { page } from '$app/state';
+	import type { Dictionary } from '$lib/types/i18n';
+	let t = $derived(page.data.t as Dictionary);
+	let lang = $derived(page.data.lang);
+	const link = (path: string) => `/${lang}${path}`;
+
+	const namelink = link('/about/#') + name
 </script>
 
-<a href="/[lang]/about/#{name}" aria-label="Team member button">
+<a href={namelink} aria-label="Team member button">
 	<div
 		class="team-card {className}"
 		style="background-color: {color}; transform: rotate({rotation});"
