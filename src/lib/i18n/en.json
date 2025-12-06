@@ -1,0 +1,72 @@
+{
+	"home": {
+		"title_1": "Quirky",
+		"title_2": "Indie",
+		"title_3": "Games",
+		"subtitle": "We make playful games with comic visuals and chaotic creativity. Welcome to the headquarters of Los Super Ninis!"
+	},
+	"hero": {
+		"play_games": "Play Our Games",
+		"read_devlog": "Read Devlog",
+		"new_release": "New Release Incoming!",
+		"speech_bubble_1": "IT'S",
+		"speech_bubble_2": "FUN!"
+	},
+	"features": {
+		"title": "WHY US?",
+		"feature_1": {
+			"title": "Playful Games",
+			"desc": "Mechanics that put a smile on your face. We prioritize fun over physics!"
+		},
+		"feature_2": {
+			"title": "Comic Visuals",
+			"desc": "A unique aesthetic inspired by the golden age of comics and pop culture."
+		},
+		"feature_3": {
+			"title": "Pure Creativity",
+			"desc": "Hand-crafted assets, original stories, and zero corporate boredom."
+		}
+	},
+	"portfolio": {
+		"title": "LATEST HITS",
+		"desc": "Check out our latest releases",
+		"link": "View All Projects ->"
+	},
+	"team": {
+		"title": "WHO ARE WE?",
+		"desc_1": "Los Super Ninis started as a late-night joke and turned into a dedicated indie studio. We believe in games that don't take themselves too seriously but are seriously fun to play.",
+		"desc_2": "Our mission? To save the world from boredom, one pixel at a time.",
+		"link": "Meet the Full Team"
+	},
+	"newsletter": {
+		"title": "JOIN THE SQUAD!",
+		"desc": "Get exclusive updates, beta keys, and comic strips directly in your inbox.",
+		"email_input": "Enter your email...",
+		"subscribe": "SUBSCRIBE!"
+	},
+	"main": {
+		"title": "Los Super Ninis",
+		"title_may": "Los Super Ninis",
+		"tagline": "Saving the world from boredom."
+	},
+	"nav": {
+		"sitemap": {
+			"home": "Home",
+			"projects": "Projects",
+			"devlog": "Devlog",
+			"about": "About",
+			"contact": "Contact"
+		},
+		"legal": {
+			"cookies": "Cookies",
+			"licences": "Licences",
+			"privacy": "Privacy",
+			"terms": "Terms"
+		}
+	},
+	"footer": {
+		"company": "Los Super Ninis, S.L.",
+		"explore": "Explore",
+		"legal": "Legal"
+	}
+}

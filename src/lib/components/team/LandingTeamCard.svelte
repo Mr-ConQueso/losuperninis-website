@@ -22,7 +22,7 @@
 	}: Props = $props();
 </script>
 
-<a href="/about/#{name}" aria-label="Team member button">
+<a href="/[lang]/about/#{name}" aria-label="Team member button">
 	<div
 		class="team-card {className}"
 		style="background-color: {color}; transform: rotate({rotation});"

@@ -13,7 +13,7 @@
 	const isBlue = index % 2 === 0;
 </script>
 
-<a href="/devlog/{slug}" class="blog-card {isBlue ? 'blog-blue' : 'blog-dark'}">
+<a href="/[lang]/devlog/{slug}" class="blog-card {isBlue ? 'blog-blue' : 'blog-dark'}">
 	<div class="blog-thumb {isBlue ? '' : 'border-beige'}">
 		<img src={image} alt={title}>
 	</div>

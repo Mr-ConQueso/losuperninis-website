@@ -1,18 +1,24 @@
-<script lang="ts">
-import ComicButton from '$lib/components/generic/ComicButton.svelte';
-import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
-import LandingBlogCard from '$lib/components/blog/LandingBlogCard.svelte';
-import { projects } from '$lib/components/projects/project-info.ts';
-import { team } from '$lib/components/team/team-info.ts';
-import MobileTeam from '$lib/components/team/MobileTeam.svelte';
+	<script lang="ts">
+	import ComicButton from '$lib/components/generic/ComicButton.svelte';
+	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
+	import LandingBlogCard from '$lib/components/blog/LandingBlogCard.svelte';
+	import { projects } from '$lib/components/projects/project-info.ts';
+	import { team } from '$lib/components/team/team-info.ts';
+	import MobileTeam from '$lib/components/team/MobileTeam.svelte';
+	import { page } from '$app/state';
 
-let { data } = $props();
+	let { data } = $props();
 
-let featuredPosts = $derived(
-	data.posts
-		.filter((p: any) => p.featured)
-		.slice(0, 3)
-);
+	let featuredPosts = $derived(
+		data.posts
+			.filter((p: any) => p.featured)
+			.slice(0, 3)
+	);
+
+	import type { Dictionary } from '$lib/types/i18n';
+	let t = $derived(page.data.t as Dictionary);
+	let lang = $derived(page.data.lang);
+	const link = (path: string) => `/${lang}${path}`;
 </script>
 
 <!-- Hero Section -->
@@ -29,16 +35,16 @@ let featuredPosts = $derived(
 				EST. 2025
 			</div>
 			<h1 class="main-title">
-				QUIRKY<br>
-				<span class="highlight-red">INDIE</span> GAMES
+				{t.home.title_1}<br>
+				<span class="highlight-red">{t.home.title_2}</span> {t.home.title_3}
 			</h1>
 			<p class="subtitle">
-				We make playful games with comic visuals and chaotic creativity. Welcome to the headquarters of Los Super Ninis!
+				{t.home.subtitle}
 			</p>
 
 			<div class="hero-buttons">
-				<ComicButton text="Play Our Games" variant="primary" href="/projects" />
-				<ComicButton text="Read Devlog" variant="secondary" href="/devlog" />
+				<ComicButton text={t.hero.play_games} variant="primary" href={link('/projects')} />
+				<ComicButton text={t.hero.read_devlog} variant="secondary" href={link('/devlog')} />
 			</div>
 		</div>
 
@@ -51,13 +57,13 @@ let featuredPosts = $derived(
 
 					<div class="hero-panel-text">
 						<span class="boom-text">BANG!</span>
-						<p class="release-tag">New Release Incoming!</p>
+						<p class="release-tag">{t.hero.new_release}</p>
 					</div>
 				</div>
 				<!-- Speech Bubble -->
 				{#snippet bubble()}
 					<div class="speech-bubble">
-						<p>IT'S<br>FUN!</p>
+						<p>{t.hero.speech_bubble_1}<br>{t.hero.speech_bubble_2}</p>
 						<div class="bubble-tail"></div>
 					</div>
 				{/snippet}
@@ -72,7 +78,7 @@ let featuredPosts = $derived(
 	<div class="container">
 
 		<div class="section-header">
-			<h2 class="section-title text-stroke">WHY US?</h2>
+			<h2 class="section-title text-stroke">{t.features.title}</h2>
 			<div class="underline-deco"></div>
 		</div>
 
@@ -82,8 +88,8 @@ let featuredPosts = $derived(
 					<div class="icon-circle pulse">
 						<i class="fas fa-gamepad"></i>
 					</div>
-					<h3 class="feature-title text-white">Playful Games</h3>
-					<p class="feature-desc text-beige">Mechanics that put a smile on your face. We prioritize fun over physics!</p>
+					<h3 class="feature-title text-white">{t.features.feature_1.title}</h3>
+					<p class="feature-desc text-beige">{t.features.feature_1.desc}</p>
 				</div>
 			</ComicPanel>
 
@@ -93,8 +99,8 @@ let featuredPosts = $derived(
 						<div class="icon-circle red-icon">
 							<i class="fas fa-bolt"></i>
 						</div>
-						<h3 class="feature-title text-black">Comic Visuals</h3>
-						<p class="feature-desc text-black">A unique aesthetic inspired by the golden age of comics and pop culture.</p>
+						<h3 class="feature-title text-black">{t.features.feature_2.title}</h3>
+						<p class="feature-desc text-black">{t.features.feature_2.desc}</p>
 					</div>
 				</ComicPanel>
 			</div>
@@ -104,8 +110,8 @@ let featuredPosts = $derived(
 					<div class="icon-circle">
 						<i class="fas fa-paint-brush"></i>
 					</div>
-					<h3 class="feature-title text-white">Pure Creativity</h3>
-					<p class="feature-desc text-beige">Hand-crafted assets, original stories, and zero corporate boredom.</p>
+					<h3 class="feature-title text-white">{t.features.feature_3.title}</h3>
+					<p class="feature-desc text-beige">{t.features.feature_3.desc}</p>
 				</div>
 			</ComicPanel>
 		</div>
@@ -119,10 +125,10 @@ let featuredPosts = $derived(
 	<div class="container">
 		<div class="portfolio-header">
 			<div>
-				<h2 class="section-title text-stroke-red">LATEST HITS</h2>
-				<p class="header-subtitle">Check out our latest releases</p>
+				<h2 class="section-title text-stroke-red">{t.portfolio.title}</h2>
+				<p class="header-subtitle">{t.portfolio.desc}</p>
 			</div>
-			<a href="/projects" class="view-all-link">View All Projects -></a>
+			<a href={link('/projects')} class="view-all-link">{t.portfolio.link}</a>
 		</div>
 
 		<div class="portfolio-grid">
@@ -166,15 +172,15 @@ let featuredPosts = $derived(
 
 		<!-- About Text -->
 		<div class="about-text">
-			<h2 class="about-title">WHO ARE WE?</h2>
+			<h2 class="about-title">{t.team.title}</h2>
 			<p class="body-text">
-				Los Super Ninis started as a late-night joke and turned into a dedicated indie studio. We believe in games that don't take themselves too seriously but are seriously fun to play.
+				{t.team.desc_1}
 			</p>
 			<p class="body-text">
-				Our mission? To save the world from boredom, one pixel at a time.
+				{t.team.desc_2}
 			</p>
 			<div class="team-btn-wrapper">
-				<ComicButton text="Meet the Full Team" variant="dark" href="/about" />
+				<ComicButton text={t.team.link} variant="dark" href="/about" />
 			</div>
 		</div>
 
@@ -218,12 +224,12 @@ let featuredPosts = $derived(
 	<div class="bg-layer halftone-beige-overlay"></div>
 	<div class="container">
 		<div class="newsletter-box">
-			<h2 class="section-title text-black">JOIN THE SQUAD!</h2>
-			<p class="text-black">Get exclusive updates, beta keys, and comic strips directly in your inbox.</p>
+			<h2 class="section-title text-black">{t.newsletter.title}</h2>
+			<p class="text-black">{t.newsletter.desc}</p>
 
 			<form class="newsletter-form">
-				<input type="email" placeholder="Enter your email..." class="email-input">
-				<ComicButton text="SUBSCRIBE!" variant="dark" />
+				<input type="email" placeholder={t.newsletter.email_input} class="email-input">
+				<ComicButton text={t.newsletter.subscribe} variant="dark" />
 			</form>
 		</div>
 	</div>

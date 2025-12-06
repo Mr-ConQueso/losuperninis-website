@@ -1,6 +1,4 @@
 export const WEBSITE_URL = "https://www.losuperninis.com";
-export const COMPANY_NAME = "Los Super Ninis";
-export const COMPANY_TAGLINE = "Saving the world from boredom, one pixel at a time.";
 export const CONTACT_EMAIL = "contact@losuperninis.com";
 
 export const STEAM_URL = "https://www.losuperninis.com";

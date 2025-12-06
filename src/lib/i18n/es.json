@@ -1,0 +1,72 @@
+{
+	"home": {
+		"title_1": "Juegos",
+		"title_2": "Indie",
+		"title_3": "Peculiares",
+		"subtitle": "Creamos juegos divertidos con estética cómic y creatividad caótica. ¡Bienvenido al cuartel general de Los Super Ninis!"
+	},
+	"hero": {
+		"play_games": "Jugar a Nuestros Juegos",
+		"read_devlog": "Leer el Devlog",
+		"new_release": "¡Nuevo Lanzamiento en Camino!",
+		"speech_bubble_1": "¡ES",
+		"speech_bubble_2": "DIVERTIDO!"
+	},
+	"features": {
+		"title": "¿POR QUÉ NOSOTROS?",
+		"feature_1": {
+			"title": "Juegos Divertidos",
+			"desc": "Mecánicas que te sacan una sonrisa. ¡Priorizamos la diversión sobre la física!"
+		},
+		"feature_2": {
+			"title": "Estética de Cómic",
+			"desc": "Una estética única inspirada en la edad dorada del cómic y la cultura pop."
+		},
+		"feature_3": {
+			"title": "Creatividad Pura",
+			"desc": "Recursos hechos a mano, historias originales y cero aburrimiento corporativo."
+		}
+	},
+	"portfolio": {
+		"title": "ÚLTIMOS ÉXITOS",
+		"desc": "Descubre nuestros lanzamientos más recientes",
+		"link": "Ver Todos los Proyectos ->"
+	},
+	"team": {
+		"title": "¿QUIÉNES SOMOS?",
+		"desc_1": "Los Super Ninis empezaron como una broma nocturna y acabaron convirtiéndose en un estudio indie dedicado. Creemos en juegos que no se toman demasiado en serio, pero que son seriamente divertidos de jugar.",
+		"desc_2": "¿Nuestra misión? Salvar al mundo del aburrimiento, píxel a píxel.",
+		"link": "Conoce al Equipo Completo"
+	},
+	"newsletter": {
+		"title": "¡ÚNETE A LA SQUAD!",
+		"desc": "Recibe novedades exclusivas, claves de acceso anticipado y tiras cómicas directamente en tu correo.",
+		"email_input": "Introduce tu correo...",
+		"subscribe": "¡SUSCRIBIRME!"
+	},
+	"main": {
+		"title": "Los Super Ninis",
+		"title_may": "Los Super Ninis",
+		"tagline": "Salvando al mundo del aburrimiento."
+	},
+	"nav": {
+		"sitemap": {
+			"home": "Inicio",
+			"projects": "Proyectos",
+			"devlog": "Devlog",
+			"about": "Acerca de",
+			"contact": "Contacto"
+		},
+		"legal": {
+			"cookies": "Cookies",
+			"licences": "Licencias",
+			"privacy": "Privacidad",
+			"terms": "Términos"
+		}
+	},
+	"footer": {
+		"company": "Los Super Ninis, S.L.",
+		"explore": "Explorar",
+		"legal": "Legal"
+	}
+}

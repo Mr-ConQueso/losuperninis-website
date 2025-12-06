@@ -1,5 +1,11 @@
 <script lang="ts">
 	import ComicButton from '$lib/components/generic/ComicButton.svelte';
+	import { page } from '$app/state';
+
+	import type { Dictionary } from '$lib/types/i18n';
+	let t = $derived(page.data.t as Dictionary);
+	let lang = $derived(page.data.lang);
+	const link = (path: string) => `/${lang}${path}`;
 
 	let isMenuOpen = $state(false);
 
@@ -15,17 +21,17 @@
 			<div class="logo-svg">
 				<img src="/icons/icon-white.svg" alt="logo" />
 			</div>
-			<span class="logo-text">LOS SUPER NINIS</span>
+			<span class="logo-text">{t.main.title_may}</span>
 		</a>
 
 		<!-- Desktop Menu -->
 		<div class="desktop-menu">
-			<a href="/" class="nav-link">Home</a>
-			<a href="/projects" class="nav-link">Projects</a>
-			<a href="/devlog" class="nav-link">Devlog</a>
-			<a href="/about" class="nav-link">About</a>
+			<a href={link('/')} class="nav-link">{t.nav.sitemap.home}</a>
+			<a href={link('/projects')} class="nav-link">{t.nav.sitemap.projects}</a>
+			<a href={link('/devlog')} class="nav-link">{t.nav.sitemap.devlog}</a>
+			<a href={link('/about')} class="nav-link">{t.nav.sitemap.about}</a>
 			<div class="nav-cta">
-				<ComicButton text="Contact" href="/#contact" />
+				<ComicButton text={t.nav.sitemap.contact} href={link('/#contact')} />
 			</div>
 		</div>
 
@@ -40,10 +46,10 @@
 	<!-- Mobile Menu -->
 	{#if isMenuOpen}
 		<div class="mobile-menu">
-			<a href="/" class="mobile-link">Home</a>
-			<a href="/projects" class="mobile-link">Projects</a>
-			<a href="/devlog" class="mobile-link">Devlog</a>
-			<a href="/about" class="mobile-link">About</a>
+			<a href={link('/')} class="mobile-link">{t.nav.sitemap.home}</a>
+			<a href={link('/projects')} class="mobile-link">{t.nav.sitemap.projects}</a>
+			<a href={link('/devlog')} class="mobile-link">{t.nav.sitemap.devlog}</a>
+			<a href={link('/about')} class="mobile-link">{t.nav.sitemap.about}</a>
 		</div>
 	{/if}
 </nav>

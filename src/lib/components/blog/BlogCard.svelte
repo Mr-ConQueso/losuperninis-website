@@ -45,7 +45,7 @@
 				</div>
 
 				<h3 class="blog-title {featured ? 'text-white' : 'text-black'}">
-					<a href="/devlog/{slug}">{title}</a>
+					<a href="/[lang]/devlog/{slug}">{title}</a>
 				</h3>
 
 				<p class="blog-excerpt {featured ? 'text-beige' : 'text-gray'}">

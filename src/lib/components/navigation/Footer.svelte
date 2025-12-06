@@ -1,27 +1,31 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import {
-		COMPANY_TAGLINE,
 		INSTAGRAM_URL,
 		BLUESKY_URL,
 		YOUTUBE_URL,
 		DISCORD_INVITE,
-		COMPANY_NAME
 	} from '$lib/utils/constants.ts';
+
+	import type { Dictionary } from '$lib/types/i18n';
+	let t = $derived(page.data.t as Dictionary);
+	let lang = $derived(page.data.lang);
+	const link = (path: string) => `/${lang}${path}`;
 
 	const year = new Date().getFullYear();
 
 	const sitemap = [
-		{ name: "Home", href: "/" },
-		{ name: "Projects", href: "/projects" },
-		{ name: "Devlog", href: "/devlog" },
-		{ name: "About", href: "/about" }
+		{ name: t.nav.sitemap.home, href: link('/') },
+		{ name: t.nav.sitemap.projects, href: link('/projects') },
+		{ name: t.nav.sitemap.devlog, href: link('/devlog') },
+		{ name: t.nav.sitemap.about, href: link('/about') }
 	];
 
 	const legal = [
-		{ name: "Cookies", href: "/cookies" },
-		{ name: "Licences", href: "/licences" },
-		{ name: "Privacy", href: "/privacy" },
-		{ name: "Terms", href: "/terms" }
+		{ name: t.nav.legal.cookies, href: link('/cookies') },
+		{ name: t.nav.legal.licences, href: link('/licences') },
+		{ name: t.nav.legal.privacy, href: link('/privacy') },
+		{ name: t.nav.legal.terms, href: link('/terms') }
 	];
 
 	const socials = [
@@ -44,9 +48,9 @@
 				</div>
 
 				<div class="brand-text">
-					<h3 class="footer-title">{COMPANY_NAME}</h3>
-					<p>{COMPANY_TAGLINE}</p>
-					<p>© {year} {COMPANY_NAME}, S.L.</p>
+					<h3 class="footer-title">{t.main.title}</h3>
+					<p>{t.main.tagline}</p>
+					<p>© {year} {t.footer.company}</p>
 				</div>
 			</div>
 
@@ -61,7 +65,7 @@
 
 		<!-- SITEMAP -->
 		<div class="col col-sitemap">
-			<h4 class="footer-head">Sitemap</h4>
+			<h4 class="footer-head">{t.footer.explore}</h4>
 			{#each sitemap as link}
 				<a href={link.href}>{link.name}</a>
 			{/each}
@@ -69,7 +73,7 @@
 
 		<!-- LEGAL -->
 		<div class="col col-legal">
-			<h4 class="footer-head">Legal</h4>
+			<h4 class="footer-head">{t.footer.legal}</h4>
 			{#each legal as link}
 				<a href={link.href}>{link.name}</a>
 			{/each}
