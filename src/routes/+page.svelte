@@ -3,6 +3,10 @@ import ComicButton from '$lib/components/generic/ComicButton.svelte';
 import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 import LandingBlogCard from '$lib/components/blog/LandingBlogCard.svelte';
 import { projects } from '$lib/components/projects/project-info.ts';
+import { team } from '$lib/components/team/team-info.ts';
+import { device } from '../lib/utils/device.svelte.ts';
+import MobileTeam from '$lib/components/team/MobileTeam.svelte';
+import DesktopTeam from '$lib/components/team/DesktopTeam.svelte';
 
 let { data } = $props();
 
@@ -159,37 +163,33 @@ let featuredPosts = $derived(
 </section>
 
 <!-- About & Team Section -->
-<section class="section about-section">
-	<div class="container about-grid">
-		<div class="about-text">
-			<h2 class="section-title text-black">WHO ARE WE?</h2>
-			<p class="body-text">
-				Los Super Ninis started as a late-night joke and turned into a dedicated indie studio. We believe in games that don't take themselves too seriously but are seriously fun to play.
-			</p>
-			<p class="body-text">
-				Our mission? To save the world from boredom, one pixel at a time.
-			</p>
-			<div class="team-btn-wrapper">
-				<ComicButton text="Meet the Full Team" variant="dark" href="/about" />
-			</div>
-		</div>
+<section class="section about-section bg-white py-20">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-		<div class="team-visuals">
-			<div class="team-card card-coder">
-				<div class="member-img">
-					<img src="https://randomuser.me/api/portraits/lego/2.jpg" alt="Coder">
+			<!-- About Text -->
+			<div class="about-text">
+				<h2 class="text-5xl text-black mb-6 drop-shadow-[2px_2px_0_rgba(0,0,0,0.2)]">WHO ARE WE?</h2>
+				<p class="text-lg text-gray-800 mb-6 leading-relaxed font-fredoka">
+					Los Super Ninis started as a late-night joke and turned into a dedicated indie studio. We believe in games that don't take themselves too seriously but are seriously fun to play.
+				</p>
+				<p class="text-lg text-gray-800 mb-8 font-fredoka">
+					Our mission? To save the world from boredom, one pixel at a time.
+				</p>
+				<div class="team-btn-wrapper transform rotate-1">
+					<ComicButton text="Meet the Full Team" variant="dark" href="/about" />
 				</div>
-				<h3>THE CODER</h3>
-				<p>"I fix bugs with coffee."</p>
 			</div>
 
-			<div class="team-card card-artist">
-				<div class="member-img">
-					<img src="https://randomuser.me/api/portraits/lego/6.jpg" alt="Artist">
-				</div>
-				<h3>THE ARTIST</h3>
-				<p>"It needs more explosions."</p>
+			<!-- Team Visuals (Dynamic) -->
+			<div class="team-visuals-container">
+				{#if device.isMobile}
+					<MobileTeam {team} />
+				{:else}
+					<DesktopTeam {team} />
+				{/if}
 			</div>
+
 		</div>
 	</div>
 </section>
@@ -568,58 +568,31 @@ let featuredPosts = $derived(
 
     /* --- ABOUT & TEAM --- */
     .about-section { background-color: white; }
-
-    .about-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 4rem;
-        align-items: center;
-    }
-
-    .body-text { color: #333; font-size: 1.1rem; margin-bottom: 1.5rem; }
     .team-btn-wrapper { display: inline-block; transform: rotate(1deg); }
 
-    .team-visuals {
+    .team-visuals-container {
         position: relative;
-        height: 400px;
+        min-height: 400px; /* Ensure space for cards */
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .team-card {
-        position: absolute;
-        width: 250px;
-        padding: 0.5rem;
-        border: 4px solid black;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        text-align: center;
-        background: white;
-        transition: transform 0.3s;
+    .section-title.center-text { text-align: center; }
+    .highlight-red { color: var(--nini-red); }
+
+    .devlog-section {
+        background-color: var(--nini-bg);
+        border-top: 4px dashed white;
+        padding: 5rem 0;
     }
 
-    .card-coder {
-        background: var(--nini-beige);
-        transform: rotate(-6deg);
-        z-index: 1;
-    }
-
-    .card-artist {
-        background: var(--nini-red);
-        transform: translate(40px, 40px) rotate(6deg);
-        z-index: 2;
-        color: white;
-    }
-
-    .team-card:hover { transform: rotate(0deg) scale(1.05); z-index: 10; }
-
-    .member-img {
-        height: 200px;
-        width: 100%;
-        border: 2px solid black;
-        margin-bottom: 0.5rem;
-        overflow: hidden;
-        background: var(--nini-bg);
+    .blog-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 900px;
+        margin: 0 auto;
     }
     .member-img img { width: 100%; height: 100%; object-fit: cover; }
     .team-card h3 { font-size: 1.25rem; margin-bottom: 0.2rem; }

@@ -3,8 +3,15 @@
 	import '../app.css';
 	import Navbar from '$lib/components/navigation/Navbar.svelte';
 	import Footer from '$lib/components/navigation/Footer.svelte';
+	import { onMount } from 'svelte';
+	import { initMobile } from '../lib/utils/device.svelte.ts'
 
 	let { children } = $props();
+
+	onMount(() => {
+		const cleanup = initMobile();
+		return cleanup;
+	});
 </script>
 
 <svelte:head>

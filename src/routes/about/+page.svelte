@@ -1,55 +1,8 @@
 <script lang="ts">
 	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 	import ComicButton from '$lib/components/generic/ComicButton.svelte';
-
-	const team = [
-		{
-			name: "Alex 'The Glitch'",
-			role: "Lead Developer",
-			img: "https://randomuser.me/api/portraits/lego/2.jpg",
-			stats: {
-				coffee: "110%",
-				bugs_fixed: "404",
-				sanity: "12%"
-			},
-			quote: "It's not a bug, it's a surprise mechanic.",
-			color: "var(--nini-blue)",
-			variant: 1
-		},
-		{
-			name: "Sam 'Pixel'",
-			role: "Art Director",
-			img: "https://randomuser.me/api/portraits/lego/6.jpg",
-			stats: {
-				layers: "999+",
-				ctrl_z: "Infinite",
-				sleep: "Unknown"
-			},
-			quote: "Can we make it pop more? Like, literally explode?",
-			color: "var(--nini-red)",
-			variant: 2
-		},
-		{
-			name: "Charlie 'The Bard'",
-			role: "Sound & Narrative",
-			img: "https://randomuser.me/api/portraits/lego/1.jpg",
-			stats: {
-				decibels: "High",
-				puns: "Critical",
-				cats: "5"
-			},
-			quote: "I recorded my cat sneezing and it's now the laser sound.",
-			color: "var(--nini-green)",
-			variant: 3
-		}
-	];
-
-	// Values Data
-	const values = [
-		{ title: "Chaos", desc: "We embrace the mess. Perfect code is boring.", icon: "fas fa-bomb" },
-		{ title: "Fun First", desc: "If we don't laugh making it, you won't laugh playing it.", icon: "fas fa-laugh-squint" },
-		{ title: "Indie Spirit", desc: "No corporate suits. Just hoodies and pizza.", icon: "fas fa-hand-rock" }
-	];
+	import TeamCard from '$lib/components/team/TeamCard.svelte';
+	import { team } from '$lib/components/team/team-info.ts';
 </script>
 
 <div class="page-wrapper">
@@ -131,25 +84,6 @@
 		</div>
 	</section>
 
-	<!-- Values Section -->
-	<section class="section values-section">
-		<div class="bg-layer solid-blue"></div>
-		<div class="container relative z-10">
-			<h2 class="section-title text-white center-text mb-12">OUR CORE VALUES</h2>
-			<div class="values-grid">
-				{#each values as val, i}
-					<div class="value-card">
-						<div class="icon-box">
-							<i class={val.icon}></i>
-						</div>
-						<h3 class="text-beige">{val.title}</h3>
-						<p class="text-white">{val.desc}</p>
-					</div>
-				{/each}
-			</div>
-		</div>
-	</section>
-
 	<!-- Team Section -->
 	<section class="section team-section">
 		<div class="bg-layer halftone-red-overlay"></div>
@@ -161,34 +95,19 @@
 
 			<div class="team-grid">
 				{#each team as member}
-					<div class="team-card-wrapper">
-						<ComicPanel variant={member.variant as 1|2|3} bgColor={member.color} className="team-panel">
-							<div class="team-card-inner">
-								<!-- Photo -->
-								<div class="member-photo">
-									<img src={member.img} alt={member.name}>
-								</div>
-
-								<!-- Info -->
-								<div class="member-info">
-									<h3 class="member-name">{member.name}</h3>
-									<span class="member-role">{member.role}</span>
-
-									<!-- RPG Stats -->
-									<div class="stats-box">
-										{#each Object.entries(member.stats) as [key, value]}
-											<div class="stat-row">
-												<span class="stat-label">{key}:</span>
-												<span class="stat-val">{value}</span>
-											</div>
-										{/each}
-									</div>
-
-									<p class="member-quote">"{member.quote}"</p>
-								</div>
-							</div>
-						</ComicPanel>
-					</div>
+					<TeamCard
+						name={member.name}
+						role={member.role}
+						img={member.img}
+						skills={member.skills}
+						bio={member.bio}
+						link={member.link}
+						linkText={member.linkText}
+						color={member.color}
+						variant={member.variant as 1|2|3}
+						kryptonite={member.kryptonite}
+						favoriteGame={member.favoriteGame}
+					/>
 				{/each}
 			</div>
 		</div>
@@ -438,7 +357,7 @@
     .member-name { font-size: 2rem; line-height: 1; color: white; margin-bottom: 0.2rem; }
     .member-role { color: var(--nini-beige); font-weight: bold; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 1rem; display: block; }
 
-    .stats-box {
+    .skills-box {
         background: black;
         border: 2px solid var(--nini-beige);
         padding: 0.8rem;
