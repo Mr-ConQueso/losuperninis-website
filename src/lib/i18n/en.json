@@ -30,7 +30,8 @@
 	"portfolio": {
 		"title": "LATEST HITS",
 		"desc": "Check out our latest releases",
-		"link": "View All Projects ->"
+		"link": "View All Projects ->",
+		"link_mobile": "View All"
 	},
 	"team": {
 		"title": "WHO ARE WE?",

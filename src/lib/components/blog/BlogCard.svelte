@@ -1,6 +1,12 @@
 <script lang="ts">
 	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 	import ComicButton from '$lib/components/generic/ComicButton.svelte';
+	import { page } from '$app/state';
+
+	import type { Dictionary } from '$lib/types/i18n';
+	let t = $derived(page.data.t as Dictionary);
+	let lang = $derived(page.data.lang);
+	const link = (path: string) => `/${lang}${path}`;
 
 	interface Props {
 		title: string;
@@ -23,6 +29,8 @@
 		variant = 1,
 		featured = false
 	}: Props = $props();
+
+	const bloglink = link('/devlog') + slug
 </script>
 
 <div class="blog-card-wrapper {featured ? 'featured' : ''}">
@@ -45,7 +53,7 @@
 				</div>
 
 				<h3 class="blog-title {featured ? 'text-white' : 'text-black'}">
-					<a href="/[lang]/devlog/{slug}">{title}</a>
+					<a href={bloglink}>{title}</a>
 				</h3>
 
 				<p class="blog-excerpt {featured ? 'text-beige' : 'text-gray'}">
@@ -55,7 +63,7 @@
 				<div class="blog-footer">
 					<ComicButton
 						text="Read More"
-						href="/devlog/{slug}"
+						href={bloglink}
 						variant={featured ? 'primary' : 'dark'}
 						className="read-btn"
 					/>

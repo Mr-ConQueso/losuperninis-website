@@ -161,7 +161,7 @@
 		</div>
 
 		<div class="mobile-cta">
-			<ComicButton text="View All" href="/projects" />
+			<ComicButton text={t.portfolio.link_mobile} href={link('/projects')} />
 		</div>
 	</div>
 </section>
@@ -180,7 +180,7 @@
 				{t.team.desc_2}
 			</p>
 			<div class="team-btn-wrapper">
-				<ComicButton text={t.team.link} variant="dark" href="/about" />
+				<ComicButton text={t.team.link} variant="dark" href={link('/#contact')} />
 			</div>
 		</div>
 

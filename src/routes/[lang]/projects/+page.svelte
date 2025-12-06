@@ -2,8 +2,14 @@
 	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 	import ComicButton from '$lib/components/generic/ComicButton.svelte';
 	import FAQItem from '$lib/components/generic/FAQItem.svelte';
-	import { COMPANY_TAGLINE, INSTAGRAM_URL, BLUESKY_URL, YOUTUBE_URL, DISCORD_INVITE } from '$lib/utils/constants.ts';
+	import { INSTAGRAM_URL, BLUESKY_URL, YOUTUBE_URL, DISCORD_INVITE } from '$lib/utils/constants.ts';
 	import { projects } from '$lib/components/projects/project-info.ts';
+	import { page } from '$app/state';
+
+	import type { Dictionary } from '$lib/types/i18n';
+	let t = $derived(page.data.t as Dictionary);
+	let lang = $derived(page.data.lang);
+	const link = (path: string) => `/${lang}${path}`;
 
 	const faqs = [
 		{ q: "Are your games free to play?", a: "Most of our web games are free! We also have premium versions on Steam with extra hats and zero ads." },
@@ -87,7 +93,7 @@
 						<p class="text-black font-bold">We are always looking for new friends, artists, and pizza sponsors.</p>
 					</div>
 					<div class="cta-buttons">
-						<ComicButton text="Contact Us" variant="dark" href="/#contact" />
+						<ComicButton text="Contact Us" variant="dark" href={link('/#contact')} />
 						<ComicButton text="Follow on Bluesky" variant="secondary" href={BLUESKY_URL} />
 					</div>
 				</div>

@@ -1,7 +1,12 @@
 <script lang="ts">
-	import { page } from '$app/state';
 	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 	import ComicButton from '$lib/components/generic/ComicButton.svelte';
+	import { page } from '$app/state';
+
+	import type { Dictionary } from '$lib/types/i18n';
+	let t = $derived(page.data.t as Dictionary);
+	let lang = $derived(page.data.lang);
+	const link = (path: string) => `/${lang}${path}`;
 
 	let status = $derived(page.status);
 	let message = $derived(page.error?.message || 'Unknown Error');
@@ -36,8 +41,8 @@
 				{/if}
 
 				<div class="action-buttons">
-					<ComicButton text="Go Home" href="/" variant="primary" />
-					<ComicButton text="Report Bug" href="/#contact" variant="dark" />
+					<ComicButton text="Go Home" href={link('/')} variant="primary" />
+					<ComicButton text="Report Bug" href={link('/#contact')} variant="dark" />
 				</div>
 			</div>
 

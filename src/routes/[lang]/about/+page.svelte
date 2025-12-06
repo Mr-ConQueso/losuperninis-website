@@ -3,6 +3,12 @@
 	import ComicButton from '$lib/components/generic/ComicButton.svelte';
 	import TeamCard from '$lib/components/team/TeamCard.svelte';
 	import { team } from '$lib/components/team/team-info.ts';
+	import { page } from '$app/state';
+
+	import type { Dictionary } from '$lib/types/i18n';
+	let t = $derived(page.data.t as Dictionary);
+	let lang = $derived(page.data.lang);
+	const link = (path: string) => `/${lang}${path}`;
 </script>
 
 <div class="page-wrapper">
@@ -121,7 +127,7 @@
 				<div class="cta-content">
 					<h2 class="text-white">ARE YOU ONE OF US?</h2>
 					<p class="text-beige">We are always looking for freelancers and contributors. If you like chaos, drop us a line.</p>
-					<ComicButton text="Join the Chaos" variant="primary" href="/#contact" />
+					<ComicButton text="Join the Chaos" variant="primary" href={link('/#contact')} />
 				</div>
 			</ComicPanel>
 		</div>

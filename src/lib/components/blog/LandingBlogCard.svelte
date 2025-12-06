@@ -10,10 +10,18 @@
 
 	let { title, date, excerpt, image, slug, index }: Props = $props();
 
+	import { page } from '$app/state';
+	import type { Dictionary } from '$lib/types/i18n';
+	let t = $derived(page.data.t as Dictionary);
+	let lang = $derived(page.data.lang);
+	const link = (path: string) => `/${lang}${path}`;
+
 	const isBlue = index % 2 === 0;
+
+	const sluglink = link('/devlog') + slug
 </script>
 
-<a href="/[lang]/devlog/{slug}" class="blog-card {isBlue ? 'blog-blue' : 'blog-dark'}">
+<a href={sluglink} class="blog-card {isBlue ? 'blog-blue' : 'blog-dark'}">
 	<div class="blog-thumb {isBlue ? '' : 'border-beige'}">
 		<img src={image} alt={title}>
 	</div>

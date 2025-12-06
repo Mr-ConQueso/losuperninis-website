@@ -17,7 +17,7 @@
 <nav class="navbar">
 	<div class="container navbar-content">
 		<!-- Logo -->
-		<a href="/" class="logo-area">
+		<a href={link('/')} class="logo-area">
 			<div class="logo-svg">
 				<img src="/icons/icon-white.svg" alt="logo" />
 			</div>
