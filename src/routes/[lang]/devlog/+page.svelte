@@ -1,6 +1,7 @@
 <script lang="ts">
 	import BlogCard from '$lib/components/blog/BlogCard.svelte';
 	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
+	import { page } from '$app/state';
 
 	// Receive data from +page.ts
 	let { data } = $props();
@@ -8,6 +9,11 @@
 	// Derived values update automatically when data changes
 	let featuredPosts = $derived(data.posts.filter((p: any) => p.featured));
 	let regularPosts = $derived(data.posts.filter((p: any) => !p.featured));
+
+	import type { Dictionary } from '$lib/types/i18n';
+	let t = $derived(page.data.t as Dictionary);
+	let lang = $derived(page.data.lang);
+	const link = (path: string) => `/${lang}${path}`;
 </script>
 
 <div class="page-wrapper">
