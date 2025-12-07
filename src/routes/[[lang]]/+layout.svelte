@@ -14,21 +14,22 @@
 </script>
 
 <svelte:head>
-	<html lang={data.lang} />
+	<html lang={data.lang}></html>
+	<script src="https://kit.fontawesome.com/6f55fb0840.js" crossorigin="anonymous"></script>
 
 	<!-- Canonical URL (Self) -->
-	<link rel="canonical" href="https://superninis.com{page.url.pathname}" />
+	<link rel="canonical" href="https://www.losuperninis.com{page.url.pathname}" />
 
 	<!-- Alternates: The regex replace(/^\/(en|es)/, '') handles both /about and /en/about correctly -->
 	<link
 		rel="alternate"
 		hreflang="en"
-		href="https://superninis.com/en{page.url.pathname.replace(/^\/(en|es)/, '')}"
+		href="https://www.losuperninis.com/en{page.url.pathname.replace(/^\/(en|es)/, '')}"
 	/>
 	<link
 		rel="alternate"
 		hreflang="es"
-		href="https://superninis.com/es{page.url.pathname.replace(/^\/(en|es)/, '')}"
+		href="https://www.losuperninis.com/es{page.url.pathname.replace(/^\/(en|es)/, '')}"
 	/>
 </svelte:head>
 

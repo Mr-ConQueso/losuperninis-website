@@ -29,10 +29,10 @@
 	];
 
 	const socials = [
-		{ name: "Instagram", href: INSTAGRAM_URL, icon: "/icons/instagram.svg" },
-		{ name: "Bluesky", href: BLUESKY_URL, icon: "/icons/bluesky.svg" },
-		{ name: "YouTube", href: YOUTUBE_URL, icon: "/icons/youtube.svg" },
-		{ name: "Discord", href: DISCORD_INVITE, icon: "/icons/discord.svg" },
+		{ name: "Instagram", href: INSTAGRAM_URL, icon: "/icons/socials/instagram.svg" },
+		{ name: "Bluesky", href: BLUESKY_URL, icon: "/icons/socials/bluesky.svg" },
+		{ name: "YouTube", href: YOUTUBE_URL, icon: "/icons/socials/youtube.svg" },
+		{ name: "Discord", href: DISCORD_INVITE, icon: "/icons/socials/discord.svg" },
 	];
 </script>
 

@@ -18,6 +18,8 @@
 		variant?: 1 | 2 | 3;
 		kryptonite?: string;
 		favoriteGame?: string;
+		favoriteGameIcon?: string,
+		kryptoniteIcon?: string,
 		[key: string]: any;
 	}
 
@@ -33,6 +35,8 @@
 		variant = 1,
 		kryptonite,
 		favoriteGame,
+		favoriteGameIcon,
+		kryptoniteIcon,
 		...rest
 	}: Props = $props();
 </script>
