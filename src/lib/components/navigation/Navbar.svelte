@@ -3,6 +3,8 @@
 	import { page } from '$app/state';
 
 	import type { Dictionary } from '$lib/types/i18n';
+	import LanguageToggle from '$lib/components/navigation/LanguageToggle.svelte';
+
 	let t = $derived(page.data.t as Dictionary);
 	let lang = $derived(page.data.lang);
 	const link = (path: string) => `/${lang}${path}`;
@@ -30,6 +32,9 @@
 			<a href={link('/projects')} class="nav-link">{t.nav.sitemap.projects}</a>
 			<a href={link('/devlog')} class="nav-link">{t.nav.sitemap.devlog}</a>
 			<a href={link('/about')} class="nav-link">{t.nav.sitemap.about}</a>
+
+			<LanguageToggle />
+
 			<div class="nav-cta">
 				<ComicButton text={t.nav.sitemap.contact} href={link('/#contact')} />
 			</div>
@@ -50,6 +55,8 @@
 			<a href={link('/projects')} class="mobile-link">{t.nav.sitemap.projects}</a>
 			<a href={link('/devlog')} class="mobile-link">{t.nav.sitemap.devlog}</a>
 			<a href={link('/about')} class="mobile-link">{t.nav.sitemap.about}</a>
+
+			<LanguageToggle />
 		</div>
 	{/if}
 </nav>

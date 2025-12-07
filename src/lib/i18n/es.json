@@ -8,33 +8,55 @@
 	"members": {
 		"nacho": {
 			"bio": "Nacho diseña, programa y mantiene unido el caos. Entre mecánicas, UIs, herramientas personalizadas y gestión del proyecto, es el pegamento digital que evita que todo estalle… la mayoría de las veces.",
-			"role": "Lead Developer & Designer",
+			"role": "Desarrollador y programador",
 			"favoriteGame": "Minecraft",
 			"kryptonite": "Merge conflicts"
 		},
 		"pablo": {
 			"bio": "Pablo decide cómo se ve, se siente y respira cada juego. Padre del estilo de Los Super Ninis y maestro del diseño de gameplay. Si existe una locura estética, él ya la ha imaginado.",
-			"role": "Art Director & Game Designer",
+			"role": "Desarrollador y director de arte",
 			"favoriteGame": "Minecraft",
 			"kryptonite": "Decidirse entre veinte estilos que él mismo inventó"
 		},
 		"xabi": {
 			"bio": "Xabi vive en un mundo hecho de píxeles, buffers y fórmulas incomprensibles. Domador de shaders, guerrero de Shader Graph y mago del paralelismo DOTS.",
-			"role": "Graphics Programmer",
+			"role": "Programador de gráficos",
 			"favoriteGame": "Outer Wilds",
 			"kryptonite": "‘funciona en mi PC’"
 		},
 		"nano": {
 			"bio": "Nano crea mundos: modela, texturiza, anima y hace magia en 3D. Si algo existe en el juego, probablemente él lo ha hecho… o lo está arreglando ahora mismo.",
-			"role": "3D Artist",
+			"role": "Artista 3D",
 			"favoriteGame": "Call of Duty",
 			"kryptonite": "Recibir ‘solo un pequeño ajuste’ cinco veces seguidas"
 		},
 		"julian": {
 			"bio": "Julián convierte ruido en arte. Graba sonidos, compone música, diseña efectos y los conecta al motor como un maestro de FMOD. Si suena bien, es culpa suya.",
-			"role": "Music & Sound Designer",
+			"role": "Música y sonido",
 			"favoriteGame": "Mortal Kombat X",
 			"kryptonite": "Archivos corruptos"
+		}
+	},
+	"games": {
+		"symbiosis": {
+			"genre": "Gestión de recursos • Estrategia",
+			"desc": "A game where you win by doing absolutely nothing. Sleep through levels and avoid responsibilities!",
+			"status": "Acceso anticipado"
+		},
+		"bst": {
+			"genre": "Arcade • Velocidad",
+			"desc": "An arcade game about a mouse racing to build a gaming setup.",
+			"status": "Lanzado"
+		},
+		"crop_guardian": {
+			"genre": "Arcade • Shooter",
+			"desc": "An arcade-like game where you fend off hordes of aliens trying to claim your crops.",
+			"status": "Lanzado"
+		},
+		"cafe_chaos": {
+			"genre": "Gestión de tiempo",
+			"desc": "Serve coffee to superheroes who are late for saving the world. Don't spill the latte!",
+			"status": "En desarrollo"
 		}
 	},
 	"newsletter": {
@@ -62,6 +84,24 @@
 		"company": "Los Super Ninis, S.L.",
 		"explore": "Explorar",
 		"legal": "Legal"
+	},
+	"faq": {
+		"faq1": {
+			"q": "¿Son gratis vuestros juegos?",
+			"a": "Most of our web games are free! We also have premium versions on Steam with extra hats and zero ads."
+		},
+		"faq2": {
+			"q": "Can I stream your games?",
+			"a": "Absolutely! We love streamers. If you find a bug live on stream, just pretend it's a feature."
+		},
+		"faq3": {
+			"q": "Do you hire interns?",
+			"a": "Only if you can beat the dev team in Mario Kart. Send your lap times to our HR department."
+		},
+		"faq4": {
+			"q": "Where is your studio located?",
+			"a": "We are based in Madrid, Spain! We basically run on tapas and sunshine."
+		}
 	},
 	"------------------PAGES ": "-----------------------",
 	"home": {
@@ -107,7 +147,12 @@
 	"projects": {
 		"title_1": "NUESTROS",
 		"title_2": "JUEGOS",
-		"desc": "Explora todas las apps peculiares y gamberras de Los Super Ninis.<br>\n\t\t\t\tAviso: puede provocar risas espontáneas.",
+		"desc_1": "Explora todas las apps peculiares y gamberras de Los Super Ninis.",
+		"desc_2": "Aviso: puede provocar risas espontáneas.",
+		"links": {
+			"game": "Ver juego",
+			"disabled": "Más adelante..."
+		},
 		"cta": {
 			"title": "¿QUIERES COLABORAR?",
 			"desc": "Siempre buscamos nuevos amigos, artistas y patrocinadores de pizza.",

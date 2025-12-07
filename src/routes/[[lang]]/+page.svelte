@@ -2,7 +2,7 @@
 	import ComicButton from '$lib/components/generic/ComicButton.svelte';
 	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 	import LandingBlogCard from '$lib/components/blog/LandingBlogCard.svelte';
-	import { projects } from '$lib/components/projects/project-info.ts';
+	import { projectsData } from '$lib/components/projects/project-info.ts';
 	import { teamData } from '$lib/components/team/team-info.ts';
 	import MobileTeam from '$lib/components/team/MobileTeam.svelte';
 	import { page } from '$app/state';
@@ -31,6 +31,19 @@
 			role: translatedFields.role,
 			kryptonite: translatedFields.kryptonite,
 			favoriteGame: translatedFields.favoriteGame
+		};
+	}));
+
+	let projects = $derived(projectsData.map(project => {
+		// Find the specific text for this member ID
+		// We cast to 'any' briefly to avoid TS shouting if keys are missing during dev
+		const translatedFields = (t.games as any)[project.id];
+
+		return {
+			...project, // Keep name, color, img, variant
+			genre: translatedFields.genre,
+			desc: translatedFields.desc,
+			status: translatedFields.status
 		};
 	}));
 </script>

@@ -2,21 +2,36 @@
 	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 	import ComicButton from '$lib/components/generic/ComicButton.svelte';
 	import FAQItem from '$lib/components/generic/FAQItem.svelte';
-	import { INSTAGRAM_URL, BLUESKY_URL, YOUTUBE_URL, DISCORD_INVITE } from '$lib/utils/constants.ts';
-	import { projects } from '$lib/components/projects/project-info.ts';
+	import { BLUESKY_URL } from '$lib/utils/constants.ts';
+	import { projectsData } from '$lib/components/projects/project-info.ts';
 	import { page } from '$app/state';
 
 	import type { Dictionary } from '$lib/types/i18n';
+
 	let t = $derived(page.data.t as Dictionary);
 	let lang = $derived(page.data.lang);
 	const link = (path: string) => `/${lang}${path}`;
 
-	const faqs = [
-		{ q: "Are your games free to play?", a: "Most of our web games are free! We also have premium versions on Steam with extra hats and zero ads." },
-		{ q: "Can I stream your games?", a: "Absolutely! We love streamers. If you find a bug live on stream, just pretend it's a feature." },
-		{ q: "Do you hire interns?", a: "Only if you can beat the dev team in Mario Kart. Send your lap times to our HR department." },
-		{ q: "Where is your studio located?", a: "We are based in Madrid, Spain! We basically run on tapas and sunshine." }
-	];
+	// Convert t.faq.* into an array like [{q, a}, ...]
+	let faqs = $derived(
+		Object.values(t.faq).map((entry: any) => ({
+			q: entry.q,
+			a: entry.a
+		}))
+	);
+
+	let projects = $derived(projectsData.map(project => {
+		// Find the specific text for this member ID
+		// We cast to 'any' briefly to avoid TS shouting if keys are missing during dev
+		const translatedFields = (t.games as any)[project.id];
+
+		return {
+			...project, // Keep name, color, img, variant
+			genre: translatedFields.genre,
+			desc: translatedFields.desc,
+			status: translatedFields.status
+		};
+	}));
 </script>
 
 <div class="page-wrapper">
@@ -26,7 +41,7 @@
 		<div class="container text-center relative z-10">
 			<h1 class="page-title text-stroke-thick">{t.projects.title_1} <span class="highlight-red">{t.projects.title_2}</span></h1>
 			<p class="page-subtitle">
-				{t.projects.desc}
+				{t.projects.desc_1}<br>{t.projects.desc_2}
 			</p>
 		</div>
 	</header>
@@ -48,9 +63,9 @@
 								<p class="project-desc">{project.desc}</p>
 								<div class="card-actions">
 									{#if project.link === ""}
-										<ComicButton text="Coming Soon..." variant="disabled" className="btn-sm" />
+										<ComicButton text={t.projects.links.disabled} variant="disabled" className="btn-sm" />
 									{:else}
-										<ComicButton text="View Game" href={project.link} target="_blank" rel="noreferrer" variant="primary" className="btn-sm" />
+										<ComicButton text={t.projects.links.game} href={project.link} target="_blank" rel="noreferrer" variant="primary" className="btn-sm" />
 									{/if}
 								</div>
 							</div>

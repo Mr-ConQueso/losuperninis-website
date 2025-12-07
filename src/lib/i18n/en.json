@@ -37,6 +37,28 @@
 			"kryptonite": "Corrupted project files"
 		}
 	},
+	"games": {
+		"symbiosis": {
+			"genre": "Resource Management • Strategy",
+			"desc": "A game where you win by doing absolutely nothing. Sleep through levels and avoid responsibilities!",
+			"status": "Early Access"
+		},
+		"bst": {
+			"genre": "Arcade • Rush",
+			"desc": "An arcade game about a mouse racing to build a gaming setup.",
+			"status": "Released"
+		},
+		"crop_guardian": {
+			"genre": "Arcade • Shooter",
+			"desc": "An arcade-like game where you fend off hordes of aliens trying to claim your crops.",
+			"status": "Released"
+		},
+		"cafe_chaos": {
+			"genre": "Time Management",
+			"desc": "Serve coffee to superheroes who are late for saving the world. Don't spill the latte!",
+			"status": "In Dev"
+		}
+	},
 	"newsletter": {
 		"title": "JOIN THE SQUAD!",
 		"desc": "Get exclusive updates, beta keys, and comic strips directly in your inbox.",
@@ -62,6 +84,24 @@
 		"company": "Los Super Ninis, L.L.C.",
 		"explore": "Explore",
 		"legal": "Legal"
+	},
+	"faq": {
+		"faq1": {
+			"q": "Are your games free to play?",
+			"a": "Most of our web games are free! We also have premium versions on Steam with extra hats and zero ads."
+		},
+		"faq2": {
+			"q": "Can I stream your games?",
+			"a": "Absolutely! We love streamers. If you find a bug live on stream, just pretend it's a feature."
+		},
+		"faq3": {
+			"q": "Do you hire interns?",
+			"a": "Only if you can beat the dev team in Mario Kart. Send your lap times to our HR department."
+		},
+		"faq4": {
+			"q": "Where is your studio located?",
+			"a": "We are based in Madrid, Spain! We basically run on tapas and sunshine."
+		}
 	},
 	"------------------PAGES ": "-----------------------",
 	"home": {
@@ -107,7 +147,12 @@
 	"projects": {
 		"title_1": "OUR",
 		"title_2": "GAMES",
-		"desc": "Explore all of Los Super Ninis’ quirky, playful apps.<br>\n\t\t\t\tWarning: May cause spontaneous laughter.",
+		"desc_1": "Explore all of Los Super Ninis’ quirky, playful apps.",
+		"desc_2": "Warning: May cause spontaneous laughter.",
+		"links": {
+			"game": "View Game",
+			"disabled": "Coming Soon..."
+		},
 		"cta": {
 			"title": "WANT TO COLLABORATE?",
 			"desc": "We are always looking for new friends, artists, and pizza sponsors.",
