@@ -24,10 +24,9 @@
 	<header class="project-header">
 		<div class="bg-layer halftone-beige"></div>
 		<div class="container text-center relative z-10">
-			<h1 class="page-title text-stroke-thick">OUR <span class="highlight-red">GAMES</span></h1>
+			<h1 class="page-title text-stroke-thick">{t.projects.title_1} <span class="highlight-red">{t.projects.title_2}</span></h1>
 			<p class="page-subtitle">
-				Explore all of Los Super Ninis’ quirky, playful apps.<br>
-				Warning: May cause spontaneous laughter.
+				{t.projects.desc}
 			</p>
 		</div>
 	</header>
@@ -89,12 +88,12 @@
 			<ComicPanel variant={2} bgColor="var(--nini-red)" className="cta-panel">
 				<div class="cta-content">
 					<div class="cta-text">
-						<h2 class="text-white">WANT TO COLLABORATE?</h2>
-						<p class="text-black font-bold">We are always looking for new friends, artists, and pizza sponsors.</p>
+						<h2 class="text-white">{t.projects.cta.title}</h2>
+						<p class="text-black font-bold">{t.projects.cta.desc}</p>
 					</div>
 					<div class="cta-buttons">
-						<ComicButton text="Contact Us" variant="dark" href={link('/#contact')} />
-						<ComicButton text="Follow on Bluesky" variant="secondary" href={BLUESKY_URL} />
+						<ComicButton text={t.projects.cta.contact} variant="dark" href={link('/#contact')} />
+						<ComicButton text={t.projects.cta.bluesky} variant="secondary" href={BLUESKY_URL} />
 					</div>
 				</div>
 			</ComicPanel>

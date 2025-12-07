@@ -95,6 +95,7 @@
 		{#each team as member, i}
 			<div class="card-wrapper {getCardClass(i, currentIndex, team.length)}">
 				<LandingTeamCard
+					id={member.id}
 					name={member.name}
 					role={member.role}
 					img={member.img}

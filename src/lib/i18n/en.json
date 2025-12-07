@@ -1,54 +1,47 @@
 {
-	"home": {
-		"title_1": "Quirky",
-		"title_2": "Indie",
-		"title_3": "Games",
-		"subtitle": "We make playful games with comic visuals and chaotic creativity. Welcome to the headquarters of Los Super Ninis!"
+	"main": {
+		"title": "Los Super Ninis",
+		"title_may": "Los Super Ninis",
+		"tagline": "Saving the world from boredom."
 	},
-	"hero": {
-		"play_games": "Play Our Games",
-		"read_devlog": "Read Devlog",
-		"new_release": "New Release Incoming!",
-		"speech_bubble_1": "IT'S",
-		"speech_bubble_2": "FUN!"
-	},
-	"features": {
-		"title": "WHY US?",
-		"feature_1": {
-			"title": "Playful Games",
-			"desc": "Mechanics that put a smile on your face. We prioritize fun over physics!"
+	"------------------ COMPONENTS ": "-----------------------",
+	"members": {
+		"nacho": {
+			"bio": "Nacho designs, codes, organizes, and keeps the whole operation from collapsing into digital chaos. From mechanics and UIs to custom Unity tools and project management, he’s the multitasking wizard making sure everything actually ships.",
+			"role": "Lead Developer & Designer",
+			"favoriteGame": "Minecraft",
+			"kryptonite": "Merge conflicts"
 		},
-		"feature_2": {
-			"title": "Comic Visuals",
-			"desc": "A unique aesthetic inspired by the golden age of comics and pop culture."
+		"pablo": {
+			"bio": "Pablo shapes the look, style, and essence of every game. The artistic brain behind Los Super Ninis, and a key architect of gameplay ideas. If something is bold, weird, or iconic—he probably invented it.",
+			"role": "Art Director & Game Designer",
+			"favoriteGame": "Minecraft",
+			"kryptonite": "Choosing between twenty art styles he created himself"
 		},
-		"feature_3": {
-			"title": "Pure Creativity",
-			"desc": "Hand-crafted assets, original stories, and zero corporate boredom."
+		"xabi": {
+			"bio": "Xabi speaks fluent shaders. Whether it’s Shader Graph, custom pipelines, or low-level DOTS wizardry, he’s the graphics programmer turning math into magic—and occasionally into mysterious artifacts.",
+			"role": "Graphics Programmer",
+			"favoriteGame": "Outer Wilds",
+			"kryptonite": "‘works on my machine’"
+		},
+		"nano": {
+			"bio": "Nano brings worlds to life. He models, textures, rigs, animates, and builds whatever the game needs. If you can see it in 3D, chances are he crafted it with precision (and a bit of suffering).",
+			"role": "3D Artist",
+			"favoriteGame": "Call of Duty",
+			"kryptonite": "Hearing the phrase ‘just one more small tweak’"
+		},
+		"julian": {
+			"bio": "Julián transforms sound into storytelling. He records foley, composes music, designs audio, and wires everything into the engine through FMOD. If it’s satisfying to the ears, he had his hands on it.",
+			"role": "Music & Sound Designer",
+			"favoriteGame": "Mortal Kombat X",
+			"kryptonite": "Corrupted project files"
 		}
-	},
-	"portfolio": {
-		"title": "LATEST HITS",
-		"desc": "Check out our latest releases",
-		"link": "View All Projects ->",
-		"link_mobile": "View All"
-	},
-	"team": {
-		"title": "WHO ARE WE?",
-		"desc_1": "Los Super Ninis started as a late-night joke and turned into a dedicated indie studio. We believe in games that don't take themselves too seriously but are seriously fun to play.",
-		"desc_2": "Our mission? To save the world from boredom, one pixel at a time.",
-		"link": "Meet the Full Team"
 	},
 	"newsletter": {
 		"title": "JOIN THE SQUAD!",
 		"desc": "Get exclusive updates, beta keys, and comic strips directly in your inbox.",
 		"email_input": "Enter your email...",
 		"subscribe": "SUBSCRIBE!"
-	},
-	"main": {
-		"title": "Los Super Ninis",
-		"title_may": "Los Super Ninis",
-		"tagline": "Saving the world from boredom."
 	},
 	"nav": {
 		"sitemap": {
@@ -66,8 +59,105 @@
 		}
 	},
 	"footer": {
-		"company": "Los Super Ninis, S.L.",
+		"company": "Los Super Ninis, L.L.C.",
 		"explore": "Explore",
 		"legal": "Legal"
+	},
+	"------------------PAGES ": "-----------------------",
+	"home": {
+		"title_1": "Quirky",
+		"title_2": "Indie",
+		"title_3": "Games",
+		"subtitle": "We make playful games with comic visuals and chaotic creativity. Welcome to the headquarters of Los Super Ninis!",
+		"hero": {
+			"play_games": "Play Our Games",
+			"read_devlog": "Read Devlog",
+			"new_release": "New Release Incoming!",
+			"speech_bubble_1": "IT'S",
+			"speech_bubble_2": "FUN!"
+		},
+		"features": {
+			"title": "WHY US?",
+			"feature_1": {
+				"title": "Playful Games",
+				"desc": "Mechanics that put a smile on your face. We prioritize fun over physics!"
+			},
+			"feature_2": {
+				"title": "Comic Visuals",
+				"desc": "A unique aesthetic inspired by the golden age of comics and pop culture."
+			},
+			"feature_3": {
+				"title": "Pure Creativity",
+				"desc": "Hand-crafted assets, original stories, and zero corporate boredom."
+			}
+		},
+		"portfolio": {
+			"title": "LATEST HITS",
+			"desc": "Check out our latest releases",
+			"link": "View All Projects ->",
+			"link_mobile": "View All"
+		},
+		"team": {
+			"title": "WHO ARE WE?",
+			"desc_1": "Los Super Ninis started as a late-night joke and turned into a dedicated indie studio. We believe in games that don't take themselves too seriously but are seriously fun to play.",
+			"desc_2": "Our mission? To save the world from boredom, one pixel at a time.",
+			"link": "Meet the Full Team"
+		}
+	},
+	"projects": {
+		"title_1": "OUR",
+		"title_2": "GAMES",
+		"desc": "Explore all of Los Super Ninis’ quirky, playful apps.<br>\n\t\t\t\tWarning: May cause spontaneous laughter.",
+		"cta": {
+			"title": "WANT TO COLLABORATE?",
+			"desc": "We are always looking for new friends, artists, and pizza sponsors.",
+			"contact": "Contact Us",
+			"bluesky": "Follow on Bluesky"
+		}
+	},
+	"devlog": {
+		"title_1": "THE",
+		"title_2": "DEV",
+		"title_3": "LOG",
+		"subtitle": "BEHIND THE SCENES",
+		"desc": "Updates, tutorials, and the occasional rant about spaghetti code.",
+		"posts": {
+			"must_read": "MUST READ",
+			"latest": "LATEST POSTS",
+			"filters": {
+				"title": "Filter by: ",
+				"all": "All",
+				"tech": "Tech",
+				"art": "Art"
+			},
+			"pages": {
+				"next": "Next ->",
+				"back": ""
+			}
+		},
+		"newsletter": {
+			"title": "DON'T MISS AN UPDATE!",
+			"desc": "Subscribe to our newsletter to get these posts delivered by a digital pigeon."
+		}
+	},
+	"about": {
+		"title_1": "THE",
+		"title_2": "ORIGIN",
+		"title_3": "STORY",
+		"desc": "How a late-night joke turned into a studio committed to saving the world from boredom.",
+		"date": "EST. 2025",
+		"bubble_1": "IT STARTED",
+		"bubble_2": "WITH A PIZZA!",
+		"team": {
+			"title": "MEET THE SQUAD",
+			"desc": "The chaotic evil geniuses behind the pixels.",
+			"fav_game": "Fave Game",
+			"kryptonite": "Kryptonite"
+		},
+		"cta": {
+			"title": "ARE YOU ONE OF US?",
+			"desc": "We are always looking for freelancers and contributors. If you like chaos, drop us a line.",
+			"link": "Join the Chaos"
+		}
 	}
 }

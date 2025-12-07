@@ -5,7 +5,6 @@
 	import { initMobile } from '$lib/utils/device.svelte.ts';
 	import { page } from '$app/state';
 
-	// FIX 1: Destructure 'data' to access the result of +layout.ts
 	let { children, data } = $props();
 
 	onMount(() => {
@@ -15,22 +14,21 @@
 </script>
 
 <svelte:head>
-	<!-- FIX 2: Use data.lang instead of children.lang -->
-	<html lang={data.lang} ></html>
+	<html lang={data.lang} />
 
-	<!-- Canonical URL -->
-	<link rel="canonical" href="https://www.losuperninis.com{page.url.pathname}" />
+	<!-- Canonical URL (Self) -->
+	<link rel="canonical" href="https://superninis.com{page.url.pathname}" />
 
-	<!-- Alternates (Logic fixed to prevent double language prefixes) -->
+	<!-- Alternates: The regex replace(/^\/(en|es)/, '') handles both /about and /en/about correctly -->
 	<link
 		rel="alternate"
 		hreflang="en"
-		href="https://www.losuperninis.com/en{page.url.pathname.replace(/^\/(en|es)/, '')}"
+		href="https://superninis.com/en{page.url.pathname.replace(/^\/(en|es)/, '')}"
 	/>
 	<link
 		rel="alternate"
 		hreflang="es"
-		href="https://www.losuperninis.com/es{page.url.pathname.replace(/^\/(en|es)/, '')}"
+		href="https://superninis.com/es{page.url.pathname.replace(/^\/(en|es)/, '')}"
 	/>
 </svelte:head>
 

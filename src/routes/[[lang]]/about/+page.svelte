@@ -2,13 +2,27 @@
 	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 	import ComicButton from '$lib/components/generic/ComicButton.svelte';
 	import TeamCard from '$lib/components/team/TeamCard.svelte';
-	import { team } from '$lib/components/team/team-info.ts';
+	import { teamData } from '$lib/components/team/team-info.ts';
 	import { page } from '$app/state';
 
 	import type { Dictionary } from '$lib/types/i18n';
 	let t = $derived(page.data.t as Dictionary);
 	let lang = $derived(page.data.lang);
 	const link = (path: string) => `/${lang}${path}`;
+
+	let team = $derived(teamData.map(member => {
+		// Find the specific text for this member ID
+		// We cast to 'any' briefly to avoid TS shouting if keys are missing during dev
+		const translatedFields = (t.members as any)[member.id];
+
+		return {
+			...member, // Keep name, color, img, variant
+			bio: translatedFields.bio,
+			role: translatedFields.role,
+			kryptonite: translatedFields.kryptonite,
+			favoriteGame: translatedFields.favoriteGame
+		};
+	}));
 </script>
 
 <div class="page-wrapper">
@@ -18,10 +32,10 @@
 		<div class="bg-layer halftone-beige"></div>
 		<div class="container relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 			<div class="header-text">
-				<div class="comic-badge">EST. 2025</div>
-				<h1 class="page-title text-stroke-thick">THE <span class="highlight-red">ORIGIN</span> STORY</h1>
+				<div class="comic-badge">{t.about.date}</div>
+				<h1 class="page-title text-stroke-thick">{t.about.title_1} <span class="highlight-red">{t.about.title_2}</span> {t.about.title_3}</h1>
 				<p class="header-subtitle">
-					How a late-night joke turned into a studio committed to saving the world from boredom.
+					{t.about.desc}
 				</p>
 			</div>
 			<!-- Visual Element -->
@@ -30,7 +44,7 @@
 					<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Studio Life" class="hero-img">
 					{#snippet bubble()}
 						<div class="speech-bubble">
-							<p>IT STARTED<br>WITH A PIZZA!</p>
+							<p>{t.about.bubble_1}<br>{t.about.bubble_2}</p>
 							<div class="bubble-tail"></div>
 						</div>
 					{/snippet}
@@ -39,64 +53,13 @@
 		</div>
 	</header>
 
-	<!-- Story / Timeline Section -->
-	<section class="section story-section">
-		<div class="container">
-			<div class="section-header center-text">
-				<h2 class="section-title text-black">OUR JOURNEY</h2>
-				<p class="text-gray">From "Los Super Ninis" (The Super Neets) to Indie Devs.</p>
-			</div>
-
-			<div class="timeline">
-				<!-- Timeline Item 1 -->
-				<div class="timeline-item left">
-					<div class="timeline-content">
-						<ComicPanel variant={1} bgColor="white">
-							<div class="p-6">
-								<span class="year-badge red">2023</span>
-								<h3>The "Aha!" Moment</h3>
-								<p>We were unemployed ("Ninis") and bored. We decided to make a game about doing nothing.</p>
-							</div>
-						</ComicPanel>
-					</div>
-				</div>
-
-				<!-- Timeline Item 2 -->
-				<div class="timeline-item right">
-					<div class="timeline-content">
-						<ComicPanel variant={3} bgColor="var(--nini-beige)">
-							<div class="p-6">
-								<span class="year-badge blue">2024</span>
-								<h3>First Game Jam</h3>
-								<p>We entered a jam, slept 4 hours in 2 days, and won "Most Chaotic Game". We were hooked.</p>
-							</div>
-						</ComicPanel>
-					</div>
-				</div>
-
-				<!-- Timeline Item 3 -->
-				<div class="timeline-item left">
-					<div class="timeline-content">
-						<ComicPanel variant={2} bgColor="white">
-							<div class="p-6">
-								<span class="year-badge green">2025</span>
-								<h3>Studio Founded</h3>
-								<p>We officially became "Los Super Ninis". We bought a coffee machine before we bought desks.</p>
-							</div>
-						</ComicPanel>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<!-- Team Section -->
 	<section class="section team-section">
 		<div class="bg-layer halftone-red-overlay"></div>
 		<div class="container relative z-10">
 			<div class="section-header center-text">
-				<h2 class="section-title text-stroke">MEET THE SQUAD</h2>
-				<p class="text-black">The chaotic evil geniuses behind the pixels.</p>
+				<h2 class="section-title text-stroke">{t.about.team.title}</h2>
+				<p class="text-black">{t.about.team.desc}</p>
 			</div>
 
 			<div class="team-grid">
@@ -113,7 +76,7 @@
 						variant={member.variant as 1|2|3}
 						kryptonite={member.kryptonite}
 						favoriteGame={member.favoriteGame}
-						id={member.name}
+						id={member.id}
 					/>
 				{/each}
 			</div>
@@ -125,9 +88,9 @@
 		<div class="container">
 			<ComicPanel variant={2} bgColor="black" className="join-panel">
 				<div class="cta-content">
-					<h2 class="text-white">ARE YOU ONE OF US?</h2>
-					<p class="text-beige">We are always looking for freelancers and contributors. If you like chaos, drop us a line.</p>
-					<ComicButton text="Join the Chaos" variant="primary" href={link('/#contact')} />
+					<h2 class="text-white">{t.about.cta.title}</h2>
+					<p class="text-beige">{t.about.cta.desc}</p>
+					<ComicButton text={t.about.cta.link} variant="primary" href={link('/#contact')} />
 				</div>
 			</ComicPanel>
 		</div>
@@ -218,101 +181,6 @@
         border-bottom: 3px solid black;
         border-right: 3px solid black;
         transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    /* --- Story Timeline --- */
-    .story-section {
-        background-color: var(--nini-beige);
-        padding: 4rem 0;
-    }
-
-    .section-header { margin-bottom: 3rem; }
-    .section-title.text-black { color: black; }
-    .text-gray { color: #444; }
-
-    .timeline {
-        position: relative;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    /* Timeline Line */
-    .timeline::after {
-        content: '';
-        position: absolute;
-        width: 6px;
-        background-color: black;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        margin-left: -3px;
-    }
-
-    .timeline-item {
-        padding: 10px 40px;
-        position: relative;
-        background-color: inherit;
-        width: 50%;
-        box-sizing: border-box;
-    }
-
-    .left { left: 0; }
-    .right { left: 50%; }
-
-    .timeline-content {
-        position: relative;
-        z-index: 10;
-    }
-
-    .year-badge {
-        display: inline-block;
-        color: white;
-        font-family: "Luckiest Guy";
-        padding: 4px 8px;
-        border: 2px solid black;
-        margin-bottom: 0.5rem;
-        font-size: 1.2rem;
-    }
-    .year-badge.red { background: var(--nini-red); }
-    .year-badge.blue { background: var(--nini-blue); }
-    .year-badge.green { background: var(--nini-green); }
-
-    .p-6 { padding: 1.5rem; }
-    .timeline-content h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-
-    /* --- Values --- */
-    .values-section {
-        padding: 4rem 0;
-        position: relative;
-        border-top: 4px solid black;
-    }
-
-    .solid-blue {
-        position: absolute;
-        inset: 0;
-        background-color: var(--nini-blue);
-    }
-
-    .values-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
-    }
-
-    .value-card {
-        padding: 2rem;
-        border: 4px solid black;
-        background: var(--nini-bg);
-        box-shadow: 6px 6px 0 white;
-        transition: transform 0.2s;
-    }
-    .value-card:hover { transform: translateY(-5px); }
-
-    .icon-box {
-        font-size: 3rem;
-        color: var(--nini-red);
-        margin-bottom: 1rem;
     }
 
     .text-beige { color: var(--nini-beige); margin-bottom: 0.5rem; font-size: 1.5rem; }

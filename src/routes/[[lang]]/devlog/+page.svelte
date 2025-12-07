@@ -22,10 +22,10 @@
 	<header class="devlog-header">
 		<div class="header-pattern"></div>
 		<div class="container relative z-10 text-center">
-			<div class="comic-badge rotate-neg-2">BEHIND THE SCENES</div>
-			<h1 class="page-title text-stroke-thick">THE <span class="highlight-red">DEV</span>LOG</h1>
+			<div class="comic-badge rotate-neg-2">{t.devlog.subtitle}</div>
+			<h1 class="page-title text-stroke-thick">{t.devlog.title_1} <span class="highlight-red">{t.devlog.title_2} </span>{t.devlog.title_3}</h1>
 			<p class="header-subtitle">
-				Updates, tutorials, and the occasional rant about spaghetti code.
+				{t.devlog.desc}
 			</p>
 		</div>
 	</header>
@@ -35,7 +35,7 @@
 		<section class="section featured-section">
 			<div class="container">
 				<h2 class="section-label">
-					<i class="fas fa-star text-yellow-400"></i> MUST READ
+					<i class="fas fa-star text-yellow-400">{t.devlog.posts.must_read}</i>
 				</h2>
 				<div class="featured-grid">
 					{#each featuredPosts as post}
@@ -55,23 +55,18 @@
 		<div class="bg-layer halftone-beige"></div>
 		<div class="container relative z-10">
 			<div class="list-header">
-				<h2 class="section-title text-stroke">LATEST POSTS</h2>
+				<h2 class="section-title text-stroke">{t.devlog.posts.latest}</h2>
 				<div class="filter-placeholder">
 					<!-- Simple visual placeholder for filters -->
-					<span>Filter by: </span>
-					<button class="filter-tag active">All</button>
-					<button class="filter-tag">Tech</button>
-					<button class="filter-tag">Art</button>
+					<span>{t.devlog.posts.filters.title}</span>
+					<button class="filter-tag active">{t.devlog.posts.filters.all}</button>
+					<button class="filter-tag">{t.devlog.posts.filters.tech}</button>
+					<button class="filter-tag">{t.devlog.posts.filters.art}</button>
 				</div>
 			</div>
 
 			<div class="posts-grid">
 				{#each regularPosts as post, i}
-					<!--
-							The BlogCard component (from previous steps) already wraps the
-							title/image in an <a> tag pointing to /devlog/{slug},
-							so clicking it will take you to the blog post.
-					-->
 					<BlogCard
 						{...post}
 						variant={((i % 3) + 1) as 1|2|3}
@@ -85,7 +80,7 @@
 				<button class="page-btn active">1</button>
 				<button class="page-btn">2</button>
 				<button class="page-btn">3</button>
-				<button class="page-btn">Next -></button>
+				<button class="page-btn">{t.devlog.posts.pages.next}</button>
 			</div>
 		</div>
 	</section>
@@ -95,11 +90,11 @@
 		<div class="container">
 			<ComicPanel variant={1} bgColor="black" className="newsletter-panel">
 				<div class="cta-content">
-					<h2 class="text-white">DON'T MISS AN UPDATE!</h2>
-					<p class="text-beige">Subscribe to our newsletter to get these posts delivered by a digital pigeon.</p>
+					<h2 class="text-white">{t.devlog.newsletter.title}</h2>
+					<p class="text-beige">{t.devlog.newsletter.desc}</p>
 					<div class="input-group">
-						<input type="email" placeholder="your@email.com" class="comic-input">
-						<button class="comic-submit">SEND</button>
+						<input type="email" placeholder={t.newsletter.email_input} class="comic-input">
+						<button class="comic-submit">{t.newsletter.subscribe}</button>
 					</div>
 				</div>
 			</ComicPanel>

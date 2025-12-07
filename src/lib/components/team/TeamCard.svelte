@@ -1,6 +1,10 @@
 <script lang="ts">
 	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 	import ComicButton from '$lib/components/generic/ComicButton.svelte';
+	import { page } from '$app/state';
+
+	import type { Dictionary } from '$lib/types/i18n';
+	let t = $derived(page.data.t as Dictionary);
 
 	interface Props {
 		name: string;
@@ -65,7 +69,7 @@
 							<div class="spec-row">
 								<div class="spec-icon"><i class="fas fa-gamepad"></i></div>
 								<div class="spec-text">
-									<span class="spec-label">Fave Game</span>
+									<span class="spec-label">{t.about.team.fav_game}</span>
 									<span class="spec-value">{favoriteGame}</span>
 								</div>
 							</div>
@@ -75,7 +79,7 @@
 							<div class="spec-row">
 								<div class="spec-icon"><i class="fas fa-skull-crossbones"></i></div>
 								<div class="spec-text">
-									<span class="spec-label">Kryptonite</span>
+									<span class="spec-label">{t.about.team.kryptonite}</span>
 									<span class="spec-value">{kryptonite}</span>
 								</div>
 							</div>

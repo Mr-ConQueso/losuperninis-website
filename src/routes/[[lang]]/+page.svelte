@@ -3,7 +3,7 @@
 	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 	import LandingBlogCard from '$lib/components/blog/LandingBlogCard.svelte';
 	import { projects } from '$lib/components/projects/project-info.ts';
-	import { team } from '$lib/components/team/team-info.ts';
+	import { teamData } from '$lib/components/team/team-info.ts';
 	import MobileTeam from '$lib/components/team/MobileTeam.svelte';
 	import { page } from '$app/state';
 
@@ -19,6 +19,20 @@
 	let t = $derived(page.data.t as Dictionary);
 	let lang = $derived(page.data.lang);
 	const link = (path: string) => `/${lang}${path}`;
+
+	let team = $derived(teamData.map(member => {
+		// Find the specific text for this member ID
+		// We cast to 'any' briefly to avoid TS shouting if keys are missing during dev
+		const translatedFields = (t.members as any)[member.id];
+
+		return {
+			...member, // Keep name, color, img, variant
+			bio: translatedFields.bio,
+			role: translatedFields.role,
+			kryptonite: translatedFields.kryptonite,
+			favoriteGame: translatedFields.favoriteGame
+		};
+	}));
 </script>
 
 <!-- Hero Section -->
@@ -43,8 +57,8 @@
 			</p>
 
 			<div class="hero-buttons">
-				<ComicButton text={t.hero.play_games} variant="primary" href={link('/projects')} />
-				<ComicButton text={t.hero.read_devlog} variant="secondary" href={link('/devlog')} />
+				<ComicButton text={t.home.hero.play_games} variant="primary" href={link('/projects')} />
+				<ComicButton text={t.home.hero.read_devlog} variant="secondary" href={link('/devlog')} />
 			</div>
 		</div>
 
@@ -57,13 +71,13 @@
 
 					<div class="hero-panel-text">
 						<span class="boom-text">BANG!</span>
-						<p class="release-tag">{t.hero.new_release}</p>
+						<p class="release-tag">{t.home.hero.new_release}</p>
 					</div>
 				</div>
 				<!-- Speech Bubble -->
 				{#snippet bubble()}
 					<div class="speech-bubble">
-						<p>{t.hero.speech_bubble_1}<br>{t.hero.speech_bubble_2}</p>
+						<p>{t.home.hero.speech_bubble_1}<br>{t.home.hero.speech_bubble_2}</p>
 						<div class="bubble-tail"></div>
 					</div>
 				{/snippet}
@@ -78,7 +92,7 @@
 	<div class="container">
 
 		<div class="section-header">
-			<h2 class="section-title text-stroke">{t.features.title}</h2>
+			<h2 class="section-title text-stroke">{t.home.features.title}</h2>
 			<div class="underline-deco"></div>
 		</div>
 
@@ -88,8 +102,8 @@
 					<div class="icon-circle pulse">
 						<i class="fas fa-gamepad"></i>
 					</div>
-					<h3 class="feature-title text-white">{t.features.feature_1.title}</h3>
-					<p class="feature-desc text-beige">{t.features.feature_1.desc}</p>
+					<h3 class="feature-title text-white">{t.home.features.feature_1.title}</h3>
+					<p class="feature-desc text-beige">{t.home.features.feature_1.desc}</p>
 				</div>
 			</ComicPanel>
 
@@ -99,8 +113,8 @@
 						<div class="icon-circle red-icon">
 							<i class="fas fa-bolt"></i>
 						</div>
-						<h3 class="feature-title text-black">{t.features.feature_2.title}</h3>
-						<p class="feature-desc text-black">{t.features.feature_2.desc}</p>
+						<h3 class="feature-title text-black">{t.home.features.feature_2.title}</h3>
+						<p class="feature-desc text-black">{t.home.features.feature_2.desc}</p>
 					</div>
 				</ComicPanel>
 			</div>
@@ -110,8 +124,8 @@
 					<div class="icon-circle">
 						<i class="fas fa-paint-brush"></i>
 					</div>
-					<h3 class="feature-title text-white">{t.features.feature_3.title}</h3>
-					<p class="feature-desc text-beige">{t.features.feature_3.desc}</p>
+					<h3 class="feature-title text-white">{t.home.features.feature_3.title}</h3>
+					<p class="feature-desc text-beige">{t.home.features.feature_3.desc}</p>
 				</div>
 			</ComicPanel>
 		</div>
@@ -125,10 +139,10 @@
 	<div class="container">
 		<div class="portfolio-header">
 			<div>
-				<h2 class="section-title text-stroke-red">{t.portfolio.title}</h2>
-				<p class="header-subtitle">{t.portfolio.desc}</p>
+				<h2 class="section-title text-stroke-red">{t.home.portfolio.title}</h2>
+				<p class="header-subtitle">{t.home.portfolio.desc}</p>
 			</div>
-			<a href={link('/projects')} class="view-all-link">{t.portfolio.link}</a>
+			<a href={link('/projects')} class="view-all-link">{t.home.portfolio.link}</a>
 		</div>
 
 		<div class="portfolio-grid">
@@ -161,7 +175,7 @@
 		</div>
 
 		<div class="mobile-cta">
-			<ComicButton text={t.portfolio.link_mobile} href={link('/projects')} />
+			<ComicButton text={t.home.portfolio.link_mobile} href={link('/projects')} />
 		</div>
 	</div>
 </section>
@@ -172,15 +186,15 @@
 
 		<!-- About Text -->
 		<div class="about-text">
-			<h2 class="about-title">{t.team.title}</h2>
+			<h2 class="about-title">{t.home.team.title}</h2>
 			<p class="body-text">
-				{t.team.desc_1}
+				{t.home.team.desc_1}
 			</p>
 			<p class="body-text">
-				{t.team.desc_2}
+				{t.home.team.desc_2}
 			</p>
 			<div class="team-btn-wrapper">
-				<ComicButton text={t.team.link} variant="dark" href={link('/about')} />
+				<ComicButton text={t.home.team.link} variant="dark" href={link('/about')} />
 			</div>
 		</div>
 

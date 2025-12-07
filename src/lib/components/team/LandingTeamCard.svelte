@@ -1,5 +1,6 @@
 <script lang="ts">
 	interface Props {
+		id: string;
 		name: string;
 		role: string;
 		img: string;
@@ -11,6 +12,7 @@
 	}
 
 	let {
+		id,
 		name,
 		role,
 		img,
@@ -27,7 +29,7 @@
 	let lang = $derived(page.data.lang);
 	const link = (path: string) => `/${lang}${path}`;
 
-	const namelink = link('/about/#') + name
+	const namelink = link('/about/#') + id
 </script>
 
 <a href={namelink} aria-label="Team member button">

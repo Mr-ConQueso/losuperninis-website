@@ -1,53 +1,47 @@
 {
-	"home": {
-		"title_1": "Juegos",
-		"title_2": "Indie",
-		"title_3": "Peculiares",
-		"subtitle": "Creamos juegos divertidos con estética cómic y creatividad caótica. ¡Bienvenido al cuartel general de Los Super Ninis!"
+	"main": {
+		"title": "Los Super Ninis",
+		"title_may": "Los Super Ninis",
+		"tagline": "Salvando al mundo del aburrimiento."
 	},
-	"hero": {
-		"play_games": "Jugar a Nuestros Juegos",
-		"read_devlog": "Leer el Devlog",
-		"new_release": "¡Nuevo Lanzamiento en Camino!",
-		"speech_bubble_1": "¡ES",
-		"speech_bubble_2": "DIVERTIDO!"
-	},
-	"features": {
-		"title": "¿POR QUÉ NOSOTROS?",
-		"feature_1": {
-			"title": "Juegos Divertidos",
-			"desc": "Mecánicas que te sacan una sonrisa. ¡Priorizamos la diversión sobre la física!"
+	"------------------ COMPONENTS ": "-----------------------",
+	"members": {
+		"nacho": {
+			"bio": "Nacho diseña, programa y mantiene unido el caos. Entre mecánicas, UIs, herramientas personalizadas y gestión del proyecto, es el pegamento digital que evita que todo estalle… la mayoría de las veces.",
+			"role": "Lead Developer & Designer",
+			"favoriteGame": "Minecraft",
+			"kryptonite": "Merge conflicts"
 		},
-		"feature_2": {
-			"title": "Estética de Cómic",
-			"desc": "Una estética única inspirada en la edad dorada del cómic y la cultura pop."
+		"pablo": {
+			"bio": "Pablo decide cómo se ve, se siente y respira cada juego. Padre del estilo de Los Super Ninis y maestro del diseño de gameplay. Si existe una locura estética, él ya la ha imaginado.",
+			"role": "Art Director & Game Designer",
+			"favoriteGame": "Minecraft",
+			"kryptonite": "Decidirse entre veinte estilos que él mismo inventó"
 		},
-		"feature_3": {
-			"title": "Creatividad Pura",
-			"desc": "Recursos hechos a mano, historias originales y cero aburrimiento corporativo."
+		"xabi": {
+			"bio": "Xabi vive en un mundo hecho de píxeles, buffers y fórmulas incomprensibles. Domador de shaders, guerrero de Shader Graph y mago del paralelismo DOTS.",
+			"role": "Graphics Programmer",
+			"favoriteGame": "Outer Wilds",
+			"kryptonite": "‘funciona en mi PC’"
+		},
+		"nano": {
+			"bio": "Nano crea mundos: modela, texturiza, anima y hace magia en 3D. Si algo existe en el juego, probablemente él lo ha hecho… o lo está arreglando ahora mismo.",
+			"role": "3D Artist",
+			"favoriteGame": "Call of Duty",
+			"kryptonite": "Recibir ‘solo un pequeño ajuste’ cinco veces seguidas"
+		},
+		"julian": {
+			"bio": "Julián convierte ruido en arte. Graba sonidos, compone música, diseña efectos y los conecta al motor como un maestro de FMOD. Si suena bien, es culpa suya.",
+			"role": "Music & Sound Designer",
+			"favoriteGame": "Mortal Kombat X",
+			"kryptonite": "Archivos corruptos"
 		}
-	},
-	"portfolio": {
-		"title": "ÚLTIMOS ÉXITOS",
-		"desc": "Descubre nuestros lanzamientos más recientes",
-		"link": "Ver Todos los Proyectos ->"
-	},
-	"team": {
-		"title": "¿QUIÉNES SOMOS?",
-		"desc_1": "Los Super Ninis empezaron como una broma nocturna y acabaron convirtiéndose en un estudio indie dedicado. Creemos en juegos que no se toman demasiado en serio, pero que son seriamente divertidos de jugar.",
-		"desc_2": "¿Nuestra misión? Salvar al mundo del aburrimiento, píxel a píxel.",
-		"link": "Conoce al Equipo Completo"
 	},
 	"newsletter": {
 		"title": "¡ÚNETE A LA SQUAD!",
 		"desc": "Recibe novedades exclusivas, claves de acceso anticipado y tiras cómicas directamente en tu correo.",
 		"email_input": "Introduce tu correo...",
 		"subscribe": "¡SUSCRIBIRME!"
-	},
-	"main": {
-		"title": "Los Super Ninis",
-		"title_may": "Los Super Ninis",
-		"tagline": "Salvando al mundo del aburrimiento."
 	},
 	"nav": {
 		"sitemap": {
@@ -68,5 +62,102 @@
 		"company": "Los Super Ninis, S.L.",
 		"explore": "Explorar",
 		"legal": "Legal"
+	},
+	"------------------PAGES ": "-----------------------",
+	"home": {
+		"title_1": "Juegos",
+		"title_2": "Indie",
+		"title_3": "Peculiares",
+		"subtitle": "Creamos juegos divertidos con estética de cómic y creatividad caótica. ¡Bienvenido al cuartel general de Los Super Ninis!",
+		"hero": {
+			"play_games": "Jugar a Nuestros Juegos",
+			"read_devlog": "Leer el Devlog",
+			"new_release": "¡Nuevo Lanzamiento en Camino!",
+			"speech_bubble_1": "¡ES",
+			"speech_bubble_2": "DIVERTIDO!"
+		},
+		"features": {
+			"title": "¿POR QUÉ NOSOTROS?",
+			"feature_1": {
+				"title": "Juegos Divertidos",
+				"desc": "Mecánicas que te sacan una sonrisa. ¡Priorizamos la diversión sobre la física!"
+			},
+			"feature_2": {
+				"title": "Estética de Cómic",
+				"desc": "Una estética única inspirada en la edad dorada del cómic y la cultura pop."
+			},
+			"feature_3": {
+				"title": "Creatividad Pura",
+				"desc": "Recursos hechos a mano, historias originales y cero aburrimiento corporativo."
+			}
+		},
+		"portfolio": {
+			"title": "ÚLTIMOS ÉXITOS",
+			"desc": "Descubre nuestros lanzamientos más recientes",
+			"link": "Ver Todos los Proyectos ->",
+			"link_mobile": "Ver Todo"
+		},
+		"team": {
+			"title": "¿QUIÉNES SOMOS?",
+			"desc_1": "Los Super Ninis empezaron como una broma nocturna y acabaron convirtiéndose en un estudio indie dedicado. Creemos en juegos que no se toman demasiado en serio, pero que son seriamente divertidos de jugar.",
+			"desc_2": "¿Nuestra misión? Salvar al mundo del aburrimiento, píxel a píxel.",
+			"link": "Conoce al Equipo Completo"
+		}
+	},
+	"projects": {
+		"title_1": "NUESTROS",
+		"title_2": "JUEGOS",
+		"desc": "Explora todas las apps peculiares y gamberras de Los Super Ninis.<br>\n\t\t\t\tAviso: puede provocar risas espontáneas.",
+		"cta": {
+			"title": "¿QUIERES COLABORAR?",
+			"desc": "Siempre buscamos nuevos amigos, artistas y patrocinadores de pizza.",
+			"contact": "Contáctanos",
+			"bluesky": "Síguenos en Bluesky"
+		}
+	},
+	"devlog": {
+		"title_1": "EL",
+		"title_2": "DEV",
+		"title_3": "LOG",
+		"subtitle": "ENTRE BAMBALINAS",
+		"desc": "Actualizaciones, tutoriales y alguna que otra queja sobre código espagueti.",
+		"posts": {
+			"must_read": "IMPRESCINDIBLE",
+			"latest": "ÚLTIMAS ENTRADAS",
+			"filters": {
+				"title": "Filtrar por:",
+				"all": "Todo",
+				"tech": "Tech",
+				"art": "Arte"
+			},
+			"pages": {
+				"next": "Siguiente ->",
+				"back": ""
+			}
+		},
+		"newsletter": {
+			"title": "¡NO TE PIERDAS NADA!",
+			"desc": "Suscríbete a nuestra newsletter para recibir estas entradas entregadas por una paloma digital."
+		}
+	},
+	"about": {
+		"title_1": "LA",
+		"title_2": "HISTORIA",
+		"title_3": "ORIGINAL",
+		"desc": "Cómo una broma nocturna se convirtió en un estudio comprometido con salvar el mundo del aburrimiento.",
+		"date": "DESDE 2025",
+		"bubble_1": "TODO EMPEZÓ",
+		"bubble_2": "¡CON UNA PIZZA!",
+		"team": {
+			"title": "MEET THE SQUAD",
+			"desc": "The chaotic evil geniuses behind the pixels.",
+			"fav_game": "Fave Game",
+			"kryptonite": "Kryptonite"
+		},
+		"cta": {
+			"title": "¿ERES UNO DE LOS NUESTROS?",
+			"desc": "Siempre buscamos freelancers y colaboradores. Si te gusta el caos, escríbenos.",
+			"link": "Únete al Caos"
+		}
 	}
 }
