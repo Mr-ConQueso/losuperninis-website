@@ -18,7 +18,7 @@
 
 	const isBlue = index % 2 === 0;
 
-	const sluglink = link('/devlog') + slug
+	const sluglink = link('/devlog/') + slug
 </script>
 
 <a href={sluglink} class="blog-card {isBlue ? 'blog-blue' : 'blog-dark'}">

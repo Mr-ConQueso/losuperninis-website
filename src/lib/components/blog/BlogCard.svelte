@@ -30,7 +30,7 @@
 		featured = false
 	}: Props = $props();
 
-	const bloglink = link('/devlog') + slug
+	const bloglink = link('/devlog/') + slug
 </script>
 
 <div class="blog-card-wrapper {featured ? 'featured' : ''}">

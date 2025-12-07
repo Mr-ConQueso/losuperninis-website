@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import { initMobile } from '$lib/utils/device.svelte.ts';
 	import { page } from '$app/state';
+	import { WEBSITE_URL } from '$lib/utils/constants.js';
 
 	let { children, data } = $props();
 
@@ -18,18 +19,18 @@
 	<script src="https://kit.fontawesome.com/6f55fb0840.js" crossorigin="anonymous"></script>
 
 	<!-- Canonical URL (Self) -->
-	<link rel="canonical" href="https://www.losuperninis.com{page.url.pathname}" />
+	<link rel="canonical" href="{WEBSITE_URL}{page.url.pathname}" />
 
 	<!-- Alternates: The regex replace(/^\/(en|es)/, '') handles both /about and /en/about correctly -->
 	<link
 		rel="alternate"
 		hreflang="en"
-		href="https://www.losuperninis.com/en{page.url.pathname.replace(/^\/(en|es)/, '')}"
+		href="{WEBSITE_URL}/en{page.url.pathname.replace(/^\/(en|es)/, '')}"
 	/>
 	<link
 		rel="alternate"
 		hreflang="es"
-		href="https://www.losuperninis.com/es{page.url.pathname.replace(/^\/(en|es)/, '')}"
+		href="{WEBSITE_URL}/es{page.url.pathname.replace(/^\/(en|es)/, '')}"
 	/>
 </svelte:head>
 

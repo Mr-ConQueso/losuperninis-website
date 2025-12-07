@@ -22,7 +22,6 @@
 	];
 
 	const legal = [
-		{ name: t.nav.legal.cookies, href: link('/cookies') },
 		{ name: t.nav.legal.licences, href: link('/licences') },
 		{ name: t.nav.legal.privacy, href: link('/privacy') },
 		{ name: t.nav.legal.terms, href: link('/terms') }

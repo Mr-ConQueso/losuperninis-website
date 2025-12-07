@@ -204,5 +204,23 @@
 			"desc": "We are always looking for freelancers and contributors. If you like chaos, drop us a line.",
 			"link": "Join the Chaos"
 		}
+	},
+	"legal": {
+		"date": "Last modified:",
+		"ccpa": {
+			"title_1": "CALIFORNIA COPYRIGHT",
+			"title_2": "PROTECTION ACT"
+		},
+		"licences": {
+			"title": "LICENCES"
+		},
+		"privacy": {
+			"title_1": "PRIVACY",
+			"title_2": "POLICY"
+		},
+		"terms": {
+			"title_1": "TERMS",
+			"title_2": "OF USE"
+		}
 	}
 }

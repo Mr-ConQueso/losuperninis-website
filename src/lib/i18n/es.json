@@ -204,5 +204,23 @@
 			"desc": "Siempre buscamos freelancers y colaboradores. Si te gusta el caos, escríbenos.",
 			"link": "Únete al Caos"
 		}
+	},
+	"legal": {
+		"date": "Última vez modificado el:",
+		"ccpa": {
+			"title_1": "CC",
+			"title_2": "PA"
+		},
+		"licences": {
+			"title": "LICENCIAS"
+		},
+		"privacy": {
+			"title_1": "POLÍTICA DE",
+			"title_2": "PRIVACIDAD"
+		},
+		"terms": {
+			"title_1": "TÉRMINOS",
+			"title_2": "Y CONDICIONES"
+		}
 	}
 }
