@@ -17,6 +17,7 @@
 <svelte:head>
 	<html lang={data.lang}></html>
 	<script src="https://kit.fontawesome.com/6f55fb0840.js" crossorigin="anonymous"></script>
+	<script defer src="https://cloud.umami.is/script.js" data-website-id="35e43943-db37-40b5-849c-235ae99abc24"></script>
 
 	<!-- Canonical URL (Self) -->
 	<link rel="canonical" href="{WEBSITE_URL}{page.url.pathname}" />
