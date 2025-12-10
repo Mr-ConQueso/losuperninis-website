@@ -7,7 +7,6 @@
 		STEAM_URL,
 		WEBSITE_URL
 	} from '$lib/utils/constants.js';
-	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 	import { page } from '$app/state';
 
 	import type { Dictionary } from '$lib/types/i18n.ts';

@@ -1,6 +1,8 @@
 export const WEBSITE_URL = "https://www.losuperninis.com";
 export const CONTACT_EMAIL = "contact@losuperninis.com";
 
+export const WEBSITE_SOURCE_URL = "https://github.com/losuperninis/losuperninis-web";
+
 export const STEAM_URL = "https://www.losuperninis.com";
 export const ITCHIO_URL = "https://losuperninis.itch.io";
 export const GITHUB_URL = "https://github.com/losuperninis";

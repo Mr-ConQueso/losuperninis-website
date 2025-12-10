@@ -12,6 +12,7 @@
 
 	import type { Dictionary } from '$lib/types/i18n';
 	import Newsletter from '$lib/components/generic/Newsletter.svelte';
+	import Contact from '$lib/components/generic/Contact.svelte';
 	let t = $derived(page.data.t as Dictionary);
 	let lang = $derived(page.data.lang);
 	const link = (path: string) => `/${lang}${path}`;
@@ -89,11 +90,9 @@
 	<!-- Newsletter CTA -->
 	<section class="section cta-section">
 		<div class="container">
-			<Newsletter
+			<Contact
 				title={t.devlog.newsletter.title}
 				description={t.devlog.newsletter.desc}
-				placeholder={t.newsletter.email_input}
-				buttonText={t.newsletter.subscribe}
 				variant={1}
 				bgColor="black"
 				textColor="white"

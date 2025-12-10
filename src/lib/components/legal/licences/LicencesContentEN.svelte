@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { WEBSITE_SOURCE_URL } from '$lib/utils/constants.js';
 
 	import type { Dictionary } from '$lib/types/i18n.ts';
+	import ComicButton from '$lib/components/generic/ComicButton.svelte';
 
 	let t = $derived(page.data.t as Dictionary);
 </script>
@@ -46,15 +48,33 @@
 	<p>While we mostly brew our own code chaos, we occasionally use:</p>
 	<ul>
 		<li><strong>PostHog Analytics</strong> (Self-hosted under AGPLv3)</li>
-		<li><strong>SvelteKit Framework</strong> (MIT License)</li>
+		<li><strong>Svelte & SvelteKit</strong> (MIT License)</li>
 	</ul>
-	<p>Full license details available upon request. Yes, even the ones our legal team insisted we include “just in case someone asks about that one npm package from 2018”.</p>
 
-	<div class="closing-note">
-		<p>
-			<small>Made with 73% caffeine and 100% nini spirit.<br>
-				(The other 27% is pure panic about server conflicts.)</small>
-		</p>
+	<div class="source-header">
+		<i class="fab fa-github"></i>
+		<h2>Source Code</h2>
+	</div>
+
+	<p class="source-desc">
+		This website is proudly open source! Built with <strong>SvelteKit</strong>, deployed on <strong>Cloudflare Pages</strong>, and powered by caffeine-fueled commits.
+	</p>
+
+	<p class="source-note">
+		Feel free to explore our code, learn from it, or just judge our commit messages. We believe in sharing knowledge (and our occasional spaghetti code).
+	</p>
+
+	<div class="source-actions">
+		<ComicButton
+			text="View on GitHub  ->"
+			variant="primary"
+			href={WEBSITE_SOURCE_URL}
+			className="source-button"
+		/>
+		<div class="license-badge">
+			<span class="badge-label">License:</span>
+			<span class="badge-value">GPL v3</span>
+		</div>
 	</div>
 
 </div>
@@ -150,17 +170,94 @@
         color: var(--nini-red);
     }
 
-    /* Closing Note */
-    .closing-note {
-        margin-top: 3rem;
-        text-align: center;
-        color: #666;
-        border-top: 2px solid #eee;
-        padding-top: 1.5rem;
+    .badge-label {
+        color: #888;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+    }
+
+    .badge-value {
+        color: var(--nini-red);
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+    .source-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .source-header i {
+        font-size: 2.5rem;
+        color: var(--nini-black);
+        background: white;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid var(--nini-black);
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .source-header h2 {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .source-desc {
+        margin-bottom: 1rem;
+    }
+
+    .source-desc strong {
+        color: var(--nini-red);
+    }
+
+    .source-note {
+        background-color: #fff9e6;
+        border-left: 4px solid var(--nini-blue);
+        padding: 1rem;
+        font-style: italic;
+        margin-bottom: 1.5rem;
+    }
+
+    .source-actions {
+        display: flex;
+        align-items: center;
+				justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .license-badge {
+        background: var(--nini-bg);
+        border: 2px solid var(--nini-black);
+        padding: 0.75rem 1.25rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: "Fredoka", sans-serif;
+        margin-bottom: 0;
+    }
+
+    .badge-label {
+        color: #888;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+    }
+
+    .badge-value {
+        color: var(--nini-red);
+        font-weight: bold;
+        font-size: 1.1rem;
     }
 
     @media (min-width: 768px) {
-        .page-title { font-size: 4rem; }
         .licences-content { padding: 4rem; }
     }
 </style>

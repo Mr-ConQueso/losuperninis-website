@@ -1,13 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import {
-		INSTAGRAM_URL,
-		BLUESKY_URL,
-		YOUTUBE_URL,
-		DISCORD_INVITE,
-	} from '$lib/utils/constants.ts';
+	import { socials } from '$lib/utils/contact.ts';
 
 	import type { Dictionary } from '$lib/types/i18n';
+
 	let t = $derived(page.data.t as Dictionary);
 	let lang = $derived(page.data.lang);
 	const link = (path: string) => `/${lang}${path}`;
@@ -25,13 +21,6 @@
 		{ name: t.nav.legal.licences, href: link('/licences') },
 		{ name: t.nav.legal.privacy, href: link('/privacy') },
 		{ name: t.nav.legal.terms, href: link('/terms') }
-	];
-
-	const socials = [
-		{ name: "Instagram", href: INSTAGRAM_URL, icon: "/icons/socials/instagram.svg" },
-		{ name: "Bluesky", href: BLUESKY_URL, icon: "/icons/socials/bluesky.svg" },
-		{ name: "YouTube", href: YOUTUBE_URL, icon: "/icons/socials/youtube.svg" },
-		{ name: "Discord", href: DISCORD_INVITE, icon: "/icons/socials/discord.svg" },
 	];
 </script>
 

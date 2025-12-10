@@ -17,6 +17,7 @@
 
 	import type { Dictionary } from '$lib/types/i18n';
 	import Newsletter from '$lib/components/generic/Newsletter.svelte';
+	import Contact from '$lib/components/generic/Contact.svelte';
 	let t = $derived(page.data.t as Dictionary);
 	let lang = $derived(page.data.lang);
 	const link = (path: string) => `/${lang}${path}`;
@@ -251,11 +252,9 @@
 <section class="section newsletter-section" id="contact">
 	<div class="bg-layer halftone-beige-overlay"></div>
 	<div class="container">
-		<Newsletter
+		<Contact
 			title={t.newsletter.title}
 			description={t.newsletter.desc}
-			placeholder={t.newsletter.email_input}
-			buttonText={t.newsletter.subscribe}
 			variant={1}
 			bgColor="white"
 			textColor="black"
