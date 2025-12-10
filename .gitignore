@@ -108,3 +108,4 @@ vite.config.ts.timestamp-*
 # Development
 .idea/
 
+/.vscode
