@@ -40,23 +40,34 @@
 	"games": {
 		"symbiosis": {
 			"genre": "Resource Management • Strategy",
-			"desc": "A game where you win by doing absolutely nothing. Sleep through levels and avoid responsibilities!",
-			"status": "Early Access"
+			"desc": "Manage and expand your own microorganism colony.",
+			"status": "In Development"
 		},
 		"bst": {
 			"genre": "Arcade • Rush",
 			"desc": "An arcade game about a mouse racing to build a gaming setup.",
-			"status": "Released"
+			"status": "On Hold"
 		},
 		"crop_guardian": {
 			"genre": "Arcade • Shooter",
 			"desc": "An arcade-like game where you fend off hordes of aliens trying to claim your crops.",
-			"status": "Released"
+			"status": "Prototype"
 		},
-		"cafe_chaos": {
-			"genre": "Time Management",
-			"desc": "Serve coffee to superheroes who are late for saving the world. Don't spill the latte!",
-			"status": "In Dev"
+		"----------- OTHER GAMES ": "-----------",
+		"friendly_fire": {
+			"genre": "Co-Op • Strategy",
+			"desc": "A strategy game that flips Buckshot Roulette on it's head.",
+			"status": "Prototype"
+		},
+		"fps": {
+			"genre": "Work-sim • Business Management",
+			"desc": "Own and manage your own pawn shop.",
+			"status": "Canceled"
+		},
+		"scribble_war": {
+			"genre": "RTS",
+			"desc": "A simple RTS where doodles battle against each other.",
+			"status": "Prototype"
 		}
 	},
 	"newsletter": {

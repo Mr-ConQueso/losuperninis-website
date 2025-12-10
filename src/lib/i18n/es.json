@@ -40,23 +40,34 @@
 	"games": {
 		"symbiosis": {
 			"genre": "Gestión de recursos • Estrategia",
-			"desc": "A game where you win by doing absolutely nothing. Sleep through levels and avoid responsibilities!",
-			"status": "Acceso anticipado"
+			"desc": "Maneja y expande tu colonia de microorganismos.",
+			"status": "En desarrollo"
 		},
 		"bst": {
 			"genre": "Arcade • Velocidad",
-			"desc": "An arcade game about a mouse racing to build a gaming setup.",
-			"status": "Lanzado"
+			"desc": "Un juego sobre un ratón creándose un setup gaming.",
+			"status": "En pausa"
 		},
 		"crop_guardian": {
 			"genre": "Arcade • Shooter",
-			"desc": "An arcade-like game where you fend off hordes of aliens trying to claim your crops.",
-			"status": "Lanzado"
+			"desc": "Defiende hordas de aliens para proteger tus cultivos.",
+			"status": "Prototipo"
 		},
-		"cafe_chaos": {
-			"genre": "Gestión de tiempo",
-			"desc": "Serve coffee to superheroes who are late for saving the world. Don't spill the latte!",
-			"status": "En desarrollo"
+		"----------- OTHER GAMES ": "-----------",
+		"friendly_fire": {
+			"genre": "Co-Op • Estrategia",
+			"desc": "Un juego de estrategia que le da la vuelta a Buckshot Roulette.",
+			"status": "Prototipo"
+		},
+		"fps": {
+			"genre": "Gestión de negocios",
+			"desc": "Gestiona tu propia casa de empeños.",
+			"status": "Cancelado"
+		},
+		"scribble_war": {
+			"genre": "ETS",
+			"desc": "Un simple ETS donde dibujitos se enfrentan entre ellos.",
+			"status": "Prototipo"
 		}
 	},
 	"newsletter": {

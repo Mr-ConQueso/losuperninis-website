@@ -28,7 +28,7 @@
 	const currentPath = clipPaths[variant];
 </script>
 
-<div class="panel-wrapper {className}" {...rest}>
+<div class="panel-wrapper" {...rest}>
 
 	<!--
 		LAYER 1: BORDER & SHADOW
@@ -48,7 +48,7 @@
 		We use background color here to fill the shape.
 	-->
 	<div
-		class="layer-content"
+		class="layer-content {className}"
 		style="background-color: {bgColor}; clip-path: {currentPath};"
 	>
 		{@render children()}

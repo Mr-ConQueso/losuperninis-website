@@ -21,7 +21,7 @@
 		</header>
 
 		<!-- Shared Panel Wrapper -->
-		<ComicPanel variant={1} bgColor="white" className="policy-panel">
+		<ComicPanel variant={1} bgColor="white">
 
 			<!-- DYNAMIC CONTENT SWITCHING -->
 			{#if lang === 'es'}
