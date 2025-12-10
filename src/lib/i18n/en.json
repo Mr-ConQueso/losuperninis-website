@@ -40,7 +40,7 @@
 	"games": {
 		"symbiosis": {
 			"genre": "Resource Management • Strategy",
-			"desc": "Manage and expand your own microorganism colony.",
+			"desc": "A resource-management strategy game where you manage, expand, and evolve colonies of microorganisms.",
 			"status": "In Development"
 		},
 		"bst": {
