@@ -11,6 +11,7 @@
 	let regularPosts = $derived(data.posts.filter((p: any) => !p.featured));
 
 	import type { Dictionary } from '$lib/types/i18n';
+	import Newsletter from '$lib/components/generic/Newsletter.svelte';
 	let t = $derived(page.data.t as Dictionary);
 	let lang = $derived(page.data.lang);
 	const link = (path: string) => `/${lang}${path}`;
@@ -88,16 +89,15 @@
 	<!-- Newsletter CTA -->
 	<section class="section cta-section">
 		<div class="container">
-			<ComicPanel variant={1} bgColor="black" className="newsletter-panel">
-				<div class="cta-content">
-					<h2 class="text-white">{t.devlog.newsletter.title}</h2>
-					<p class="text-beige">{t.devlog.newsletter.desc}</p>
-					<div class="input-group">
-						<input type="email" placeholder={t.newsletter.email_input} class="comic-input">
-						<button class="comic-submit">{t.newsletter.subscribe}</button>
-					</div>
-				</div>
-			</ComicPanel>
+			<Newsletter
+				title={t.devlog.newsletter.title}
+				description={t.devlog.newsletter.desc}
+				placeholder={t.newsletter.email_input}
+				buttonText={t.newsletter.subscribe}
+				variant={1}
+				bgColor="black"
+				textColor="white"
+			/>
 		</div>
 	</section>
 
