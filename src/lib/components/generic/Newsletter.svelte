@@ -56,7 +56,24 @@
 			});
 
 			if (!response.ok) {
-				const errorData = await response.json();
+				// Safely parse JSON response, fallback to text if it fails
+				let errorData: any = {};
+				const contentType = response.headers.get('content-type');
+
+				if (contentType && contentType.includes('application/json')) {
+					try {
+						errorData = await response.json();
+					} catch {
+						// If JSON parsing fails, try to get text
+						const text = await response.text();
+						errorData = { error: text || 'Subscription failed' };
+					}
+				} else {
+					// Response is not JSON (could be HTML error page)
+					const text = await response.text();
+					errorData = { error: text || 'Subscription failed' };
+				}
+
 				throw new Error(errorData.error || 'Subscription failed');
 			}
 
