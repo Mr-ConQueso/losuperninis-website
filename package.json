@@ -38,6 +38,5 @@
 		"wrangler": "^4.51.0"
 	},
 	"dependencies": {
-		"posthog-js": "^1.302.2"
 	}
 }

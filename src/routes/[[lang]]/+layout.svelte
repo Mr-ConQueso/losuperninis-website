@@ -18,7 +18,6 @@
 	<html lang={data.lang}></html>
 	<script src="https://kit.fontawesome.com/6f55fb0840.js" crossorigin="anonymous"></script>
 
-
 	<!-- Canonical URL (Self) -->
 	<link rel="canonical" href="{WEBSITE_URL}{page.url.pathname}" />
 

@@ -15,12 +15,7 @@
 			.slice(0, 3)
 	);
 
-	function subscribeNewsletter() {
-		posthog.capture('User subscribed!', { property: 'true' })
-	}
-
 	import type { Dictionary } from '$lib/types/i18n';
-	import posthog from 'posthog-js';
 	let t = $derived(page.data.t as Dictionary);
 	let lang = $derived(page.data.lang);
 	const link = (path: string) => `/${lang}${path}`;
@@ -261,7 +256,7 @@
 
 			<form class="newsletter-form">
 				<input type="email" placeholder={t.newsletter.email_input} class="email-input">
-				<ComicButton text={t.newsletter.subscribe} variant="dark" onClick={subscribeNewsletter}/>
+				<ComicButton text={t.newsletter.subscribe} variant="dark" />
 			</form>
 		</div>
 	</div>
