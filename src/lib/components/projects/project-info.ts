@@ -4,7 +4,7 @@ export const projectsData = [
 		title: 'Symbiosis',
 		img: '/images/projects/symbiosis-cover.webp',
 		banner: '/images/projects/symbiosis-cover.webp',
-		link: 'https://store.steampowered.com/app/3564740/Where_Winds_Meet/',
+		link: 'https://store.steampowered.com/app/4457910/Symbiosis/',
 		variant: 1
 	},
 	{

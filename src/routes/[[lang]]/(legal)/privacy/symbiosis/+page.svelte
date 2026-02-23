@@ -2,9 +2,9 @@
 	import { page } from '$app/state';
 	import ComicPanel from '$lib/components/generic/ComicPanel.svelte';
 
-	import type { Dictionary } from '$lib/types/i18n';
-	import TermsContentES from '$lib/components/legal/terms/TermsContentES.svelte';
-	import TermsContentEN from '$lib/components/legal/terms/TermsContentEN.svelte';
+	import type { Dictionary } from '$lib/types/i18n.ts';
+	import PrivacySymbiosisES from '$lib/components/legal/privacy/symbiosis/PrivacySymbiosisES.svelte';
+	import PrivacySymbiosisEN from '$lib/components/legal/privacy/symbiosis/PrivacySymbiosisEN.svelte';
 
 	let t = $derived(page.data.t as Dictionary);
 	let lang = $derived(page.data.lang);
@@ -14,10 +14,10 @@
 	<div class="container relative z-10">
 		<header class="policy-header text-center mb-12">
 			<h1 class="page-title text-stroke-thick">
-				{t.legal.terms.title_1} <span class="highlight-red">{t.legal.terms.title_2}</span>
+				{t.legal.privacy.title_1} <span class="highlight-red">{t.legal.privacy.title_2}</span>
 			</h1>
 			<div class="last-modified">
-				<strong>{t.legal.date} <time datetime="2025-10-05">05/10/25</time></strong>
+				<strong>{t.legal.date} <time datetime="2026-2-23">02/23/26</time></strong>
 			</div>
 		</header>
 
@@ -26,9 +26,9 @@
 
 			<!-- DYNAMIC CONTENT SWITCHING -->
 			{#if lang === 'es'}
-				<TermsContentES />
+				<PrivacySymbiosisES />
 			{:else}
-				<TermsContentEN />
+				<PrivacySymbiosisEN />
 			{/if}
 
 		</ComicPanel>

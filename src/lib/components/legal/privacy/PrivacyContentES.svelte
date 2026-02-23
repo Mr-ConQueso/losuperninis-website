@@ -217,7 +217,9 @@
         margin-left: 1.5rem;
         margin-bottom: 1.5rem;
         background: #f9f9f9;
-        padding: 1rem 1rem 1rem 2.5rem;
+        padding: 1rem 1r<a>
+				Buttons
+			</a>em 1rem 2.5rem;
         border-radius: 8px;
         border-left: 4px solid var(--nini-beige);
     }
