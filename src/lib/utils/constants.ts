@@ -12,6 +12,7 @@ export const INSTAGRAM_URL = "https://www.instagram.com/losuperninis/";
 export const BLUESKY_URL = "https://bsky.app/profile/losuperninis.bsky.social";
 export const YOUTUBE_URL = "https://www.youtube.com/@losuperninis";
 export const DISCORD_INVITE = "https://discord.gg/kMnYg9FkYP";
-export const REDDIT = 'https://www.reddit.com/user/losuperninis/';
+export const REDDIT_URL = 'https://www.reddit.com/user/losuperninis/';
+export const X_URL = 'https://x.com/';
 
 export const POSTHOG_API_KEY = "phc_JraE0uizEsEIRKlSziSBqqqzMMJ8Hq3wE1qBnK84ODr";

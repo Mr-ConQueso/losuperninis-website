@@ -18,9 +18,8 @@ export const projectsData = [
 	{
 		id: 'crop_guardian',
 		title: 'Crop Guardian',
-		img: 'https://images.unsplash.com/photo-1533236897111-3e94666b2edf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-		banner:
-			'https://images.unsplash.com/photo-1533236897111-3e94666b2edf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+		img: '/images/projects/cg-cover.webp',
+		banner: '/images/projects/cg-cover.webp',
 		link: 'https://losuperninis.itch.io/crop-guardian',
 		variant: 3
 	}
